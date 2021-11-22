@@ -1,15 +1,15 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+<h1>love mathe</h1>
+  <RecognizeQuantities/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import RecognizeQuantities from './components/RecognizeQuantities.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    RecognizeQuantities
   }
 }
 </script>

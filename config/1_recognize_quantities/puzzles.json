@@ -1,0 +1,56 @@
+{
+    "1": {
+        "name": "Puzzle 1",
+        "body": "X X O",
+        "buttons": {
+            "1": {
+                "label": "X",
+                "isSolution": true
+            },
+            "2": {
+                "label": "X O",
+                "isSolution": false
+            },
+            "3": {
+                "label": "O",
+                "isSolution": false
+            }
+        }
+    },
+    "2": {
+        "name": "Puzzle 2",
+        "body": "X O O",
+        "buttons": {
+            "1": {
+                "label": "X",
+                "isSolution": false
+            },
+            "2": {
+                "label": "X O",
+                "isSolution": false
+            },
+            "3": {
+                "label": "O",
+                "isSolution": true
+            }
+        }
+    },
+    "3": {
+        "name": "Puzzle 3",
+        "body": "X O X O",
+        "buttons": {
+            "1": {
+                "label": "X",
+                "isSolution": false
+            },
+            "2": {
+                "label": "X O",
+                "isSolution": true
+            },
+            "3": {
+                "label": "O",
+                "isSolution": false
+            }
+        }
+    }
+}
