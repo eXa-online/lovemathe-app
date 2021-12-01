@@ -1,5 +1,4 @@
 <template>
-<h1>love mathe</h1>
   <CompareQuantities/>
 </template>
 
