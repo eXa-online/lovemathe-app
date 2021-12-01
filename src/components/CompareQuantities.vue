@@ -1,7 +1,6 @@
 <template>
   <div>
     <div class="puzzle_header">
-      <h2 class="puzzle_name">{{ currentPuzzleConfig.name }}</h2>
       <img class="puzzle_badge" :src="currentBadge">
     </div>
     <div class="puzzle_body">
@@ -72,10 +71,6 @@ export default {
   display: flex;
   justify-content: center;
   gap: 1vw;
-}
-.puzzle_name {
-  display: flex;
-  justify-content: center;
 }
 .puzzle_badge {
   min-height: 7vh;
