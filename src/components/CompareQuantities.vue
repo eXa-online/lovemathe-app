@@ -8,8 +8,8 @@
       <img :src="currentPuzzleBody">
     </div>
     <div class="puzzle_buttons">
-      <button v-for="(button, index) in currentPuzzleConfig.buttons" :key="button" v-on:click="evalSelection(index)">
-        {{button.label}}
+      <button v-for="(buttonImage, index) in buttonImages" :key="buttonImage" v-on:click="evalSelection(index)">
+        <img :src="buttonImage">
       </button>
     </div>
   </div>
@@ -29,6 +29,13 @@ export default {
   computed: {
     maxPuzzles: function(){
       return Object.keys(puzzlesConfig).length;
+    },
+    buttonImages: function() {
+      return [
+        require(`../assets/1_compare_quantities/buttons/0.svg`),
+        require(`../assets/1_compare_quantities/buttons/1.svg`),
+        require(`../assets/1_compare_quantities/buttons/2.svg`)
+      ]
     },
     currentPuzzleConfig: function() {
       console.log("puzzle index", this.puzzleIndex)
