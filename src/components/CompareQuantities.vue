@@ -34,9 +34,8 @@ export default {
     },
     currentBadge: function() {
       console.log("badge index", this.badgeIndex)
-      return require(`../assets/badges/1_compare_quantities/${this.badgeIndex}.svg`)
+      return require(`../assets/1_compare_quantities/badges/${this.badgeIndex}.svg`)
     }
-
   },
   methods: {
     evalSelection(isSolution) {
