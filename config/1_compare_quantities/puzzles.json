@@ -1,103 +1,91 @@
 {
     "1": {
         "name": "Puzzle 1",
+        "solution": 1,
         "buttons": {
             "1": {
-                "label": "X",
-                "isSolution": true
+                "label": "X"
             },
             "2": {
-                "label": "X O",
-                "isSolution": false
+                "label": "X O"
             },
             "3": {
-                "label": "O",
-                "isSolution": false
+                "label": "O"
             }
         }
     },
     "2": {
         "name": "Puzzle 2",
+        "solution": 2,
         "buttons": {
             "1": {
-                "label": "X",
-                "isSolution": false
+                "label": "X"
             },
             "2": {
-                "label": "X O",
-                "isSolution": true
+                "label": "X O"
             },
             "3": {
-                "label": "O",
-                "isSolution": false
+                "label": "O"
             }
         }
     },
     "3": {
         "name": "Puzzle 3",
+        "solution": 3,
         "buttons": {
             "1": {
-                "label": "X",
-                "isSolution": false
+                "label": "X"
             },
             "2": {
-                "label": "X O",
-                "isSolution": false
+                "label": "X O"
             },
             "3": {
-                "label": "O",
-                "isSolution": true
+                "label": "O"
             }
         }
     },
     "4": {
         "name": "Puzzle 4",
+        "solution": 1,
         "buttons": {
             "1": {
-                "label": "X",
-                "isSolution": true
+                "label": "X"
             },
             "2": {
-                "label": "X O",
-                "isSolution": false
+                "label": "X O"
             },
             "3": {
-                "label": "O",
-                "isSolution": false
+                "label": "O"
             }
         }
     },
     "5": {
         "name": "Puzzle 5",
+        "solution": 2,
         "buttons": {
             "1": {
-                "label": "X",
-                "isSolution": false
+                "label": "X"
             },
             "2": {
-                "label": "X O",
-                "isSolution": true
+                "label": "X O"
             },
             "3": {
-                "label": "O",
-                "isSolution": false
+                "label": "O"
             }
         }
     },
     "6": {
         "name": "Puzzle 6",
+        "solution": 1,
         "buttons": {
             "1": {
-                "label": "X",
-                "isSolution": true
+                "label": "X"
             },
             "2": {
-                "label": "X O",
-                "isSolution": false
+                "label": "X O"
             },
             "3": {
-                "label": "O",
-                "isSolution": false
+                "label": "O"
             }
         }
     }

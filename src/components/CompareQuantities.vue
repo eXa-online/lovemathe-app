@@ -8,7 +8,7 @@
       <img :src="currentPuzzleBody">
     </div>
     <div class="puzzle_buttons">
-      <button v-for="button in currentPuzzleConfig.buttons" :key="button" v-on:click="evalSelection(button.isSolution)">
+      <button v-for="(button, index) in currentPuzzleConfig.buttons" :key="button" v-on:click="evalSelection(index)">
         {{button.label}}
       </button>
     </div>
@@ -43,9 +43,11 @@ export default {
     }
   },
   methods: {
-    evalSelection(isSolution) {
-      console.log("This solution was:", isSolution)
-      if (isSolution) {
+    evalSelection(givenSolution) {
+      console.log("givenSolution:", givenSolution)
+      const isCorrect = givenSolution == this.currentPuzzleConfig.solution
+      console.log("solution was:", isCorrect)
+      if (isCorrect) {
         this.badgeIndex += 1;
       }
 
