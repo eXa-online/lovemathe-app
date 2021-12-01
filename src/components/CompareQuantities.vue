@@ -1,12 +1,14 @@
 <template>
   <div>
     <div class="puzzle_header">
-      <h2 class="puzzle_name">{{ currentPuzzle.name }}</h2>
+      <h2 class="puzzle_name">{{ currentPuzzleConfig.name }}</h2>
       <img class="puzzle_badge" :src="currentBadge">
     </div>
-    <div class="puzzle_body">{{ currentPuzzle.body }}</div>
+    <div class="puzzle_body">
+      <img :src="currentPuzzleBody">
+    </div>
     <div class="puzzle_buttons">
-      <button v-for="button in currentPuzzle.buttons" :key="button" v-on:click="evalSelection(button.isSolution)">
+      <button v-for="button in currentPuzzleConfig.buttons" :key="button" v-on:click="evalSelection(button.isSolution)">
         {{button.label}}
       </button>
     </div>
@@ -14,7 +16,7 @@
 </template>
 
 <script>
-import puzzles from '../../config/1_compare_quantities/puzzles.json'
+import puzzlesConfig from '../../config/1_compare_quantities/puzzles.json'
 
 export default {
   name: 'CompareQuantities',
@@ -26,15 +28,18 @@ export default {
   },
   computed: {
     maxPuzzles: function(){
-      return Object.keys(puzzles).length;
+      return Object.keys(puzzlesConfig).length;
     },
-    currentPuzzle: function() {
+    currentPuzzleConfig: function() {
       console.log("puzzle index", this.puzzleIndex)
-      return puzzles[this.puzzleIndex.toString()];
+      return puzzlesConfig[this.puzzleIndex.toString()];
     },
     currentBadge: function() {
       console.log("badge index", this.badgeIndex)
       return require(`../assets/1_compare_quantities/badges/${this.badgeIndex}.svg`)
+    },
+    currentPuzzleBody: function() {
+      return require(`../assets/1_compare_quantities/puzzles/${this.puzzleIndex}.svg`)
     }
   },
   methods: {
@@ -69,6 +74,10 @@ export default {
 }
 .puzzle_body {
   padding: 5vw;
+}
+.puzzle_body img {
+  min-height: 7vh;
+  max-height: 50vh;
 }
 .puzzle_buttons {
   display: flex;
