@@ -14,10 +14,10 @@
 </template>
 
 <script>
-import puzzles from '../../config/1_recognize_quantities/puzzles.json'
+import puzzles from '../../config/1_compare_quantities/puzzles.json'
 
 export default {
-  name: 'RecognizeQuantities',
+  name: 'CompareQuantities',
   data() {
     return {
       badgeIndex: 1,
@@ -34,7 +34,7 @@ export default {
     },
     currentBadge: function() {
       console.log("badge index", this.badgeIndex)
-      return require(`../assets/badges/1_recognize_quantities/${this.badgeIndex}.svg`)
+      return require(`../assets/badges/1_compare_quantities/${this.badgeIndex}.svg`)
     }
 
   },

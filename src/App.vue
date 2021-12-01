@@ -1,15 +1,15 @@
 <template>
 <h1>love mathe</h1>
-  <RecognizeQuantities/>
+  <CompareQuantities/>
 </template>
 
 <script>
-import RecognizeQuantities from './components/RecognizeQuantities.vue'
+import CompareQuantities from './components/CompareQuantities.vue'
 
 export default {
   name: 'App',
   components: {
-    RecognizeQuantities
+    CompareQuantities
   }
 }
 </script>
