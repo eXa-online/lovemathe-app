@@ -1,16 +1,14 @@
 <template>
-  <div>
-    <div class="puzzle_header">
-      <img class="puzzle_badge" :src="currentBadge">
-    </div>
-    <div class="puzzle_body">
-      <img :src="currentPuzzleBody">
-    </div>
+  <div class="puzzle_body">
+    <img :src="currentPuzzleBody">
+  </div>
+  <div class="puzzle_bottom">
     <div class="puzzle_buttons">
       <button v-for="(buttonImage, index) in buttonImages" :key="buttonImage" v-on:click="evalSelection(index)">
         <img :src="buttonImage">
       </button>
     </div>
+    <img class="puzzle_badge" :src="currentBadge">
   </div>
 </template>
 
@@ -59,21 +57,20 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.puzzle_header {
-  display: flex;
-  justify-content: center;
-  gap: 1vw;
-}
 .puzzle_badge {
   min-height: 7vh;
-  max-height: 7vh;
 }
 .puzzle_body {
-  padding: 5vw;
+  padding: 3vw;
 }
 .puzzle_body img {
   min-height: 7vh;
-  max-height: 50vh;
+  max-height: 45vh;
+}
+.puzzle_bottom {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
 }
 .puzzle_buttons {
   display: flex;
