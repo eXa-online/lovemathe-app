@@ -15,30 +15,22 @@
 </template>
 
 <script>
-import puzzlesConfig from '../../config/1_compare_quantities/puzzles.json'
-
 export default {
   name: 'CompareQuantities',
   data() {
     return {
       badgeIndex: 1,
-      puzzleIndex: 1
+      puzzleIndex: 0,
+      solutions: [0,1,2,0,1,0]
     }
   },
   computed: {
-    maxPuzzles: function(){
-      return Object.keys(puzzlesConfig).length;
-    },
     buttonImages: function() {
       return [
         require(`../assets/1_compare_quantities/buttons/0.svg`),
         require(`../assets/1_compare_quantities/buttons/1.svg`),
         require(`../assets/1_compare_quantities/buttons/2.svg`)
       ]
-    },
-    currentPuzzleConfig: function() {
-      console.log("puzzle index", this.puzzleIndex)
-      return puzzlesConfig[this.puzzleIndex.toString()];
     },
     currentBadge: function() {
       console.log("badge index", this.badgeIndex)
@@ -51,13 +43,13 @@ export default {
   methods: {
     evalSelection(givenSolution) {
       console.log("givenSolution:", givenSolution)
-      const isCorrect = givenSolution == this.currentPuzzleConfig.solution
+      const isCorrect = givenSolution == this.solutions[this.puzzleIndex]
       console.log("solution was:", isCorrect)
       if (isCorrect) {
         this.badgeIndex += 1;
       }
 
-      if (this.puzzleIndex < this.maxPuzzles) {
+      if (this.puzzleIndex < this.solutions.length) {
         this.puzzleIndex++;
       }
     }
