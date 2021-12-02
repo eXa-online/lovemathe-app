@@ -33,7 +33,6 @@ export default {
       ]
     },
     currentBadge: function() {
-      console.log("badge index", this.badgeIndex)
       return require(`../assets/1_compare_quantities/badges/${this.badgeIndex}.svg`)
     },
     currentPuzzleBody: function() {
@@ -42,9 +41,7 @@ export default {
   },
   methods: {
     evalSelection(givenSolution) {
-      console.log("givenSolution:", givenSolution)
       const isCorrect = givenSolution == this.solutions[this.puzzleIndex]
-      console.log("solution was:", isCorrect)
       if (isCorrect) {
         this.badgeIndex++;
       }
