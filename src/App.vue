@@ -22,4 +22,7 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+body {
+  background-image: url('assets/1_compare_quantities/background.svg');
+}
 </style>
