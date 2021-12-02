@@ -88,4 +88,8 @@ export default {
   justify-content: center;
   gap: 50px;
 }
+.puzzle_buttons button {
+  border: none;
+  background-color: transparent;
+}
 </style>
