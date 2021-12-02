@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="1304" height="682" viewBox="0 0 1304 682" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="3" y="3" width="1298" height="676" rx="77" fill="white" stroke="#844EA5" stroke-width="6"/>
-<circle cx="468" cy="459" r="58" fill="#F2A74E"/>
+<svg width="1100" height="682" viewBox="0 0 1100 682" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="3" y="3" width="1094" height="676" rx="77" fill="white" stroke="#844EA5" stroke-width="6"/>
+<circle cx="445" cy="464" r="58" fill="#F2A74E"/>
+<circle cx="941" cy="201" r="58" fill="#F2A74E"/>
+<circle cx="143" cy="259" r="58" fill="#F2A74E"/>
+<path d="M421 85L436.267 131.987L485.672 131.987L445.702 161.026L460.969 208.013L421 178.974L381.031 208.013L396.298 161.026L356.328 131.987L405.733 131.987L421 85Z" fill="#164E82"/>
+<path d="M824 289L839.267 335.987L888.672 335.987L848.702 365.026L863.969 412.013L824 382.974L784.031 412.013L799.298 365.026L759.328 335.987L808.733 335.987L824 289Z" fill="#164E82"/>
+<path d="M233 487L248.267 533.987L297.672 533.987L257.702 563.026L272.969 610.013L233 580.974L193.031 610.013L208.298 563.026L168.328 533.987L217.733 533.987L233 487Z" fill="#164E82"/>
 </svg>
