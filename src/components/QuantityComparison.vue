@@ -27,16 +27,16 @@ export default {
   computed: {
     buttonImages: function() {
       return [
-        require(`../assets/1_compare_quantities/buttons/0.svg`),
-        require(`../assets/1_compare_quantities/buttons/1.svg`),
-        require(`../assets/1_compare_quantities/buttons/2.svg`)
+        require(`../assets/quantity_comparison/buttons/0.svg`),
+        require(`../assets/quantity_comparison/buttons/1.svg`),
+        require(`../assets/quantity_comparison/buttons/2.svg`)
       ]
     },
     currentBadge: function() {
-      return require(`../assets/1_compare_quantities/badges/${this.badgeIndex}.svg`)
+      return require(`../assets/quantity_comparison/badges/${this.badgeIndex}.svg`)
     },
     currentPuzzleBody: function() {
-      return require(`../assets/1_compare_quantities/puzzles/${this.puzzleIndex}.svg`)
+      return require(`../assets/quantity_comparison/puzzles/${this.puzzleIndex}.svg`)
     }
   },
   methods: {

@@ -1,14 +1,14 @@
 <template>
-  <CompareQuantities/>
+  <QuantityComparison/>
 </template>
 
 <script>
-import CompareQuantities from './components/CompareQuantities.vue'
+import QuantityComparison from './components/QuantityComparison.vue'
 
 export default {
   name: 'App',
   components: {
-    CompareQuantities
+    QuantityComparison
   }
 }
 </script>
