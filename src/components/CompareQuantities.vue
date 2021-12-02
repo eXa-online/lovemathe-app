@@ -68,7 +68,7 @@ export default {
 .puzzle_badge__large {
   position: absolute;
   top: 21%;
-  left: 50%;
+  left: 45%;
   z-index: 1000;
 }
 .puzzle_body {
@@ -81,12 +81,12 @@ export default {
 .puzzle_bottom {
   display: flex;
   justify-content: center;
-  gap: 50px;
+  gap: 2vw;
 }
 .puzzle_buttons {
   display: flex;
   justify-content: center;
-  gap: 50px;
+  gap: 2vw
 }
 .puzzle_buttons button {
   border: none;
