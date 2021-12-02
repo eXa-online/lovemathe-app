@@ -18,6 +18,6 @@ export default {
   text-align: center;
 }
 body {
-  background-image: url('assets/1_compare_quantities/background.svg');
+  background-image: url('assets/background.svg');
 }
 </style>
