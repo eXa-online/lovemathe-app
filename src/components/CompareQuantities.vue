@@ -17,7 +17,7 @@ export default {
   name: 'CompareQuantities',
   data() {
     return {
-      badgeIndex: 1,
+      badgeIndex: 0,
       puzzleIndex: 0,
       solutions: [0,2,1,0,1,0]
     }
@@ -44,7 +44,7 @@ export default {
       const isCorrect = givenSolution == this.solutions[this.puzzleIndex]
       console.log("solution was:", isCorrect)
       if (isCorrect) {
-        this.badgeIndex += 1;
+        this.badgeIndex++;
       }
 
       if (this.puzzleIndex < this.solutions.length) {
