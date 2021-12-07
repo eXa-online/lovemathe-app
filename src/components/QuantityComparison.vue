@@ -51,6 +51,7 @@ export default {
       }
       if (this.puzzleIndex === this.solutions.length) {
         this.completed = true;
+        this.$router.push({ path: '/' });
       }
     }
   }
