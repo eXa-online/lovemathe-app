@@ -14,6 +14,8 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 export default {
   name: 'QuantityComparison',
   data() {
@@ -40,6 +42,7 @@ export default {
     }
   },
   methods: {
+    ...mapActions(['fetchBadge']),
     evalSelection(givenSolution) {
       const isCorrect = givenSolution == this.solutions[this.puzzleIndex]
       if (isCorrect) {
@@ -51,7 +54,8 @@ export default {
       }
       if (this.puzzleIndex === this.solutions.length) {
         this.completed = true;
-        this.$router.push({ path: '/' });
+        this.fetchBadge({'name':this.$options.name, 'badgePath':this.currentBadge})
+        this.$router.push({ path: '/' })
       }
     }
   }
