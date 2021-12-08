@@ -9,7 +9,10 @@
         <img :src="buttonImage">
       </button>
     </div>
-    <img class="puzzle_badge__small" :src="currentBadge">
+    <div class="puzzle_badge_container">
+      <img :src="badgeBackground">
+      <img class="puzzle_badge__small" :src="currentBadge">
+    </div>
   </div>
 </template>
 
@@ -39,6 +42,9 @@ export default {
     },
     currentPuzzleBody: function() {
       return require(`../assets/quantity_comparison/puzzles/${this.puzzleIndex}.svg`)
+    },
+    badgeBackground: function() {
+      return require('../assets/badge_background.svg')
     }
   },
   methods: {
@@ -64,8 +70,14 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.puzzle_badge_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .puzzle_badge__small {
   min-height: 7vh;
+  position: absolute;
 }
 .puzzle_badge__large {
   position: absolute;
