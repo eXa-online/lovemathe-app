@@ -5,7 +5,7 @@
   </div>
   <div class="puzzle_bottom" v-if="!completed">
     <div class="puzzle_buttons">
-      <button v-for="(buttonImage, index) in buttonImages" :key="buttonImage" v-on:click="evalSelection(index)">
+      <button v-for="(buttonImage, index) in buttonImages" :key="buttonImage" @click="evalSelection(index)">
         <img :src="buttonImage">
       </button>
     </div>
