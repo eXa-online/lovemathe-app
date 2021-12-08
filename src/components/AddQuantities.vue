@@ -1,6 +1,6 @@
 <template>
   <div class="puzzle_body">
-    <img class="puzzle" :src="currentPuzzleBody">
+    <img class="puzzle" :src="currentPuzzleBody" @[completed&&`click`]="switchToHome">
     <img class="puzzle_badge__large" :src="currentBadge" v-if="completed">
   </div>
   <div class="puzzle_bottom" v-if="!completed">
@@ -61,8 +61,10 @@ export default {
       if (this.puzzleIndex === this.solutions.length) {
         this.completed = true;
         this.fetchBadge({'name':this.$options.name, 'badgePath':this.currentBadge})
-        this.$router.push({ path: '/' });
       }
+    },
+    switchToHome: function() {
+      this.$router.push({ path: '/' });
     }
   }
 }
