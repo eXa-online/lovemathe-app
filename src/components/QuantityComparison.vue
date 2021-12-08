@@ -15,7 +15,7 @@
 
 <script>
 export default {
-  name: 'CompareQuantities',
+  name: 'QuantityComparison',
   data() {
     return {
       completed: false,
