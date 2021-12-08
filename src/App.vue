@@ -1,17 +1,6 @@
 <template>
-  <QuantityComparison/>
+  <router-view/>
 </template>
-
-<script>
-import QuantityComparison from './components/QuantityComparison.vue'
-
-export default {
-  name: 'App',
-  components: {
-    QuantityComparison
-  }
-}
-</script>
 
 <style>
 #app {
