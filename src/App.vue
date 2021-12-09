@@ -1,9 +1,4 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/add_quantities">Add Quantities</router-link> |
-    <router-link to="/quantity_comparison">Quantity comparison</router-link>
-  </div>
   <router-view/>
 </template>
 
