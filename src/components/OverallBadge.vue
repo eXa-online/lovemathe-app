@@ -30,18 +30,22 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2vw;
-  height: 100%;
-  width: 100%;
-  padding: 1vw 1vh;
+  padding: 4vw 1vh;
 }
 .overall_badge_background {
   z-index: -1000;
+  min-height: 7vh;
+  max-height: 80vh;
 }
 .add_quantities {
   position: absolute;
+  min-height: 3vh;
+  left: 45%;
+  top: 75%;
 }
 .quantity_comparison {
   position: absolute;
+  left: 55%;
+  top: 75%;
 }
 </style>
