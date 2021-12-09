@@ -1,9 +1,9 @@
 <template>
   <div id="overall_badge">
     <img class="overall_badge_background" :src="badgeBackground">
-    <router-link class="add_quantities" to="/add_quantities" v-html="currentAddQuantitiesBadge" title="AddQuantities"></router-link>
-    <router-link class="quantity_comparison" to="/quantity_comparison" v-html="currentQuantityComparisonBadge" title="QuantityComparison"></router-link>
-    <router-link class="reduce_quantities" to="/reduce_quantities" v-html="currentReduceQuantitiesBadge" title="ReduceQuantities"></router-link>
+    <router-link class="add_quantities" to="/add_quantities" v-html="currentAddQuantitiesBadge" title="Mengen ergänzen"></router-link>
+    <router-link class="quantity_comparison" to="/quantity_comparison" v-html="currentQuantityComparisonBadge" title="Mengenvergleich"></router-link>
+    <router-link class="reduce_quantities" to="/reduce_quantities" v-html="currentReduceQuantitiesBadge" title="Mengen reduzieren"></router-link>
   </div>
 </template>
 
