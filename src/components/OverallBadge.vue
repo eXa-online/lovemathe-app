@@ -1,7 +1,7 @@
 <template>
   <div id="overall_badge">
-    <router-link class="add_quantities" to="/add_quantities" v-html="currentAddQuantitiesBadge"></router-link>
-    <router-link class="quantity_comparison" to="/quantity_comparison" v-html="currentQuantityComparisonBadge"></router-link>
+    <router-link class="add_quantities" to="/add_quantities" v-html="currentAddQuantitiesBadge" title="AddQuantities"></router-link>
+    <router-link class="quantity_comparison" to="/quantity_comparison" v-html="currentQuantityComparisonBadge" title="QuantityComparison"></router-link>
   </div>
 </template>
 
