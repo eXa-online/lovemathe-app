@@ -3,6 +3,7 @@
     <img class="overall_badge_background" :src="badgeBackground">
     <router-link class="add_quantities" to="/add_quantities" v-html="currentAddQuantitiesBadge" title="AddQuantities"></router-link>
     <router-link class="quantity_comparison" to="/quantity_comparison" v-html="currentQuantityComparisonBadge" title="QuantityComparison"></router-link>
+    <router-link class="reduce_quantities" to="/reduce_quantities" v-html="currentReduceQuantitiesBadge" title="ReduceQuantities"></router-link>
   </div>
 </template>
 
@@ -18,6 +19,9 @@ export default {
     },
     currentAddQuantitiesBadge: function() {
       return this.currentBadgeByName('AddQuantities')
+    },
+    currentReduceQuantitiesBadge: function() {
+      return this.currentBadgeByName('ReduceQuantities')
     },
     badgeBackground: function() {
       return require('../assets/overall_badge_background.svg')
@@ -42,6 +46,12 @@ export default {
   min-height: 3vh;
   left: 45%;
   top: 75%;
+}
+.reduce_quantities {
+  position: absolute;
+  min-height: 3vh;
+  left: 50%;
+  top: 77%;
 }
 .quantity_comparison {
   position: absolute;
