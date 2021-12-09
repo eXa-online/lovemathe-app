@@ -83,11 +83,14 @@ export default {
 }
 .puzzle_badge__large {
   position: absolute;
-  top: 21%;
-  left: 45%;
+  min-width: 13vh;
+  max-width: 13vh;
   z-index: 1000;
 }
 .puzzle_body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 3vw;
 }
 .puzzle_body .puzzle {
