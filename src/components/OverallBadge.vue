@@ -1,6 +1,7 @@
 <template>
   <div id="overall_badge">
     <img class="overall_badge_background" :src="badgeBackground">
+    <router-link class="counting_one" to="/counting_one" v-html="currentCountingOneBadge" title="Abzählen 1"></router-link>
     <router-link class="add_quantities" to="/add_quantities" v-html="currentAddQuantitiesBadge" title="Mengen ergänzen"></router-link>
     <router-link class="quantity_comparison" to="/quantity_comparison" v-html="currentQuantityComparisonBadge" title="Mengenvergleich"></router-link>
     <router-link class="reduce_quantities" to="/reduce_quantities" v-html="currentReduceQuantitiesBadge" title="Mengen reduzieren"></router-link>
@@ -14,6 +15,9 @@ export default {
   name: "OverallBadge",
   computed: {
     ...mapGetters(['currentBadgeByName']),
+    currentCountingOneBadge: function() {
+      return this.currentBadgeByName('CountingOne')
+    },
     currentQuantityComparisonBadge: function() {
       return this.currentBadgeByName('QuantityComparison')
     },
@@ -40,6 +44,12 @@ export default {
   z-index: -1000;
   min-height: 7vh;
   max-height: 80vh;
+}
+.counting_one {
+  position: absolute;
+  min-height: 3vh;
+  left: 35%;
+  top: 70%;
 }
 .add_quantities {
   position: absolute;
