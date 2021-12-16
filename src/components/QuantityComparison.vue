@@ -76,6 +76,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-top: 3vh;
 }
 .puzzle_badge__small {
   min-height: 7vh;
@@ -98,14 +99,11 @@ export default {
   max-height: 45vh;
 }
 .puzzle_bottom {
-  display: flex;
-  justify-content: center;
-  gap: 2vw;
+  padding: 0 3vw;
 }
 .puzzle_buttons {
   display: flex;
   justify-content: center;
-  gap: 2vw
 }
 .puzzle_buttons button {
   border: none;
