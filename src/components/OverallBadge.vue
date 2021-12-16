@@ -1,10 +1,10 @@
 <template>
   <div id="overall_badge">
     <img class="overall_badge_background" :src="badgeBackground">
-    <router-link class="counting_one" to="/counting_one" v-html="currentCountingOneBadge" title="Abzählen 1"></router-link>
-    <router-link class="add_quantities" to="/add_quantities" v-html="currentAddQuantitiesBadge" title="Mengen ergänzen"></router-link>
-    <router-link class="quantity_comparison" to="/quantity_comparison" v-html="currentQuantityComparisonBadge" title="Mengenvergleich"></router-link>
-    <router-link class="reduce_quantities" to="/reduce_quantities" v-html="currentReduceQuantitiesBadge" title="Mengen reduzieren"></router-link>
+    <router-link class="counting_one" to="/counting_one" v-html="currentBadgeByName('CountingOne')" title="Abzählen 1"></router-link>
+    <router-link class="add_quantities" to="/add_quantities" v-html="currentBadgeByName('AddQuantities')" title="Mengen ergänzen"></router-link>
+    <router-link class="quantity_comparison" to="/quantity_comparison" v-html="currentBadgeByName('QuantityComparison')" title="Mengenvergleich"></router-link>
+    <router-link class="reduce_quantities" to="/reduce_quantities" v-html="currentBadgeByName('ReduceQuantities')" title="Mengen reduzieren"></router-link>
   </div>
 </template>
 
@@ -15,18 +15,6 @@ export default {
   name: "OverallBadge",
   computed: {
     ...mapGetters(['currentBadgeByName']),
-    currentCountingOneBadge: function() {
-      return this.currentBadgeByName('CountingOne')
-    },
-    currentQuantityComparisonBadge: function() {
-      return this.currentBadgeByName('QuantityComparison')
-    },
-    currentAddQuantitiesBadge: function() {
-      return this.currentBadgeByName('AddQuantities')
-    },
-    currentReduceQuantitiesBadge: function() {
-      return this.currentBadgeByName('ReduceQuantities')
-    },
     badgeBackground: function() {
       return require('../assets/overall_badge_background.svg')
     }
