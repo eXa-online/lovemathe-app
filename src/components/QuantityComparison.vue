@@ -1,17 +1,20 @@
 <template>
-  <div class="puzzle_body" @[completed&&`click`]="switchToHome">
-    <img class="puzzle" :src="currentPuzzleBody">
-    <img class="puzzle_badge__large" :src="currentBadge" v-if="completed">
-  </div>
-  <div class="puzzle_bottom" v-if="!completed">
-    <div class="puzzle_buttons">
-      <button v-for="(buttonImage, index) in buttonImages" :key="buttonImage" @click="evalSelection(index)">
-        <img :src="buttonImage">
-      </button>
+  <video v-if="showDemo" id="puzzle_demo" autoplay :src="demoVideoPath" @ended="showDemo=false"></video>
+  <div v-else>
+    <div class="puzzle_body" @[completed&&`click`]="switchToHome">
+      <img class="puzzle" :src="currentPuzzleBody">
+      <img class="puzzle_badge__large" :src="currentBadge" v-if="completed">
     </div>
-    <div class="puzzle_badge_container">
-      <img :src="badgeBackground">
-      <img class="puzzle_badge__small" :src="currentBadge">
+    <div class="puzzle_bottom" v-if="!completed">
+      <div class="puzzle_buttons">
+        <button v-for="(buttonImage, index) in buttonImages" :key="buttonImage" @click="evalSelection(index)">
+          <img :src="buttonImage">
+        </button>
+      </div>
+      <div class="puzzle_badge_container">
+        <img :src="badgeBackground">
+        <img class="puzzle_badge__small" :src="currentBadge">
+      </div>
     </div>
   </div>
 </template>
@@ -24,6 +27,7 @@ export default {
   data() {
     return {
       completed: false,
+      showDemo: true,
       badgeIndex: 0,
       puzzleIndex: 0,
       solutions: [0,2,1,0,1,0]
@@ -42,6 +46,9 @@ export default {
     },
     currentPuzzleBody: function() {
       return require(`../assets/quantity_comparison/puzzles/${this.puzzleIndex}.svg`)
+    },
+    demoVideoPath: function() {
+      return require('../assets/quantity_comparison/demo.mp4')
     },
     badgeBackground: function() {
       return require('../assets/badge_background.svg')
@@ -87,6 +94,10 @@ export default {
   min-width: 13vh;
   max-width: 13vh;
   z-index: 1000;
+}
+#puzzle_demo {
+  height: 85vh;
+  width: 100%;
 }
 .puzzle_body {
   display: flex;
