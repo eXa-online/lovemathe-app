@@ -25,7 +25,6 @@ export default {
 #overall_badge {
   display: flex;
   justify-content: center;
-  align-items: center;
   padding: 4vw 1vh;
 }
 .overall_badge_background {
@@ -36,8 +35,8 @@ export default {
 .counting_one {
   position: absolute;
   min-height: 3vh;
-  left: 35%;
-  top: 70%;
+  right: 28vw;
+  bottom: 30%;
 }
 .add_quantities {
   position: absolute;

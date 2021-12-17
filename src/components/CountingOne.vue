@@ -82,8 +82,9 @@ export default {
   padding-top: 3vh;
 }
 .puzzle_badge__small {
-  min-height: 7vh;
   position: absolute;
+  min-height: 7vh;
+  max-height: 9vh;
 }
 .puzzle_badge__large {
   position: absolute;
