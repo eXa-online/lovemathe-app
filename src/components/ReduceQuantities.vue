@@ -84,8 +84,8 @@ export default {
 }
 .puzzle_badge__large {
   position: absolute;
-  min-width: 13vh;
-  max-width: 13vh;
+  min-width: 13vw;
+  max-width: 13vw;
   z-index: 1000;
 }
 .puzzle_body {
