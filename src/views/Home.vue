@@ -14,3 +14,12 @@ export default {
   }
 }
 </script>
+<style>
+.home {
+  display: grid;
+  grid-template-columns: repeat(200, 1fr);
+  grid-template-rows: repeat(200, 1fr);
+  margin: 0;
+  height: 100%;
+}
+</style>

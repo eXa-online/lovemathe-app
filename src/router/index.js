@@ -8,6 +8,14 @@ const routes = [
     component: Home
   },
   {
+    path: '/quantity_equality',
+    name: 'QuantityEqualitiyView',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/QuantityEquality.vue')
+  },
+  {
     path: '/quantity_comparison',
     name: 'QuantityComparisonView',
     // route level code-splitting
