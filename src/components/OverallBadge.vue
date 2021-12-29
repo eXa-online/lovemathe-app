@@ -30,38 +30,38 @@ export default {
   background-image: url("../assets/overall_badge_background.svg");
   background-repeat: no-repeat;
   background-size: auto;
-  grid-column: 80/180;
-  grid-row: 40/140;
+  grid-column: 4/8;
+  grid-row: 3/10;
   display: inline-grid;
-  grid-template-columns: repeat(20, 1fr);
-  grid-template-rows: repeat(20, 1fr);
+  grid-template-columns: repeat(40, 1fr);
+  grid-template-rows: repeat(40, 1fr);
   justify-items: start;
   align-items: start;
   margin: 0;
   height: 100%;
 }
 .quantity_equality {
-  grid-column: 1;
-  grid-row: 1;
+  grid-column: 1/8;
+  grid-row: 1/8;
 }
 
 .counting_one {
-  grid-column: 9;
-  grid-row: 18;
+  grid-column: 35/39;
+  grid-row: 32/39;
 }
 
 .add_quantities {
-  grid-column: 7;
-  grid-row: 18;
+  grid-column: 5/7;
+  grid-row: 35/37;
 }
 
 .reduce_quantities {
-  grid-column: 6;
-  grid-row: 17;
+  grid-column: 7/9;
+  grid-row: 34/36;
 }
 
 .quantity_comparison {
-  grid-column: 5;
-  grid-row: 18;
+  grid-column: 6/8;
+  grid-row: 36/38;
 }
 </style>

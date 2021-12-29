@@ -17,8 +17,10 @@ export default {
 <style>
 .home {
   display: grid;
-  grid-template-columns: repeat(200, 1fr);
-  grid-template-rows: repeat(200, 1fr);
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  justify-items: center;
+  align-items: center;
   margin: 0;
   height: 100%;
 }
