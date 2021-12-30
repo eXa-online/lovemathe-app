@@ -17,11 +17,14 @@ export default {
 <style>
 .home {
   display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  grid-template-rows: repeat(10, 1fr);
-  justify-items: center;
-  align-items: center;
+  align-items: start;
+  justify-items: start;
+  grid-template-columns: repeat(20, minmax(16px, 100%));
+  grid-template-rows: repeat(20, minmax(16px, 100%));
+  grid-gap: 0;
   margin: 0;
+  padding: 0;
+  width: 100%;
   height: 100%;
 }
 </style>

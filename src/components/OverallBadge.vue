@@ -27,41 +27,45 @@ export default {
 <style>
 
 #overall_badge {
+  grid-area: 4 / 7 / 15 / 15;
   background-image: url("../assets/overall_badge_background.svg");
-  background-repeat: no-repeat;
   background-size: auto;
-  grid-column: 4/8;
-  grid-row: 3/10;
+  -webkit-background-size: auto;
+  -moz-background-size: auto;
+  background-repeat: no-repeat;
   display: inline-grid;
-  grid-template-columns: repeat(40, 1fr);
-  grid-template-rows: repeat(40, 1fr);
-  justify-items: start;
+  grid-template-columns: repeat(20, minmax(10px, 100%));
+  grid-template-rows: repeat(20, minmax(10px, 100%));
   align-items: start;
-  margin: 0;
+  justify-items: start;
+  grid-gap: 0;
+  width: 100%;
   height: 100%;
+  max-height: 100%;
+  max-width: 100%;
 }
 .quantity_equality {
-  grid-column: 1/8;
-  grid-row: 1/8;
+  grid-column: 1/auto;
+  grid-row: 1/auto;
 }
 
 .counting_one {
-  grid-column: 35/39;
-  grid-row: 32/39;
+  grid-column: 18/auto;
+  grid-row: 16/auto;
 }
 
 .add_quantities {
-  grid-column: 5/7;
-  grid-row: 35/37;
+  grid-column: 14/auto;
+  grid-row: 17/auto;
 }
 
 .reduce_quantities {
-  grid-column: 7/9;
-  grid-row: 34/36;
+  grid-column: 13/auto;
+  grid-row: 18/auto;
 }
 
 .quantity_comparison {
-  grid-column: 6/8;
-  grid-row: 36/38;
+  grid-column: 15/auto;
+  grid-row: 18/auto;
 }
 </style>
