@@ -29,11 +29,13 @@ export default {
 <style>
 
 .overall_badge {
-  grid-area: 4 / 6 / 13 / 14;
+  grid-area: 4 / 4 / 18 / 14;
   position: relative;
   width: 100%;
   height: 100%;
-  max-height: 30vw;
+  background-color: red;
+  min-width: 60vw;
+  max-height: 60vh;
 }
 
 .badges {
