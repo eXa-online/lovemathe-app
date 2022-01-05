@@ -73,6 +73,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .puzzle_badge_container {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -80,6 +81,7 @@ export default {
 }
 .puzzle_badge__small {
   min-height: 7vh;
+  max-height: 7vh;
   position: absolute;
 }
 .puzzle_badge__large {

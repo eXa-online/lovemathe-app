@@ -81,6 +81,7 @@ export default {
 }
 .puzzle_badge__small {
   min-height: 7vh;
+  max-height: 7vh;
   position: absolute;
 }
 .puzzle_badge__large {

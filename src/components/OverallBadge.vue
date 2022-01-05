@@ -29,61 +29,50 @@ export default {
 <style>
 
 .overall_badge {
+  grid-area: 4 / 6 / 13 / 14;
   position: relative;
-  grid-area: 4 / 6 / auto / auto;
   width: 100%;
-  min-width: 60vw;
-  height: auto;
-  padding: 0;
+  height: 100%;
+  max-height: 30vw;
 }
 
 .badges {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
   background: url("../assets/overall_badge_background.svg") no-repeat;
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
+  background-size: contain;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
   display: inline-grid;
-  grid-template-columns: repeat(30, minmax(auto, 100%));
-  grid-template-rows: repeat(30, minmax(auto, 100%));
   align-items: start;
   justify-items: start;
+  grid-template-columns: repeat(30, minmax(5px, 100%));
+  grid-template-rows: repeat(30, minmax(5px, 100%));
   width: 100%;
   height: 100%;
-  min-width: 60vh;
-  min-height: 60vh;
   grid-gap: 0;
   margin: 0;
   padding: 0;
 }
 
 .quantity_equality {
-  position: absolute;
-  grid-column: 1/auto;
-  grid-row: 1/auto;
+  grid-area: 1 / 1 / auto / auto;
 }
 
 .counting_one {
-  position: absolute;
-  grid-column: -5/auto;
-  grid-row: -5/auto;
+  grid-area: 19 / 23 / auto / auto;
 }
 
 .add_quantities {
-  position: absolute;
-  grid-column: 16/auto;
-  grid-row: -5/auto;
+  grid-area: 25 / 14 / auto / auto;
 }
 
 .reduce_quantities {
-  position: absolute;
-  grid-column: 18/auto;
-  grid-row: -5/auto;
+  grid-area: 26 / 15 / auto / auto;
 }
 
 .quantity_comparison {
-  position: absolute;
-  grid-column: 17/auto;
-  grid-row: -4/auto;
+  grid-area: 25 / 16 / auto / auto;
 }
 </style>
