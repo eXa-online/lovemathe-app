@@ -39,8 +39,7 @@ export default {
 
 .badges {
   position: relative;
-  background: url("../assets/overall_badge_background.svg") no-repeat 100%;
-  background-size: 100%;
+  background: url("../assets/overall_badge_background.svg") no-repeat;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
