@@ -58,7 +58,7 @@ export default {
 }
 
 .quantity_equality {
-  grid-area: 1 / 1 / auto / auto;
+  grid-area: 4 / 3 / auto / auto;
 }
 
 .counting_one {
