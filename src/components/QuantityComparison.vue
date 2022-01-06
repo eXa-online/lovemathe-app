@@ -1,6 +1,8 @@
 <template>
-  <video v-if="showDemo" id="puzzle_demo" autoplay :src="demoVideoPath" @ended="showDemo=false"></video>
-  <div v-else>
+  <h3>Was ist mehr?</h3>
+  <!--video v-if="showDemo" id="puzzle_demo" autoplay :src="demoVideoPath" @ended="showDemo=false"></video>
+  <div v-else-->
+  <div>
     <div class="puzzle_body" @[completed&&`click`]="switchToHome">
       <img class="puzzle" :src="currentPuzzleBody">
       <img class="puzzle_badge__large" :src="currentBadge" v-if="completed">

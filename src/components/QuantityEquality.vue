@@ -1,4 +1,5 @@
 <template>
+  <h3>Gleich viel oder nicht?</h3>
     <div class="puzzle_body" @[completed&&`click`]="switchToHome">
       <img class="puzzle" :src="currentPuzzleBody">
       <img class="puzzle_badge__large" :src="currentBadge" v-if="completed">
@@ -27,7 +28,7 @@ export default {
       showDemo: true,
       badgeIndex: 0,
       puzzleIndex: 0,
-      solutions: [0,2,1,0,1,0]
+      solutions: [1,1,0,1,0]
     }
   },
   computed: {
@@ -35,7 +36,6 @@ export default {
       return [
         require(`../assets/quantity_equality/buttons/0.svg`),
         require(`../assets/quantity_equality/buttons/1.svg`),
-        require(`../assets/quantity_equality/buttons/2.svg`)
       ]
     },
     currentBadge: function() {
