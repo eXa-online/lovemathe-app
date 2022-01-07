@@ -62,7 +62,7 @@ export default {
 }
 
 .counting_one {
-  grid-area: 19 / 23 / auto / auto;
+  grid-area: 18 / 20 / auto / auto;
 }
 
 .add_quantities {
