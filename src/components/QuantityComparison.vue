@@ -1,5 +1,5 @@
 <template>
-  <h3>Was ist mehr?</h3>
+  <h3>Siehst du mehr Sterne oder mehr Kreise? Klicke auf das passende Bild</h3>
   <!--video v-if="showDemo" id="puzzle_demo" autoplay :src="demoVideoPath" @ended="showDemo=false"></video>
   <div v-else-->
   <div>
