@@ -28,7 +28,7 @@ export default {
       showDemo: true,
       badgeIndex: 0,
       puzzleIndex: 0,
-      solutions: [1,1,0,1,0]
+      solutions: [1,0,0,1,0]
     }
   },
   computed: {
