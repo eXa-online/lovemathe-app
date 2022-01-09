@@ -1,5 +1,4 @@
 <template>
-  <h3>Wie viele Sterne siehst du? Klicke auf das passende Würfelbild</h3>
   <div class="puzzle_body" @[completed&&`click`]="switchToHome">
     <img class="puzzle" :src="currentPuzzleBody">
     <img class="puzzle_badge__large" :src="currentBadge" v-if="completed">
@@ -15,6 +14,7 @@
       <img class="puzzle_badge__small" :src="currentBadge">
     </div>
   </div>
+  <h3>Wie viele Sterne siehst du? Klicke auf das passende Würfelbild</h3>
 </template>
 
 <script>

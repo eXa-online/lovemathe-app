@@ -1,5 +1,4 @@
 <template>
-  <h3>Siehst du mehr Sterne oder mehr Kreise? Klicke auf das passende Bild</h3>
   <div class="puzzle_body" @[completed&&`click`]="switchToHome">
     <img class="puzzle" :src="currentPuzzleBody">
     <img class="puzzle_badge__large" :src="currentBadge" v-if="completed">
@@ -15,6 +14,7 @@
       <img class="puzzle_badge__small" :src="currentBadge">
     </div>
   </div>
+  <h3>Siehst du mehr Sterne oder mehr Kreise? Klicke auf das passende Bild</h3>
 </template>
 
 <script>
