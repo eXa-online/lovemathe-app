@@ -60,8 +60,8 @@ export default {
         this.puzzleIndex++;
       }
       if (this.puzzleIndex === this.solutions.length) {
-        this.completed = true;
         this.fetchBadge({'name':this.$options.name, 'badgePath':this.currentBadge})
+        this.completed = true;
       }
     },
     switchToHome: function() {
