@@ -2,7 +2,7 @@
   <div class="home">
     <div class="overall_badge">
       <div class="badges">
-        <router-link class="counting_one" to="/counting_one" v-html="currentBadgeByName('CountingOne')"
+        <router-link class="badge counting_one" to="/counting_one" v-html="currentBadgeByName('CountingOne')"
                     title="Abzählen 1"></router-link>
         <router-link class="add_quantities" to="/add_quantities" v-html="currentBadgeByName('AddQuantities')"
                     title="Mengen ergänzen"></router-link>
@@ -89,5 +89,9 @@ export default {
 
 .quantity_comparison {
   grid-area: 25 / 16 / auto / auto;
+}
+
+.badge {
+  width: 100%;
 }
 </style>

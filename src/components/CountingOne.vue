@@ -13,7 +13,7 @@
   <div class="puzzle_bottom" v-if="!completed">
     <div class="puzzle_buttons">
       <button v-for="(buttonImage, index) in buttonImages" :key="buttonImage" @click="evalSelection(index)">
-        <img :src="buttonImage">
+        <img class="puzzle_button" :src="buttonImage">
       </button>
     </div>
   </div>
@@ -100,14 +100,12 @@ export default {
 }
 .puzzle_badge__small {
   position: absolute;
-  min-height: 7vh;
-  max-height: 7vh;
+  max-height: 10vh;
   width: fit-content;
 }
 .puzzle_badge__large {
   position: absolute;
-  min-width: 13vw;
-  max-width: 13vw;
+  max-height: 20vw;
   z-index: 1000;
 }
 .puzzle_body {
@@ -130,6 +128,10 @@ export default {
 .puzzle_buttons button {
   border: none;
   background-color: transparent;
+}
+.puzzle_button {
+  width: 100%;
+  height: 20vh;
 }
 .puzzle_background {
   width: 100%;
