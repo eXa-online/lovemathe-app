@@ -2,16 +2,16 @@
   <div class="puzzle_body" @[completed&&`click`]="switchToHome">
     <img class="puzzle" :src="currentPuzzleBody">
     <img class="puzzle_badge__large" :src="currentBadge" v-if="completed">
+    <div class="puzzle_badge_container" v-if="!completed">
+      <img :src="badgeBackground">
+      <img class="puzzle_badge__small" :src="currentBadge">
+    </div>
   </div>
   <div class="puzzle_bottom" v-if="!completed">
     <div class="puzzle_buttons">
       <button v-for="(buttonImage, index) in buttonImages" :key="buttonImage" @click="evalSelection(index)">
         <img :src="buttonImage">
       </button>
-    </div>
-    <div class="puzzle_badge_container">
-      <img :src="badgeBackground">
-      <img class="puzzle_badge__small" :src="currentBadge">
     </div>
   </div>
   <h3>{{title}}</h3>
@@ -79,7 +79,6 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 3vh;
 }
 .puzzle_badge__small {
   min-height: 7vh;
@@ -95,7 +94,7 @@ export default {
 .puzzle_body {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   padding: 3vw;
 }
 .puzzle_body .puzzle {
