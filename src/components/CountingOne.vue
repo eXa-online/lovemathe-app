@@ -2,9 +2,12 @@
   <div class="puzzle_body" @[completed&&`click`]="switchToHome">
     <img class="puzzle" :src="currentPuzzleBody">
     <img class="puzzle_badge__large" :src="currentBadge" v-if="completed">
-    <div class="puzzle_badge_container" v-if="!completed">
-      <img :src="badgeBackground">
-      <img class="puzzle_badge__small" :src="currentBadge">
+    <div class="puzzle_additionals" v-if="!completed">
+      <div class="puzzle_badge_container">
+        <img :src="badgeBackground">
+        <img class="puzzle_badge__small" :src="currentBadge">
+      </div>
+      <img @click="playInstruction" :src="getHelpButtonImage">
     </div>
   </div>
   <div class="puzzle_bottom" v-if="!completed">
@@ -28,8 +31,13 @@ export default {
       badgeIndex: 0,
       puzzleIndex: 0,
       solutions: [0,2,4,1,2,3],
-      title: 'Wie viele Sterne siehst du? Klicke auf das passende Würfelbild'
+      title: 'Wie viele Sterne siehst du? Klicke auf das passende Würfelbild',
+      instruction: new Audio(require('../assets/counting_one/instruction.mp3')),
+      getHelpButtonImage: require('../assets/help.svg')
     }
+  },
+  created() {
+    this.playInstruction()
   },
   computed: {
     buttonImages: function() {
@@ -54,6 +62,9 @@ export default {
   },
   methods: {
     ...mapActions(['fetchBadge']),
+    playInstruction(){
+      this.instruction.play()
+    },
     evalSelection(givenSolution) {
       const isCorrect = givenSolution == this.solutions[this.puzzleIndex]
       if (isCorrect) {
@@ -77,6 +88,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.puzzle_additionals {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1vw;
+}
 .puzzle_badge_container {
   display: flex;
   align-items: center;
