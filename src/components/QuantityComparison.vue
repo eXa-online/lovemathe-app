@@ -111,7 +111,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  padding: 3vw;
+  padding: 3vh 3vw;
 }
 .puzzle_body .puzzle {
   min-height: 7vh;
