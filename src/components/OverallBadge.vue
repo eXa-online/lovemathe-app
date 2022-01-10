@@ -9,7 +9,7 @@
         <router-link class="badge quantity_comparison" to="/quantity_comparison"
                     v-html="currentBadgeByName('QuantityComparison')"
                     title="Mengenvergleich"></router-link>
-        <router-link class="quantity_equality" to="/quantity_equality" v-html="currentBadgeByName('QuantityEquality')"
+        <router-link class="badge quantity_equality" to="/quantity_equality" v-html="currentBadgeByName('QuantityEquality')"
                     title="Mengengleichheit"></router-link>
         <router-link class="reduce_quantities" to="/reduce_quantities" v-html="currentBadgeByName('ReduceQuantities')"
                     title="Mengen reduzieren"></router-link>

@@ -3,7 +3,7 @@ import Vuex from 'vuex'
 export default new Vuex.Store({
     state: {
         currentBadges: {
-            'QuantityEquality': `<svg iwidth="150" height="150" viewBox="0 0 192.62 192.22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            'QuantityEquality': `<svg viewBox="0 0 192.62 192.22" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M.17,42.44,14.85,32.32l-.74-17.89,17.8.49L41.75,0,55.86,10.93,72.55,4.67l5,17.18,17.15,4.81-6,16.87,11.06,14L85.15,67.68l.74,17.89-17.8-.49L58.25,100,44.14,89.07,27.45,95.33l-5-17.18L5.27,73.34l6-16.87Z" transform="translate(-0.17)" style="fill: #f90"/>
       </svg>`,
             'QuantityComparison': `<svg viewBox="0 0 18 26" fill="none" xmlns="http://www.w3.org/2000/svg">
