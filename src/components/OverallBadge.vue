@@ -4,7 +4,7 @@
       <div class="badges">
         <router-link class="badge counting_one" to="/counting_one" v-html="currentBadgeByName('CountingOne')"
                     title="Abzählen 1"></router-link>
-        <router-link class="add_quantities" to="/add_quantities" v-html="currentBadgeByName('AddQuantities')"
+        <router-link class="badge add_quantities" to="/add_quantities" v-html="currentBadgeByName('AddQuantities')"
                     title="Mengen ergänzen"></router-link>
         <router-link class="badge quantity_comparison" to="/quantity_comparison"
                     v-html="currentBadgeByName('QuantityComparison')"
