@@ -14,7 +14,7 @@
       <img class="puzzle_badge__small" :src="currentBadge">
     </div>
   </div>
-  <h3>Wie viele Sterne siehst du? Klicke auf das passende Würfelbild</h3>
+  <h3>{{title}}</h3>
 </template>
 
 <script>
@@ -27,7 +27,8 @@ export default {
       completed: false,
       badgeIndex: 0,
       puzzleIndex: 0,
-      solutions: [0,2,4,1,2,3]
+      solutions: [0,2,4,1,2,3],
+      title: 'Wie viele Sterne siehst du? Klicke auf das passende Würfelbild'
     }
   },
   computed: {

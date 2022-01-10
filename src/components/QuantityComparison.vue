@@ -14,7 +14,7 @@
       <img class="puzzle_badge__small" :src="currentBadge">
     </div>
   </div>
-  <h3>Siehst du mehr Sterne oder mehr Kreise? Klicke auf das passende Bild</h3>
+  <h3>{{title}}</h3>
 </template>
 
 <script>
@@ -27,7 +27,8 @@ export default {
       completed: false,
       badgeIndex: 0,
       puzzleIndex: 0,
-      solutions: [2,1,1,2,0,1]
+      solutions: [2,1,1,2,0,1],
+      title: 'Siehst du mehr Sterne oder mehr Kreise? Klicke auf das passende Bild'
     }
   },
   computed: {

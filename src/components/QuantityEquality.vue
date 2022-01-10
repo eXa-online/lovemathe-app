@@ -14,7 +14,7 @@
       <img class="puzzle_badge__small" :src="currentBadge">
     </div>
   </div>
-  <h3>Siehst du genau so viele Sterne wie Kreise oder nicht?</h3>
+  <h3>{{title}}</h3>
 </template>
 
 <script>
@@ -28,7 +28,8 @@ export default {
       showDemo: true,
       badgeIndex: 0,
       puzzleIndex: 0,
-      solutions: [1,0,0,1,0]
+      solutions: [1,0,0,1,0],
+      title: 'Siehst du genau so viele Sterne wie Kreise oder nicht?'
     }
   },
   computed: {

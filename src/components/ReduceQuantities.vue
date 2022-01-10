@@ -14,7 +14,7 @@
       <img class="puzzle_badge__small" :src="currentBadge">
     </div>
   </div>
-  <h3>Ich brauche genau so viele Kreise wie Sterne. Was ist zu viel?</h3>
+  <h3>{{title}}</h3>
 </template>
 
 <script>
@@ -27,7 +27,8 @@ export default {
       completed: false,
       badgeIndex: 0,
       puzzleIndex: 0,
-      solutions: [2,1,0,1,2,1]
+      solutions: [2,1,0,1,2,1],
+      title: 'Ich brauche genau so viele Kreise wie Sterne. Was ist zu viel?'
     }
   },
   computed: {
