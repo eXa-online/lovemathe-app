@@ -6,7 +6,7 @@
                     title="Abzählen 1"></router-link>
         <router-link class="add_quantities" to="/add_quantities" v-html="currentBadgeByName('AddQuantities')"
                     title="Mengen ergänzen"></router-link>
-        <router-link class="quantity_comparison" to="/quantity_comparison"
+        <router-link class="badge quantity_comparison" to="/quantity_comparison"
                     v-html="currentBadgeByName('QuantityComparison')"
                     title="Mengenvergleich"></router-link>
         <router-link class="quantity_equality" to="/quantity_equality" v-html="currentBadgeByName('QuantityEquality')"
