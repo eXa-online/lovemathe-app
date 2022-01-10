@@ -72,23 +72,28 @@ export default {
 }
 
 .quantity_equality {
-  grid-area: 4 / 3 / auto / auto;
+  grid-area: 10 / 7 / auto / auto;
+  transform: scale(8)
 }
 
 .counting_one {
   grid-area: 18 / 20 / auto / auto;
+  transform: scale(7)
 }
 
 .add_quantities {
-  grid-area: 25 / 14 / auto / auto;
+  grid-area: 24 / 6 / auto / auto;
+  transform: scale(1.5)
 }
 
 .reduce_quantities {
-  grid-area: 26 / 15 / auto / auto;
+  grid-area: 24 / 10 / auto / auto;
+  transform: scale(1.5)
 }
 
 .quantity_comparison {
-  grid-area: 25 / 16 / auto / auto;
+  grid-area: 24 / 14 / auto / auto;
+  transform: scale(1.5)
 }
 
 .badge {
