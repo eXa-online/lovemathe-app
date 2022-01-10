@@ -1,52 +1,18 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
+import AddQuantities from '@/components/AddQuantities.vue'
+import CountingOne from '@/components/CountingOne.vue'
+import OverallBadge from '@/components/OverallBadge.vue'
+import QuantityComparison from '@/components/QuantityComparison.vue'
+import QuantityEquality from '@/components/QuantityEquality.vue'
+import ReduceQuantities from '@/components/ReduceQuantities.vue'
 
 const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home
-  },
-  {
-    path: '/quantity_equality',
-    name: 'QuantityEqualitiyView',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/QuantityEquality.vue')
-  },
-  {
-    path: '/quantity_comparison',
-    name: 'QuantityComparisonView',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/QuantityComparison.vue')
-  },
-  {
-    path: '/add_quantities',
-    name: 'AddQuantitiesView',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AddQuantities.vue')
-  },
-  {
-    path: '/reduce_quantities',
-    name: 'ReduceQuantitiesView',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/ReduceQuantities.vue')
-  },
-  {
-    path: '/counting_one',
-    name: 'CountingOneView',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/CountingOne.vue')
-  }
+  { path: '/', component: OverallBadge },
+  { path: '/add_quantities', component: AddQuantities },
+  { path: '/counting_one', component: CountingOne },
+  { path: '/quantity_comparison', component: QuantityComparison },
+  { path: '/quantity_equality', component: QuantityEquality },
+  { path: '/reduce_quantities', component: ReduceQuantities },
 ]
 
 const router = createRouter({

@@ -1,17 +1,19 @@
 <template>
-  <div class="overall_badge">
-    <div class="badges">
-      <router-link class="counting_one" to="/counting_one" v-html="currentBadgeByName('CountingOne')"
-                   title="Abzählen 1"></router-link>
-      <router-link class="add_quantities" to="/add_quantities" v-html="currentBadgeByName('AddQuantities')"
-                   title="Mengen ergänzen"></router-link>
-      <router-link class="quantity_comparison" to="/quantity_comparison"
-                   v-html="currentBadgeByName('QuantityComparison')"
-                   title="Mengenvergleich"></router-link>
-      <router-link class="quantity_equality" to="/quantity_equality" v-html="currentBadgeByName('QuantityEquality')"
-                   title="Mengengleichheit"></router-link>
-      <router-link class="reduce_quantities" to="/reduce_quantities" v-html="currentBadgeByName('ReduceQuantities')"
-                   title="Mengen reduzieren"></router-link>
+  <div class="home">
+    <div class="overall_badge">
+      <div class="badges">
+        <router-link class="counting_one" to="/counting_one" v-html="currentBadgeByName('CountingOne')"
+                    title="Abzählen 1"></router-link>
+        <router-link class="add_quantities" to="/add_quantities" v-html="currentBadgeByName('AddQuantities')"
+                    title="Mengen ergänzen"></router-link>
+        <router-link class="quantity_comparison" to="/quantity_comparison"
+                    v-html="currentBadgeByName('QuantityComparison')"
+                    title="Mengenvergleich"></router-link>
+        <router-link class="quantity_equality" to="/quantity_equality" v-html="currentBadgeByName('QuantityEquality')"
+                    title="Mengengleichheit"></router-link>
+        <router-link class="reduce_quantities" to="/reduce_quantities" v-html="currentBadgeByName('ReduceQuantities')"
+                    title="Mengen reduzieren"></router-link>
+      </div>
     </div>
   </div>
 </template>
@@ -27,6 +29,18 @@ export default {
 };
 </script>
 <style>
+.home {
+  display: grid;
+  align-items: start;
+  justify-items: start;
+  grid-template-columns: repeat(20, minmax(16px, 100%));
+  grid-template-rows: repeat(20, minmax(16px, 100%));
+  grid-gap: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
 
 .overall_badge {
   grid-area: 2 / 6 / 18 / 18;
