@@ -4,7 +4,7 @@
     <img class="puzzle_badge__large" :src="currentBadge" v-if="completed">
     <div class="puzzle_additionals" v-if="!completed">
       <div class="puzzle_badge_container">
-        <img :src="badgeBackground">
+        <img class="puzzle_background" :src="badgeBackground">
         <img class="puzzle_badge__small" :src="currentBadge">
       </div>
       <img @click="playInstruction" :src="getHelpButtonImage">
@@ -131,5 +131,9 @@ export default {
 .puzzle_buttons button {
   border: none;
   background-color: transparent;
+}
+.puzzle_background {
+  width: 100%;
+  max-height: 16vh;
 }
 </style>
