@@ -1,20 +1,20 @@
 <template>
   <h3>Siehst du genau so viele Sterne wie Kreise oder nicht?</h3>
-    <div class="puzzle_body" @[completed&&`click`]="switchToHome">
-      <img class="puzzle" :src="currentPuzzleBody">
-      <img class="puzzle_badge__large" :src="currentBadge" v-if="completed">
+  <div class="puzzle_body" @[completed&&`click`]="switchToHome">
+    <img class="puzzle" :src="currentPuzzleBody">
+    <img class="puzzle_badge__large" :src="currentBadge" v-if="completed">
+  </div>
+  <div class="puzzle_bottom" v-if="!completed">
+    <div class="puzzle_buttons">
+      <button v-for="(buttonImage, index) in buttonImages" :key="buttonImage" @click="evalSelection(index)">
+        <img :src="buttonImage">
+      </button>
     </div>
-    <div class="puzzle_bottom" v-if="!completed">
-      <div class="puzzle_buttons">
-        <button v-for="(buttonImage, index) in buttonImages" :key="buttonImage" @click="evalSelection(index)">
-          <img :src="buttonImage">
-        </button>
-      </div>
-      <div class="puzzle_badge_container">
-        <img :src="badgeBackground">
-        <img class="puzzle_badge__small" :src="currentBadge">
-      </div>
+    <div class="puzzle_badge_container">
+      <img :src="badgeBackground">
+      <img class="puzzle_badge__small" :src="currentBadge">
     </div>
+  </div>
 </template>
 
 <script>
