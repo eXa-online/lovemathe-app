@@ -30,7 +30,7 @@ export default {
       completed: false,
       badgeIndex: 0,
       puzzleIndex: 0,
-      solutions: [2,1,0,1,2,1],
+      solutions: [2,1,0,1,2,2],
       title: 'Ich brauche genau so viele Kreise wie Sterne. Was ist zu viel?',
       instruction: new Audio(require('../assets/reduce_quantities/instruction.mp3')),
       getHelpButtonImage: require('../assets/help.svg')
