@@ -32,7 +32,7 @@ export default {
       badgeIndex: 0,
       puzzleIndex: 0,
       solutions: [1,0,0,1,0],
-      title: 'Siehst du genau so viele Sterne wie Kreise? Wenn ja, klicke auf das lachende und wenn nicht auf das traurige Gesicht.',
+      title: 'Siehst du genau so viele Sterne wie Kreise? Wenn ja, klicke auf das lachende und wenn nicht, auf das traurige Gesicht.',
       instruction: new Audio(require('../assets/quantity_equality/instruction.mp3')),
       getHelpButtonImage: require('../assets/help.svg')
     }

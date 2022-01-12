@@ -31,7 +31,7 @@ export default {
       badgeIndex: 0,
       puzzleIndex: 0,
       solutions: [0,2,4,1,2,3],
-      title: 'Wie viele Sterne siehst du? Klicke auf das passende Würfelbild',
+      title: 'Wie viele Sterne siehst du? Klicke auf das passende Würfelbild.',
       instruction: new Audio(require('../assets/counting_one/instruction.mp3')),
       getHelpButtonImage: require('../assets/help.svg')
     }
