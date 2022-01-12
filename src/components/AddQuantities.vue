@@ -30,7 +30,7 @@ export default {
       completed: false,
       badgeIndex: 0,
       puzzleIndex: 0,
-      solutions: [0,1,0,2,0,1],
+      solutions: [2,0,2,1,0,1],
       title: 'Ich brauche genau so viele Kreise wie Sterne. Was fehlt?',
       instruction: new Audio(require('../assets/add_quantities/instruction.mp3')),
       getHelpButtonImage: require('../assets/help.svg')
