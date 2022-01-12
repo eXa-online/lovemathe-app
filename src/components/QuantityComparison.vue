@@ -30,8 +30,8 @@ export default {
       completed: false,
       badgeIndex: 0,
       puzzleIndex: 0,
-      solutions: [2,1,1,2,0,1],
-      title: 'Siehst du mehr Sterne oder mehr Kreise? Klicke auf das passende Bild',
+      solutions: [2,0,1,0,1,0],
+      title: 'Siehst du mehr Sterne oder mehr Kreise? Klicke auf das passende Bild.',
       instruction: new Audio(require('../assets/quantity_comparison/instruction.mp3')),
       getHelpButtonImage: require('../assets/help.svg')
     }
