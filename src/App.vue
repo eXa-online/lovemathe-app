@@ -17,7 +17,7 @@ html {
   height: 100%;
 }
 body {
-  background-image: url('assets/background.svg');
+  background-color: #ADE3EA;
   background-size: cover;
   margin: 0;
   height: 100%;
