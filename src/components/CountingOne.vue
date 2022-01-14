@@ -63,25 +63,25 @@ export default {
     }
   },
   methods: {
-    ...mapActions(['fetchBadge']),
+    ...mapActions(['postGameSetup']),
     playInstruction(){
       this.instruction.play()
     },
     evalSelection(givenSolution) {
-      if (this.preventDoubleClick()) {     
-          const isCorrect = givenSolution == this.solutions[this.puzzleIndex]
-          if (isCorrect) {
-            this.badgeIndex++;
-          }
-          if (this.puzzleIndex < this.solutions.length) {
-            this.puzzleIndex++;
-          }
-          if (this.puzzleIndex === this.solutions.length) {
-            this.fetchBadge({'name':this.$options.name, 'badgePath':this.currentBadge})
-            this.completed = true;
-          }
-          this.date = Date.now()
-        }   
+      if (this.preventDoubleClick()) {
+        const isCorrect = givenSolution == this.solutions[this.puzzleIndex]
+        if (isCorrect) {
+          this.badgeIndex++;
+        }
+        if (this.puzzleIndex < this.solutions.length) {
+          this.puzzleIndex++;
+        }
+        if (this.puzzleIndex === this.solutions.length) {
+          this.postGameSetup({'name':this.$options.name, 'badgePath':this.currentBadge})
+          this.completed = true;
+        }
+        this.date = Date.now()
+      }
     },
     switchToHome: function() {
       this.$router.push({ path: '/' });

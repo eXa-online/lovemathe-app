@@ -99,4 +99,44 @@ export default {
 .badge {
   width: 100%;
 }
+
+.non_active_badge{
+  filter: gray;
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+}
+
+ @keyframes animated-badge-big{
+  0% {
+            transform: scale(1.0);
+            -webkit-transform: scale(1.0);
+        }
+  100% {
+            transform: scale(1.12);
+            -webkit-transform: scale(1.12);
+        }
+ }
+
+.animated_badge_big {
+  animation: animated-badge-big 1s linear infinite alternate;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+ @keyframes animated-badge-small{
+  0% {
+            transform: scale(1.0);
+            -webkit-transform: scale(1.0);
+        }
+  100% {
+            transform: scale(1.24);
+            -webkit-transform: scale(1.24);
+        }
+ }
+
+.animated_badge_small {
+  animation: animated-badge-small 1s linear infinite alternate;
+  transform-origin: center;
+  transform-box: fill-box;
+}
 </style>
