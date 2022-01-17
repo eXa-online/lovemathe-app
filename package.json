@@ -21,6 +21,7 @@
     "glob-parent": ">=5.1.2",
     "json-schema": ">=0.4.0",
     "node-forge": ">=1.0.0",
+    "postcss": ">=8.2.13",
     "vue": "^3.0.0",
     "vue-router": "^4.0.12",
     "vuex": "^4.0.2"
