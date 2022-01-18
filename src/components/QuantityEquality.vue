@@ -34,7 +34,9 @@ export default {
       solutions: [1,0,1,1,0],
       title: 'Siehst du genau so viele Sterne wie Kreise? Wenn ja, klicke auf das lachende und wenn nicht, auf das traurige Gesicht.',
       instruction: new Audio(require('../assets/quantity_equality/instruction.mp3')),
-      getHelpButtonImage: require('../assets/help.svg')
+      getHelpButtonImage: require('../assets/help.svg'),
+      date: Date.now(),
+      cooldownTimeMiliseconds: 1000
     }
   },
   created() {
@@ -63,21 +65,26 @@ export default {
       this.instruction.play()
     },
     evalSelection(givenSolution) {
-      const isCorrect = givenSolution == this.solutions[this.puzzleIndex]
-      if (isCorrect) {
-        this.badgeIndex++;
-      }
-
-      if (this.puzzleIndex < this.solutions.length) {
-        this.puzzleIndex++;
-      }
-      if (this.puzzleIndex === this.solutions.length) {
-        this.fetchBadge({'name':this.$options.name, 'badgePath':this.currentBadge})
-        this.completed = true;
-      }
+      if (this.preventDoubleClick()) {     
+          const isCorrect = givenSolution == this.solutions[this.puzzleIndex]
+          if (isCorrect) {
+            this.badgeIndex++;
+          }
+          if (this.puzzleIndex < this.solutions.length) {
+            this.puzzleIndex++;
+          }
+          if (this.puzzleIndex === this.solutions.length) {
+            this.fetchBadge({'name':this.$options.name, 'badgePath':this.currentBadge})
+            this.completed = true;
+          }
+          this.date = Date.now()
+        }   
     },
     switchToHome: function() {
       this.$router.push({ path: '/' });
+    },
+    preventDoubleClick: function() {
+      return Date.now() > this.date + this.cooldownTimeMiliseconds;
     }
   }
 }

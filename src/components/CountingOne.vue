@@ -33,7 +33,9 @@ export default {
       solutions: [0,2,4,1,2,3],
       title: 'Wie viele Sterne siehst du? Klicke auf das passende Würfelbild.',
       instruction: new Audio(require('../assets/counting_one/instruction.mp3')),
-      getHelpButtonImage: require('../assets/help.svg')
+      getHelpButtonImage: require('../assets/help.svg'),
+      date: Date.now(),
+      cooldownTimeMiliseconds: 1000
     }
   },
   created() {
@@ -66,21 +68,26 @@ export default {
       this.instruction.play()
     },
     evalSelection(givenSolution) {
-      const isCorrect = givenSolution == this.solutions[this.puzzleIndex]
-      if (isCorrect) {
-        this.badgeIndex++;
-      }
-
-      if (this.puzzleIndex < this.solutions.length) {
-        this.puzzleIndex++;
-      }
-      if (this.puzzleIndex === this.solutions.length) {
-        this.fetchBadge({'name':this.$options.name, 'badgePath':this.currentBadge})
-        this.completed = true;
-      }
+      if (this.preventDoubleClick()) {     
+          const isCorrect = givenSolution == this.solutions[this.puzzleIndex]
+          if (isCorrect) {
+            this.badgeIndex++;
+          }
+          if (this.puzzleIndex < this.solutions.length) {
+            this.puzzleIndex++;
+          }
+          if (this.puzzleIndex === this.solutions.length) {
+            this.fetchBadge({'name':this.$options.name, 'badgePath':this.currentBadge})
+            this.completed = true;
+          }
+          this.date = Date.now()
+        }   
     },
     switchToHome: function() {
       this.$router.push({ path: '/' });
+    },
+    preventDoubleClick: function() {
+      return Date.now() > this.date + this.cooldownTimeMiliseconds;
     }
   }
 }
