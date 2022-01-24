@@ -24,7 +24,7 @@
 import { mapActions } from 'vuex'
 
 export default {
-  name: 'PuzzleTemplate',
+  name: 'GameTemplate',
   data() {
     return {
       completed: false,
