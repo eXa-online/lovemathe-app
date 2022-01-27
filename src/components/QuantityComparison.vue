@@ -2,7 +2,7 @@
   <GameTemplate
     gameName="QuantityComparison"
     gamePath="quantity_comparison"
-    title="Siehst du mehr Sterne oder mehr Kreise? Klicke auf das passende Bild."
+    title="Siehst du mehr Bienen oder mehr Schmetterlinge? Klicke auf das richtige Bild."
     :countButtons="3"
     :showDemo="true"
     :solutions="[2,0,1,0,1,0]"/>
