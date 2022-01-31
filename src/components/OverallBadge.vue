@@ -83,7 +83,7 @@ export default {
 
 .add_quantities {
   grid-area: 24 / 6 / auto / auto;
-  transform: scale(1.5)
+  transform: scale(4)
 }
 
 .reduce_quantities {
