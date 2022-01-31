@@ -2,7 +2,7 @@
   <GameTemplate
     gameName="AddQuantities"
     gamePath="add_quantities"
-    title="Ich brauche genau so viele Kreise wie Sterne. Was fehlt?"
+    title="Ich brauche genau so viele Körbe wie Marmeladengläser. Was fehlt?"
     :countButtons="3"
     :showDemo="true"
     :solutions="[2,0,2,1,0,1]"/>
