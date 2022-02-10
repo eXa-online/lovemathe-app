@@ -1,7 +1,6 @@
 <template>
   <GameTemplate
     gameName="Counting"
-    gamePath="counting"
     title="Wie viele Äpfel siehst du? Klicke auf das passende Würfelbild."
     :countButtons="6"
     :showDemo="true"

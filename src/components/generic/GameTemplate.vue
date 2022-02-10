@@ -30,6 +30,7 @@ export default {
     return {
       completed: false,
       badgeIndex: 0,
+      gamePath: this.gameName.toLowerCase(),
       puzzleIndex: 0,
       getHelpButtonImage: require('../../assets/help.svg'),
       cooldownTimeMiliseconds: 1000,
@@ -38,7 +39,7 @@ export default {
       date: Date.now() + this.audioDuration
     }
   },
-  props: ['showDemo', 'solutions', 'title', 'gamePath', 'countButtons', 'gameName', 'audioDuration', 'showDuration'],
+  props: ['showDemo', 'solutions', 'title', 'countButtons', 'gameName', 'audioDuration', 'showDuration'],
   created() {
     this.playInstruction()
     if (this.showDuration){
