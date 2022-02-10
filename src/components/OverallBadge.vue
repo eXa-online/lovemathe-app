@@ -13,6 +13,8 @@
                     title="Mengengleichheit"></router-link>
         <router-link class="badge reduce_quantities" to="/reduce_quantities" v-html="currentBadgeByName('ReduceQuantities')"
                     title="Mengen reduzieren"></router-link>
+        <router-link class="badge one_look" to="/one_look" v-html="currentBadgeByName('OneLook')"
+                    title="Simultanerfassung"></router-link>
       </div>
     </div>
   </div>
@@ -94,6 +96,11 @@ export default {
 .quantity_comparison {
   grid-area: 24 / 14 / auto / auto;
   transform: scale(1.5)
+}
+
+.one_look {
+  grid-area:6 / 16 / auto / auto;
+  transform: scale(7)
 }
 
 .badge {
