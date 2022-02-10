@@ -47,11 +47,7 @@ export default {
   },
   computed: {
     buttonImages: function() {
-      let buttonImages = []
-      for (let i = 0; i < this.countButtons; i++) {
-          buttonImages[i] = require(`../../assets/${this.gamePath}/buttons/${i}.svg`)
-      }
-      return buttonImages;
+      return [...Array(this.countButtons)].map((_, index)  => require(`../../assets/${this.gamePath}/buttons/${index}.svg`));
     },
     currentBadge: function() {
       return require(`../../assets/${this.gamePath}/badges/${this.badgeIndex}.svg`)
