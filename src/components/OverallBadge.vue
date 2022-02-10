@@ -2,8 +2,8 @@
   <div class="home">
     <div class="overall_badge">
       <div class="badges">
-        <router-link class="badge counting_one" to="/counting_one" v-html="currentBadgeByName('CountingOne')"
-                    title="Abzählen 1"></router-link>
+        <router-link class="badge counting" to="/counting" v-html="currentBadgeByName('Counting')"
+                    title="Abzählen"></router-link>
         <router-link class="badge add_quantities" to="/add_quantities" v-html="currentBadgeByName('AddQuantities')"
                     title="Mengen ergänzen"></router-link>
         <router-link class="badge quantity_comparison" to="/quantity_comparison"
@@ -78,7 +78,7 @@ export default {
   transform: scale(8)
 }
 
-.counting_one {
+.counting {
   grid-area: 18 / 20 / auto / auto;
   transform: scale(6)
 }
