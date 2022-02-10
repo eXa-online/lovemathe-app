@@ -78,7 +78,7 @@ export default {
 
 .counting_one {
   grid-area: 18 / 20 / auto / auto;
-  transform: scale(7)
+  transform: scale(6)
 }
 
 .add_quantities {
@@ -88,7 +88,7 @@ export default {
 
 .reduce_quantities {
   grid-area: 24 / 10 / auto / auto;
-  transform: scale(1.5)
+  transform: scale(2)
 }
 
 .quantity_comparison {
