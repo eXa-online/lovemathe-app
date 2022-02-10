@@ -33,9 +33,10 @@ export default {
       getHelpButtonImage: require('../../assets/help.svg'),
       date: Date.now(),
       cooldownTimeMiliseconds: 1000
+      date: Date.now() + this.audioDuration
     }
   },
-  props: ['showDemo', 'solutions', 'title', 'gamePath', 'countButtons', 'gameName'],
+  props: ['showDemo', 'solutions', 'title', 'gamePath', 'countButtons', 'gameName', 'audioDuration'],
   created() {
     this.playInstruction()
   },

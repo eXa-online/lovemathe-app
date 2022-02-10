@@ -5,7 +5,8 @@
     title="Siehst du mehr Bienen oder mehr Schmetterlinge? Klicke auf das richtige Bild."
     :countButtons="3"
     :showDemo="true"
-    :solutions="[2,0,1,0,1,0]"/>
+    :solutions="[2,0,1,0,1,0]"
+    :audioDuration="4000"/>
 </template>
 
 <script>
