@@ -2,7 +2,7 @@
   <GameTemplate
     gameName="CountingOne"
     gamePath="counting_one"
-    title="Wie viele Sterne siehst du? Klicke auf das passende Würfelbild."
+    title="Wie viele Äpfel siehst du? Klicke auf das passende Würfelbild."
     :countButtons="6"
     :showDemo="true"
     :solutions="[0,2,4,1,2,3]"/>
