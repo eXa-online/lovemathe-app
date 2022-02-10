@@ -2,7 +2,7 @@
   <GameTemplate
     gameName="OneLook"
     gamePath="one_look"
-    title="Du siehst das Bild nur für eine kurze Zeit. Wieviel Tropfen kannst du zählen?"
+    title="Du siehst das Bild nur für eine kurze Zeit. Wie viele Tropfen kannst du erkennen?"
     :countButtons="6"
     :showDemo="true"
     :solutions="[1,4,0,2,5,1]"
