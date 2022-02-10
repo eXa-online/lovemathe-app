@@ -1,6 +1,7 @@
 <template>
   <div class="puzzle_body" @[completed&&`click`]="switchToHome">
-    <img class="puzzle" :src="currentPuzzleBody">
+    <img v-if="showPuzzle" class="puzzle" :src="currentPuzzleBody">
+    <img v-if="!showPuzzle" class="puzzle" :src="emptyBackground">
     <img class="puzzle_badge__large" :src="currentBadge" v-if="completed">
     <div class="puzzle_additionals" v-if="!completed">
       <div class="puzzle_badge_container">
@@ -31,22 +32,26 @@ export default {
       badgeIndex: 0,
       puzzleIndex: 0,
       getHelpButtonImage: require('../../assets/help.svg'),
-      date: Date.now(),
-      cooldownTimeMiliseconds: 1000
+      cooldownTimeMiliseconds: 1000,
+      showPuzzle: true,
+      firstPuzzle: true,
       date: Date.now() + this.audioDuration
     }
   },
-  props: ['showDemo', 'solutions', 'title', 'gamePath', 'countButtons', 'gameName', 'audioDuration'],
+  props: ['showDemo', 'solutions', 'title', 'gamePath', 'countButtons', 'gameName', 'audioDuration', 'showDuration'],
   created() {
     this.playInstruction()
+    if (this.showDuration){
+      this.showPuzzleForDuration(this.showDuration)
+    }
   },
   computed: {
     buttonImages: function() {
-        let buttonImages = []
-        for (let i = 0; i < this.countButtons; i++) {
-            buttonImages[i] = require(`../../assets/${this.gamePath}/buttons/${i}.svg`)
-        }
-        return buttonImages;
+      let buttonImages = []
+      for (let i = 0; i < this.countButtons; i++) {
+          buttonImages[i] = require(`../../assets/${this.gamePath}/buttons/${i}.svg`)
+      }
+      return buttonImages;
     },
     currentBadge: function() {
       return require(`../../assets/${this.gamePath}/badges/${this.badgeIndex}.svg`)
@@ -56,6 +61,9 @@ export default {
     },
     badgeBackground: function() {
       return require('../../assets/badge_background.svg')
+    },
+    emptyBackground: function(){
+      return require(`../../assets/${this.gamePath}/puzzles/${this.solutions.length}.svg`)
     }
   },
   methods: {
@@ -77,6 +85,9 @@ export default {
           this.completed = true;
         }
         this.date = Date.now()
+        if (this.showDuration){
+          this.showPuzzleForDuration(this.showDuration)
+        }
       }
     },
     switchToHome: function() {
@@ -84,6 +95,19 @@ export default {
     },
     preventDoubleClick: function() {
       return Date.now() > this.date + this.cooldownTimeMiliseconds;
+    },
+    async showPuzzleForDuration(milliseconds){
+      if(this.firstPuzzle){
+        this.showPuzzle = false
+        await this.sleepForDuration(this.audioDuration)
+        this.firstPuzzle = false
+      }
+      this.showPuzzle=true
+      await this.sleepForDuration(milliseconds)
+      this.showPuzzle=false
+    },
+    sleepForDuration(milliseconds){
+      return new Promise(resolve => setTimeout(resolve, milliseconds))
     }
   }
 }
@@ -103,12 +127,14 @@ export default {
 }
 .puzzle_badge__small {
   max-height: 10vh;
+  max-width: 10vw;
   position: absolute;
   width: -webkit-fit-content;
 }
 .puzzle_badge__large {
   position: absolute;
   max-height: 20vw;
+  max-width: 30vw;
   z-index: 1000;
 }
 #puzzle_demo {
