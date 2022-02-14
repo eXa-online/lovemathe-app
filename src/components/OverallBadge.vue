@@ -4,16 +4,16 @@
       <div class="badges">
         <router-link class="badge counting" to="/counting" v-html="currentBadgeByName('Counting')"
                     title="Abzählen"></router-link>
-        <router-link class="badge add_quantities" to="/add_quantities" v-html="currentBadgeByName('AddQuantities')"
+        <router-link class="badge add_quantities" to="/add_quantities" v-html="currentBadgeByName('Add_Quantities')"
                     title="Mengen ergänzen"></router-link>
         <router-link class="badge quantity_comparison" to="/quantity_comparison"
-                    v-html="currentBadgeByName('QuantityComparison')"
+                    v-html="currentBadgeByName('Quantity_Comparison')"
                     title="Mengenvergleich"></router-link>
-        <router-link class="badge quantity_equality" to="/quantity_equality" v-html="currentBadgeByName('QuantityEquality')"
+        <router-link class="badge quantity_equality" to="/quantity_equality" v-html="currentBadgeByName('Quantity_Equality')"
                     title="Mengengleichheit"></router-link>
-        <router-link class="badge reduce_quantities" to="/reduce_quantities" v-html="currentBadgeByName('ReduceQuantities')"
+        <router-link class="badge reduce_quantities" to="/reduce_quantities" v-html="currentBadgeByName('Reduce_Quantities')"
                     title="Mengen reduzieren"></router-link>
-        <router-link class="badge one_look" to="/one_look" v-html="currentBadgeByName('OneLook')"
+        <router-link class="badge one_look" to="/one_look" v-html="currentBadgeByName('One_Look')"
                     title="Simultanerfassung"></router-link>
       </div>
     </div>
