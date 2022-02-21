@@ -6,7 +6,7 @@
     :countButtons="2"
     :showDemo="true"
     :solutions="[1,0,1,1,0]"
-    :audioDuration="3000"/>
+    :audioDuration="7000"/>
 </template>
 
 <script>
