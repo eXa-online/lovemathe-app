@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <div class="overall_badge">
       <div class="badges">
         <router-link class="badge counting" to="/counting" v-html="currentBadgeByName('Counting')"
                     title="Abzählen"></router-link>
@@ -16,7 +15,6 @@
         <router-link class="badge one_look" to="/one_look" v-html="currentBadgeByName('One_Look')"
                     title="Simultanerfassung"></router-link>
       </div>
-    </div>
   </div>
 </template>
 
@@ -42,6 +40,8 @@ export default {
   padding: 0;
   width: 100%;
   height: 100%;
+  background: url("../assets/overall_badge_background.svg") no-repeat;
+  background-size: cover;
 }
 
 .overall_badge {
@@ -57,8 +57,6 @@ export default {
   position: absolute;
   top: 0;
   left: 0;
-  background: url("../assets/overall_badge_background.svg") no-repeat;
-  background-size: contain;
   -webkit-background-size: contain;
   -moz-background-size: contain;
   display: inline-grid;
@@ -74,33 +72,33 @@ export default {
 }
 
 .quantity_equality {
-  grid-area: 10 / 7 / auto / auto;
-  transform: scale(8)
+  grid-area: 7 / 5 / auto / auto;
+  transform: scale(5)
 }
 
 .counting {
-  grid-area: 18 / 20 / auto / auto;
+  grid-area: 16 / 26 / auto / auto;
   transform: scale(6)
 }
 
 .add_quantities {
   grid-area: 24 / 6 / auto / auto;
-  transform: scale(4)
+  transform: scale(5.5)
 }
 
 .reduce_quantities {
-  grid-area: 24 / 10 / auto / auto;
+  grid-area: 20 / 12 / auto / auto;
   transform: scale(2)
 }
 
 .quantity_comparison {
-  grid-area: 24 / 14 / auto / auto;
-  transform: scale(1.5)
+  grid-area: 24/ 16 / auto / auto;
+  transform: scale(2)
 }
 
 .one_look {
-  grid-area:6 / 16 / auto / auto;
-  transform: scale(7)
+  grid-area: 10 / 14 / auto / auto;
+  transform: scale(8)
 }
 
 .badge {
