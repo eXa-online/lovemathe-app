@@ -8,7 +8,7 @@ Funktionalität Orintierung im Raum
     Gegeben sei das Orientierungsspiel mit folgenden Parametern
       | Level  | Gegenstand   | Psoition     |
       | 1      | Eimer        | oben mitte   |
-      | 2      | Brille       | unten links  |
+      | 2      | Gießkanne       | unten links  |
       | 3      | Leiter       | unten rechtw |
       | 4      | Hut          | oben links   |
       | 5      | Glas         | unten mitte  |
