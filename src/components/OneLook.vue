@@ -7,7 +7,6 @@
     :solutions="[1,4,0,2,5,1]"
     :showDuration="800"
     :audioDuration="6000"/>
-    
 </template>
 
 <script>

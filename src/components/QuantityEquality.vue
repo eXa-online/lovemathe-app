@@ -1,7 +1,6 @@
 <template>
   <GameTemplate
     gameName="Quantity_Equality"
-    gamePath="quantity_equality"
     title="Siehst du genau so viele Brillen wie Hüte? Wenn ja, klicke auf das lachende und wenn nicht, auf das traurige Gesicht."
     :countButtons="2"
     :showDemo="true"
