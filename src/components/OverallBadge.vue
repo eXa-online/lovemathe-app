@@ -14,6 +14,8 @@
                     title="Mengen reduzieren"></router-link>
         <router-link class="badge one_look" to="/one_look" v-html="currentBadgeByName('One_Look')"
                     title="Simultanerfassung"></router-link>
+        <router-link class="badge seriation" to="/seriation" v-html="currentBadgeByName('Seriation')"
+                    title="Seriation"></router-link>        
       </div>
   </div>
 </template>
@@ -99,6 +101,14 @@ export default {
 .one_look {
   grid-area: 10 / 14 / auto / auto;
   transform: scale(8)
+}
+.one_look {
+  grid-area: 10 / 14 / auto / auto;
+  transform: scale(8)
+}
+.seriation {
+  grid-area: 27 / 20 / auto / auto;
+  transform: scale(8);
 }
 
 .badge {

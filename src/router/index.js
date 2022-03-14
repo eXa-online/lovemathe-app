@@ -6,6 +6,7 @@ import OverallBadge from '@/components/OverallBadge.vue'
 import QuantityComparison from '@/components/QuantityComparison.vue'
 import QuantityEquality from '@/components/QuantityEquality.vue'
 import ReduceQuantities from '@/components/ReduceQuantities.vue'
+import Seriation from '@/components/Seriation.vue'
 
 const routes = [
   { path: '/', component: OverallBadge },
@@ -15,6 +16,7 @@ const routes = [
   { path: '/quantity_comparison', component: QuantityComparison },
   { path: '/quantity_equality', component: QuantityEquality },
   { path: '/reduce_quantities', component: ReduceQuantities },
+  { path: '/seriation', component: Seriation },
 ]
 
 const router = createRouter({
