@@ -46,15 +46,6 @@ export default {
   background-size: cover;
 }
 
-.overall_badge {
-  grid-area: 2 / 6 / 18 / 18;
-  position: relative;
-  width: 100%;
-  height: 100%;
-  min-width: 60vw;
-  max-height: 50vw;
-}
-
 .badges {
   position: absolute;
   top: 0;
