@@ -84,17 +84,17 @@ export default {
 }
 
 .add_quantities {
-  grid-area: 24 / 6 / auto / auto;
+  grid-area: 24 / 5 / auto / auto;
   transform: scale(5.5)
 }
 
 .reduce_quantities {
-  grid-area: 20 / 12 / auto / auto;
+  grid-area: 20 / 9 / auto / auto;
   transform: scale(2)
 }
 
 .quantity_comparison {
-  grid-area: 24/ 16 / auto / auto;
+  grid-area: 25/ 12 / auto / auto;
   transform: scale(2)
 }
 
@@ -107,8 +107,8 @@ export default {
   transform: scale(8)
 }
 .seriation {
-  grid-area: 27 / 20 / auto / auto;
-  transform: scale(8);
+  grid-area: 25 / 19 / auto / auto;
+  transform: scale(9);
 }
 
 .badge {
