@@ -1,7 +1,6 @@
 <template>
   <GameTemplate
     gameName="Quantity_Comparison"
-    gamePath="quantity_comparison"
     title="Siehst du mehr Bienen oder mehr Schmetterlinge? Klicke auf das richtige Bild."
     :countButtons="3"
     :showDemo="true"

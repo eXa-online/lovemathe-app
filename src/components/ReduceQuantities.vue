@@ -1,7 +1,6 @@
 <template>
   <GameTemplate
     gameName="Reduce_Quantities"
-    gamePath="reduce_quantities"
     title="Ich brauche genau so viele Tomaten wie Schaufeln. Was ist zu viel?"
     :countButtons="3"
     :showDemo="true"
