@@ -72,12 +72,12 @@ export default {
 }
 
 .counting {
-  grid-area: 16 / 26 / auto / auto;
+  grid-area: 14 / 27 / auto / auto;
   transform: scale(6)
 }
 
 .add_quantities {
-  grid-area: 24 / 5 / auto / auto;
+  grid-area: 26 / 24 / auto / auto;
   transform: scale(5.5)
 }
 
@@ -87,7 +87,7 @@ export default {
 }
 
 .quantity_comparison {
-  grid-area: 25/ 12 / auto / auto;
+  grid-area: 21 / 20 / auto / auto;
   transform: scale(2)
 }
 
@@ -100,12 +100,12 @@ export default {
   transform: scale(8)
 }
 .seriation {
-  grid-area: 25 / 19 / auto / auto;
-  transform: scale(9);
+  grid-area: 26 / 14 / auto / auto;
+  transform: scale(8);
 }
 .orientation {
-  grid-area: 18 / 19 / auto / auto;
-  transform: scale(4);
+  grid-area: 24 / 4 / auto / auto;
+  transform: scale(6);
 }
 
 .badge {
