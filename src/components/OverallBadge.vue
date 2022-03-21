@@ -82,7 +82,7 @@ export default {
 }
 
 .reduce_quantities {
-  grid-area: 20 / 9 / auto / auto;
+  grid-area: 20 / 8 / auto / auto;
   transform: scale(2)
 }
 
@@ -104,7 +104,7 @@ export default {
   transform: scale(8);
 }
 .orientation {
-  grid-area: 24 / 4 / auto / auto;
+  grid-area: 22 / 4 / auto / auto;
   transform: scale(6);
 }
 
