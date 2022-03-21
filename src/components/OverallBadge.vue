@@ -73,7 +73,7 @@ export default {
 
 .counting {
   grid-area: 14 / 27 / auto / auto;
-  transform: scale(6)
+  transform: scale(5)
 }
 
 .add_quantities {
