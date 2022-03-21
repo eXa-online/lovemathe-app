@@ -16,6 +16,8 @@
                     title="Simultanerfassung"></router-link>
         <router-link class="badge seriation" to="/seriation" v-html="currentBadgeByName('Seriation')"
                     title="Seriation"></router-link>        
+        <router-link class="badge orientation" to="/orientation" v-html="currentBadgeByName('Orientation')"
+                    title="Orientation"></router-link>
       </div>
   </div>
 </template>
@@ -100,6 +102,10 @@ export default {
 .seriation {
   grid-area: 25 / 19 / auto / auto;
   transform: scale(9);
+}
+.orientation {
+  grid-area: 18 / 19 / auto / auto;
+  transform: scale(4);
 }
 
 .badge {
