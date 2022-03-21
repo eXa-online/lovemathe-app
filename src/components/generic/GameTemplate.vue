@@ -18,7 +18,8 @@
       </button>
     </div>
   </div>
-  <h3>{{title}}</h3>
+  <h3 v-if="seperateInstructions">{{currentTitle}}</h3>
+  <h3 v-else>{{title}}</h3>
 </template>
 
 <script>
@@ -39,7 +40,7 @@ export default {
       date: Date.now() + this.audioDuration
     }
   },
-  props: ['showDemo', 'solutions', 'title', 'countButtons', 'gameName', 'audioDuration', 'showDuration'],
+  props: ['showDemo', 'solutions', 'title', 'countButtons', 'gameName', 'audioDuration', 'showDuration', 'seperateInstructions', 'seperateTitles'],
   created() {
     this.playInstruction()
     if (this.showDuration){
@@ -61,12 +62,20 @@ export default {
     },
     emptyBackground: function(){
       return require(`../../assets/${this.gamePath}/puzzles/${this.solutions.length}.svg`)
+    },
+    currentTitle: function() {
+      return this.seperateTitles[this.puzzleIndex]
     }
   },
   methods: {
     ...mapActions(['postGameSetup']),
     playInstruction(){
-      new Audio(require(`../../assets/${this.gamePath}/instruction.mp3`)).play()
+      if (this.seperateInstructions) {
+        new Audio(require(`../../assets/${this.gamePath}/instructions/${this.puzzleIndex}.mp3`)).play()
+      }
+      else {
+        new Audio(require(`../../assets/${this.gamePath}/instruction.mp3`)).play()
+        }
     },
     evalSelection(givenSolution) {
       if (this.preventDoubleClick()) {
@@ -84,6 +93,9 @@ export default {
         this.date = Date.now()
         if (this.showDuration){
           this.showPuzzleForDuration(this.showDuration)
+        }
+        if (this.seperateInstructions){
+          this.playInstruction()
         }
       }
     },
