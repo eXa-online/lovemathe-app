@@ -89,10 +89,16 @@ export default {
         if (this.puzzleIndex === this.solutions.length) {
           this.postGameSetup({'name':this.gameName, 'badgePath':this.currentBadge})
           this.completed = true;
+          this.$store.dispatch('setGameDone', this.gameName)
+          this.$store.dispatch('setBadgeIndex', this.badgeIndex)
+          this.$store.dispatch('isKidFine')
         }
         this.date = Date.now()
         if (this.showDuration){
           this.showPuzzleForDuration(this.showDuration)
+        }
+        if (this.completed === true) {
+          setTimeout(() => { this.switchToHome()}, 1000)
         }
         if (this.seperateInstructions){
           this.playInstruction()

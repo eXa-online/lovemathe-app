@@ -1,34 +1,57 @@
 <template>
-  <div class="home">
+  <div class="home" v-bind:style="[allGamesDone === true ? {'backgroundImage': 'url('+allGamesDoneImage+')'} : {'backgroundImage': 'url('+notAllGamesDoneImage+')'}]">
       <div class="badges">
         <router-link class="badge counting" to="/counting" v-html="currentBadgeByName('Counting')"
-                    title="Abzählen"></router-link>
+                     title="Abzählen"
+        ></router-link>
         <router-link class="badge add_quantities" to="/add_quantities" v-html="currentBadgeByName('Add_Quantities')"
-                    title="Mengen ergänzen"></router-link>
-        <router-link class="badge quantity_comparison" to="/quantity_comparison"
-                    v-html="currentBadgeByName('Quantity_Comparison')"
-                    title="Mengenvergleich"></router-link>
-        <router-link class="badge quantity_equality" to="/quantity_equality" v-html="currentBadgeByName('Quantity_Equality')"
-                    title="Mengengleichheit"></router-link>
+                     title="Mengen ergänzen"
+                     v-bind:class="[completedGames.includes('Quantity_Equality') ? 'gameEnabled' :  'gameDisabled']"
+        ></router-link>
+        <router-link class="badge quantity_comparison" to="/quantity_comparison" v-html="currentBadgeByName('Quantity_Comparison')"
+                     title="Mengenvergleich"
+                     v-bind:class="[completedGames.includes('Add_Quantities') ? 'gameEnabled' :  'gameDisabled']"
+        ></router-link>
+        <router-link class="badge quantity_equality"
+                     to="/quantity_equality" v-html="currentBadgeByName('Quantity_Equality')"
+                     title="Mengengleichheit"
+                     v-bind:class="[completedGames.includes('Counting') ? 'gameEnabled' :  'gameDisabled']"
+        ></router-link>
         <router-link class="badge reduce_quantities" to="/reduce_quantities" v-html="currentBadgeByName('Reduce_Quantities')"
-                    title="Mengen reduzieren"></router-link>
+                     title="Mengen reduzieren"
+                     v-bind:class="[completedGames.includes('Quantity_Comparison') ? 'gameEnabled' :  'gameDisabled']"
+        ></router-link>
         <router-link class="badge one_look" to="/one_look" v-html="currentBadgeByName('One_Look')"
-                    title="Simultanerfassung"></router-link>
+                     title="Simultanerfassung"
+                     v-bind:class="[completedGames.includes('Reduce_Quantities') ? 'gameEnabled' :  'gameDisabled']"
+        ></router-link>
         <router-link class="badge seriation" to="/seriation" v-html="currentBadgeByName('Seriation')"
-                    title="Seriation"></router-link>        
+                     title="Seriation"
+                     v-bind:class="[completedGames.includes('One_Look') ? 'gameEnabled' :  'gameDisabled']"
+        ></router-link>
         <router-link class="badge orientation" to="/orientation" v-html="currentBadgeByName('Orientation')"
-                    title="Orientation"></router-link>
+                     title="Orientation"
+                     v-bind:class="[completedGames.includes('Seriation') ? 'gameEnabled' :  'gameDisabled']"
+        ></router-link>
+        <img v-if="isFine" class="isGood" src="../assets/kid_has_no_problems.svg" alt=""/>
       </div>
   </div>
 </template>
 
 <script>
-import {mapGetters} from 'vuex'
+import {mapGetters, mapState} from 'vuex'
 
 export default {
   name: "OverallBadge",
+  data() {
+    return {
+      allGamesDoneImage: require('../assets/overall_badge_background_color.svg'),
+      notAllGamesDoneImage: require('../assets/overall_badge_background.svg')
+    }
+  },
   computed: {
-    ...mapGetters(['currentBadgeByName']),
+    ...mapGetters(['currentBadgeByName','allGamesDone']),
+    ...mapState(['completedGames', 'badgeIndexes', 'isFine']),
   },
 };
 </script>
@@ -44,7 +67,6 @@ export default {
   padding: 0;
   width: 100%;
   height: 100%;
-  background: url("../assets/overall_badge_background.svg") no-repeat;
   background-size: cover;
 }
 
@@ -108,6 +130,11 @@ export default {
   transform: scale(6);
 }
 
+.isGood{
+  grid-area: 28 / 29 / auto / auto;
+  transform: scale(0.5);
+}
+
 .badge {
   width: 100%;
 }
@@ -150,5 +177,11 @@ export default {
   animation: animated-badge-small 1s linear infinite alternate;
   transform-origin: center;
   transform-box: fill-box;
+}
+.gameDisabled {
+  pointer-events: none;
+}
+.gameEnabled {
+  pointer-events: all;
 }
 </style>
