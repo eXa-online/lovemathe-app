@@ -2,7 +2,10 @@ import Vuex from 'vuex'
 
 let store = new Vuex.Store({
     state: {
-        gameOrder: ['Counting', 'Quantity_Equality', 'Add_Quantities','Quantity_Comparison', 'Reduce_Quantities', 'One_Look', 'Seriation', 'Orientation'], 
+        completedGames: [],
+        badgeIndexes: [],
+        isFine: false,
+        gameOrder: ['Counting', 'Quantity_Equality', 'Add_Quantities','Quantity_Comparison', 'Reduce_Quantities', 'One_Look', 'Seriation', 'Orientation'],
         activeGames: new Set(), 
         currentBadges: {
             'Quantity_Equality': 
@@ -349,6 +352,31 @@ let store = new Vuex.Store({
             state.currentBadges[firstGame] = state.activeBadges[firstGame];
             state.activeGames.add(firstGame)
         },
+        GAME_DONE (state, gameName){
+            var gameNotDone = false
+            gameNotDone = !state.completedGames.includes(gameName);
+            if (gameNotDone === true) {
+                state.completedGames.push(gameName)
+            }
+        },
+        BADGE_INDEX (state, badgeIndex){
+            if(state.badgeIndexes < 8) {
+                state.badgeIndexes.push(badgeIndex)
+            }
+        },
+        IS_FINE (state){
+            if(state.completedGames.length === state.badgeIndexes.length){
+                for(let i = 0; i < 8; i++) {
+                    if(state.badgeIndexes[i] > 3) {
+                        state.isFine = true
+                    }
+                    else {
+                        state.isFine = false
+                    }
+                }
+                return state.isFine
+            }
+        }
     },
     actions: {
         fetchBadge(context, payload) {
@@ -364,11 +392,33 @@ let store = new Vuex.Store({
             context.commit("activateNextGame", payload.name);
             context.dispatch("fetchBadge", payload);
         },
+        setGameDone({commit}, gameName) {
+            commit('GAME_DONE', gameName )
+        },
+        setBadgeIndex({commit}, badgeIndex ) {
+            commit('BADGE_INDEX', badgeIndex )
+        },
+        isKidFine({commit}) {
+            commit('IS_FINE')
+        },
     },
     getters: {
         currentBadgeByName: (state) => (name) => {
             return state.currentBadges[name];
         },
+        allGamesDone (state) {
+            let arr1 = state.gameOrder;
+            let arr2 = state.completedGames;
+
+            const is_same = arr1.length == arr2.length &&
+                (arr1.every((currElem)=>{
+                        if(arr2.indexOf(currElem)> -1){
+                            return true;
+                        } else {return false}
+                    })
+                )
+            return is_same
+        }
     },
 },
 )
