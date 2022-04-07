@@ -360,7 +360,7 @@ let store = new Vuex.Store({
             }
         },
         BADGE_INDEX (state, badgeIndex){
-            if(state.badgeIndexes < 8) {
+            if(state.badgeIndexes.length < 8) {
                 state.badgeIndexes.push(badgeIndex)
             }
         },

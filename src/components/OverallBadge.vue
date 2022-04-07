@@ -131,7 +131,7 @@ export default {
 }
 
 .isGood{
-  grid-area: 28 / 29 / auto / auto;
+  grid-area: 27 / 29 / auto / auto;
   transform: scale(0.5);
 }
 
