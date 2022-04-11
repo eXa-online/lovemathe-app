@@ -3,14 +3,14 @@
     Um festzustellen, ob Kinder Probleme beim Erkennen von Mengen haben
     möchte ich als Tester
     ein Spiel haben in dem die Kinder Mengen vergleichen und ergänzen
-    Szenario Mengen vergleichen
+    Szenario Mengen ergänzen
       Gegeben sei das Mengenvergleichsspiel mit folgenden Parametern
-        | Level  | Anzahl A | Größe A  | Anzahl B  | Größe B | Button 1 | Button 2  | Button 3 | Solution   |
-        | 1      | 1        | 1        | 0         | 0       |  B       | A A       | A        | Button A   |
-        | 2      | 1        | 1        | 3         | 1       |  B       | A A       | A        | Button AA  |
-        | 3      | 5        | 1        | 4         | 1       |  B       | A A       | A        | Button B   |
-        | 4      | 3        | 2        | 4         | 1       |  B       | A A       | A        | Button AA  |
-        | 5      | 7        | 1        | 6         | 1       |  B       | A A       | A        | Button A   |
-        | 6      | 5        | 2        | 7         | 1       |  B       | A A       | A        | Button AA  |
+        | Level  | Anzahl A | Anzahl B  | Solution |
+        | 1      | 1        | 0         | B        |
+        | 2      | 1        | 2         | A        |
+        | 3      | 5        | 4         | B        |
+        | 4      | 3        | 4         | A        |
+        | 5      | 6        | 5         | B        |
+        | 6      | 5        | 6         | A        |
       Wenn das Kind die richtige Entscheidung trifft
       Dann hat es den Level geschafft
