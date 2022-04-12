@@ -2,9 +2,9 @@
   <GameTemplate
     gameName="Add_Quantities"
     title="Ich brauche genau so viele Körbe wie Marmeladengläser. Was fehlt?"
-    :countButtons="3"
+    :countButtons="2"
     :showDemo="true"
-    :solutions="[2,0,2,1,0,1]"
+    :solutions="[0,1,0,1,0,1]"
     :audioDuration="4000"/>
 </template>
 
