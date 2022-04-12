@@ -4,7 +4,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/lovemathe/404.html"
   },
   {
-    "revision": "7808d2197848e0cc55ba",
+    "revision": "acf346942e14dadfba54",
     "url": "/lovemathe/css/app.7c7a8ee9.css"
   },
   {
@@ -68,6 +68,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/lovemathe/img/0.9d35e73d.svg"
   },
   {
+    "revision": "9f0b8f5657fb8b5f34913d81ad2015e3",
+    "url": "/lovemathe/img/0.9f0b8f56.svg"
+  },
+  {
     "revision": "ad1a137d2c3990204e87589d588664dc",
     "url": "/lovemathe/img/0.ad1a137d.svg"
   },
@@ -94,10 +98,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "f57c9706ff052dbdee528dcb89631632",
     "url": "/lovemathe/img/0.f57c9706.svg"
-  },
-  {
-    "revision": "f5e74f763a8ee28beba5b35f24abfea8",
-    "url": "/lovemathe/img/0.f5e74f76.svg"
   },
   {
     "revision": "0293903e5f79d1108a6963b34ac393c3",
@@ -160,8 +160,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/lovemathe/img/1.7b68b0e4.svg"
   },
   {
-    "revision": "af8af555693d490080ce32adc3c1d6e9",
-    "url": "/lovemathe/img/1.af8af555.svg"
+    "revision": "7d39719858c88b69624226fd49ca13dd",
+    "url": "/lovemathe/img/1.7d397198.svg"
   },
   {
     "revision": "c56104450d4250dabfc9353a528855e8",
@@ -252,12 +252,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/lovemathe/img/2.ad15fc6b.svg"
   },
   {
-    "revision": "b679d0d26866d1551f36724298aee2fc",
-    "url": "/lovemathe/img/2.b679d0d2.svg"
+    "revision": "b52f94cffc0f717c0738bd09a792a530",
+    "url": "/lovemathe/img/2.b52f94cf.svg"
   },
   {
-    "revision": "d692d1a87a1226bafd683015791d8fd0",
-    "url": "/lovemathe/img/2.d692d1a8.svg"
+    "revision": "b679d0d26866d1551f36724298aee2fc",
+    "url": "/lovemathe/img/2.b679d0d2.svg"
   },
   {
     "revision": "e65611388450f150232fe5901b72303f",
@@ -296,12 +296,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/lovemathe/img/3.2698e98f.svg"
   },
   {
-    "revision": "3960b5a752b41eccdde2537ab7c79575",
-    "url": "/lovemathe/img/3.3960b5a7.svg"
+    "revision": "3484d41cf04c85bc2944109f32a1251e",
+    "url": "/lovemathe/img/3.3484d41c.svg"
   },
   {
-    "revision": "49051dd85e7d848fa51434b0d8093422",
-    "url": "/lovemathe/img/3.49051dd8.svg"
+    "revision": "3960b5a752b41eccdde2537ab7c79575",
+    "url": "/lovemathe/img/3.3960b5a7.svg"
   },
   {
     "revision": "498a35a3951262c3b9b4e2a383a89754",
@@ -372,6 +372,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/lovemathe/img/4.5361f4aa.svg"
   },
   {
+    "revision": "55e6ca909b6f094ddfda2cff4a375fc9",
+    "url": "/lovemathe/img/4.55e6ca90.svg"
+  },
+  {
     "revision": "672cfb7bf6a39cdaa0c8d16d773cc3e0",
     "url": "/lovemathe/img/4.672cfb7b.svg"
   },
@@ -382,10 +386,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "68df2d4d62f5b3d4bc91a64aa9bba4fb",
     "url": "/lovemathe/img/4.68df2d4d.svg"
-  },
-  {
-    "revision": "8d2ab861284417745fbb3b07dbd13ead",
-    "url": "/lovemathe/img/4.8d2ab861.svg"
   },
   {
     "revision": "a3a78e2c14743b5b2a2517499653629f",
@@ -476,10 +476,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/lovemathe/img/5.bbe0c76b.svg"
   },
   {
-    "revision": "c73872defc49077fdbbd9373ff322c46",
-    "url": "/lovemathe/img/5.c73872de.svg"
-  },
-  {
     "revision": "cdf1d2c19fa8fc6333be840b798d65b6",
     "url": "/lovemathe/img/5.cdf1d2c1.svg"
   },
@@ -490,6 +486,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "d412f48490c53645e4424f51e271e60d",
     "url": "/lovemathe/img/5.d412f484.svg"
+  },
+  {
+    "revision": "e27c8a93c385810dcf8b89df35234360",
+    "url": "/lovemathe/img/5.e27c8a93.svg"
   },
   {
     "revision": "fe09dff80967694e811629d2f5e1a1a0",
@@ -552,12 +552,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/lovemathe/img/overall_badge_background_color.e3b62628.svg"
   },
   {
-    "revision": "7afbe4bef33b27de21d6d734b5da92a6",
+    "revision": "a38d3893723309b086fc6da1da58dab1",
     "url": "/lovemathe/index.html"
   },
   {
-    "revision": "7808d2197848e0cc55ba",
-    "url": "/lovemathe/js/app.b397d43f.js"
+    "revision": "acf346942e14dadfba54",
+    "url": "/lovemathe/js/app.816cd77d.js"
   },
   {
     "revision": "43b76af6af91e8d5ff08",
