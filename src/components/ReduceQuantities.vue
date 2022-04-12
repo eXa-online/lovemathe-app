@@ -2,9 +2,9 @@
   <GameTemplate
     gameName="Reduce_Quantities"
     title="Ich brauche genau so viele Tomaten wie Schaufeln. Was ist zu viel?"
-    :countButtons="3"
+    :countButtons="2"
     :showDemo="true"
-    :solutions="[2,1,0,1,2,2]"
+    :solutions="[1,1,0,1,0,1]"
     :audioDuration="4000"/>
 </template>
 
