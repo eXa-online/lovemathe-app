@@ -98,7 +98,7 @@ export default {
           this.showPuzzleForDuration(this.showDuration)
         }
         if (this.completed === true) {
-          setTimeout(() => { this.switchToHome()}, 1000)
+          setTimeout(() => { this.switchToHome()}, 1500)
         }
         if (this.seperateInstructions){
           this.playInstruction()
