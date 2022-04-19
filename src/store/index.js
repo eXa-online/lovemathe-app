@@ -1,5 +1,8 @@
 import Vuex from 'vuex'
 
+// import the different modules
+import simultanerfassung from "./modules/simultanerfassung.js";
+
 let store = new Vuex.Store({
     state: {
         completedGames: [],
@@ -420,6 +423,9 @@ let store = new Vuex.Store({
             return is_same
         }
     },
+    modules: {
+        simultanerfassung
+    }
 },
 )
 
