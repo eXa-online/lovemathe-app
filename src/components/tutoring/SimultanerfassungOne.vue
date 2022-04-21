@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import { mapActions, mapState } from 'vuex'
+import { mapActions } from 'vuex'
 
 export default {
   name: 'SimultanerfassungOne',
@@ -43,7 +43,6 @@ export default {
       solutions: 0,
       showDuration: 3000,
       level: 1,
-      //showDuration: state => state.simultanerfassung.showDuration,
     }
   },
   props: ['seperateInstructions', 'seperateTitles'],
@@ -55,9 +54,6 @@ export default {
     }
   },
   computed: {
-    ...mapState({
-      completedGames: state => state.simultanerfassung.completedGames
-    }),
     buttonImages: function() {
       return [...Array(this.countButtons)].map((_, index)  => require(`../../assets/${this.gamePath}/buttons/${index}.svg`));
     },
