@@ -1,5 +1,7 @@
 <template>
-  <div class="puzzle_body" @[completed&&`click`]="switchToTutoring">
+  <div v-bind:class="[bigBackground ? 'activeBackground' :  '']">
+  </div>
+  <div class="puzzle_body" @[completed&&`click`]="switchToNext">
     <img v-if="showPuzzle" class="puzzle" :src="currentPuzzleBody">
     <img v-if="!showPuzzle" class="puzzle" :src="emptyBackground">
     <img class="puzzle_badge__large" :src="currentBadge" v-if="completed">
@@ -20,7 +22,6 @@
 
 <script>
 import { mapActions } from 'vuex'
-
 export default {
   name: 'SimultanerfassungOne',
   data() {
@@ -43,14 +44,19 @@ export default {
       solutions: 0,
       showDuration: 3000,
       level: 1,
+      bigBackground: true,
+      bigBackgroundTime: 4000,
     }
   },
   props: ['seperateInstructions', 'seperateTitles'],
   created() {
-    this.playInstruction()
+    // this.playInstruction()
+    setTimeout(() => {this.playInstruction()}, this.bigBackgroundTime)
     this.randomNumber()
+    this.bigBackgroundTimer()
     if (this.showDuration){
-      this.showPuzzleForDuration(this.showDuration)
+      // this.showPuzzleForDuration(this.showDuration)
+      setTimeout(() => {this.showPuzzleForDuration(this.showDuration)}, this.bigBackgroundTime)
     }
   },
   computed: {
@@ -71,7 +77,7 @@ export default {
     },
     currentTitle: function() {
       return this.seperateTitles[this.puzzleIndex]
-    }
+    },
   },
   methods: {
     ...mapActions(['postGameSetup']),
@@ -87,6 +93,9 @@ export default {
       else {
         new Audio(require(`../../assets/${this.gamePath}/instruction.mp3`)).play()
       }
+    },
+    bigBackgroundTimer () {
+      setTimeout(() => {this.bigBackground = false}, this.bigBackgroundTime)
     },
     evalSelection(givenSolution) {
       if (this.preventDoubleClick()) {
@@ -104,7 +113,7 @@ export default {
           this.showPuzzleForDuration(this.showDuration)
         }
         if (this.badgeIndex === 4) {
-          setTimeout(() => { this.switchToTutoring()}, 1500)
+          setTimeout(() => { this.switchToNext()}, 1500)
           this.$store.dispatch('setSimultanerfassungDone', this.level)
         }
         if (this.seperateInstructions){
@@ -112,8 +121,8 @@ export default {
         }
       }
     },
-    switchToTutoring: function() {
-      this.$router.push({ path: '/tutoring/vorschule' });
+    switchToNext: function() {
+      this.$router.push({ path: '/tutoring/vorschule/simultanerfassung_two' });
     },
     preventDoubleClick: function() {
       return Date.now() > this.date + this.cooldownTimeMiliseconds;
@@ -184,5 +193,12 @@ export default {
 .puzzle_background {
   width: 100%;
   max-height: 16vh;
+}
+.activeBackground {
+  background-image: url('../../assets/simultanerfassung_one/background.svg');
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  position: absolute;
 }
 </style>
