@@ -4,8 +4,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/lovemathe/404.html"
   },
   {
-    "revision": "f91a0deb57d685e5967d",
-    "url": "/lovemathe/css/app.0bdb5c2a.css"
+    "revision": "6bdf12fe7839e9ad6188",
+    "url": "/lovemathe/css/app.7a991324.css"
   },
   {
     "revision": "10ea12562dd427ded50bfb33ce65fa8e",
@@ -604,6 +604,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/lovemathe/img/6.eb5eb242.svg"
   },
   {
+    "revision": "07d99432196d2b74e0386c58b9b59dc3",
+    "url": "/lovemathe/img/background.07d99432.svg"
+  },
+  {
+    "revision": "88125667593e86119e38d6b96038f5aa",
+    "url": "/lovemathe/img/background.88125667.svg"
+  },
+  {
     "revision": "c6fea0afe9f60b424f4e5b9205749c7d",
     "url": "/lovemathe/img/badge_background.c6fea0af.svg"
   },
@@ -628,16 +636,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/lovemathe/img/overall_badge_background_color.e3b62628.svg"
   },
   {
-    "revision": "8712fae81ad0e0e425c5fa089a0926d2",
+    "revision": "80c22d19e8b661edac6400a3eaff13b4",
     "url": "/lovemathe/index.html"
   },
   {
-    "revision": "f91a0deb57d685e5967d",
-    "url": "/lovemathe/js/app.98f58f78.js"
+    "revision": "6bdf12fe7839e9ad6188",
+    "url": "/lovemathe/js/app.3d1cc68d.js"
   },
   {
-    "revision": "89db5bef758155f8af8e",
-    "url": "/lovemathe/js/chunk-vendors.7f9d05c5.js"
+    "revision": "7784022f24a09caa397d",
+    "url": "/lovemathe/js/chunk-vendors.3c0e961a.js"
   },
   {
     "revision": "cfa184234af632040f5959b9c74af26e",
