@@ -1,5 +1,9 @@
 <template>
-  <div class="puzzle_body" @[completed&&`click`]="switchToTutoring">
+  <div :class="[bigBackground ? 'backgroundFadeIn' : '']">
+  </div>
+  <div :class="[bigBackground ? 'activeBackground' : '']">
+  </div>
+  <div class="puzzle_body" @[completed&&`click`]="switchToNext">
     <img v-if="showPuzzle" class="puzzle" :src="currentPuzzleBody">
     <img v-if="!showPuzzle" class="puzzle" :src="emptyBackground">
     <img class="puzzle_badge__large" :src="currentBadge" v-if="completed">
@@ -43,14 +47,19 @@ export default {
       solutions: 0,
       showDuration: 2400,
       level: 2,
+      bigBackground: true,
+      bigBackgroundTime: 4000,
     }
   },
   props: ['seperateInstructions', 'seperateTitles'],
   created() {
-    this.playInstruction()
+    // this.playInstruction()
+    setTimeout(() => {this.playInstruction()}, this.bigBackgroundTime)
     this.randomNumber()
+    this.bigBackgroundTimer()
     if (this.showDuration){
-      this.showPuzzleForDuration(this.showDuration)
+      // this.showPuzzleForDuration(this.showDuration)
+      setTimeout(() => {this.showPuzzleForDuration(this.showDuration)}, this.bigBackgroundTime)
     }
   },
   computed: {
@@ -88,6 +97,9 @@ export default {
         new Audio(require(`../../assets/${this.gamePath}/instruction.mp3`)).play()
       }
     },
+    bigBackgroundTimer () {
+      setTimeout(() => {this.bigBackground = false}, this.bigBackgroundTime)
+    },
     evalSelection(givenSolution) {
       if (this.preventDoubleClick()) {
         let isCorrect = givenSolution == this.solutions
@@ -104,7 +116,7 @@ export default {
           this.showPuzzleForDuration(this.showDuration)
         }
         if (this.badgeIndex === 4) {
-          setTimeout(() => { this.switchToTutoring()}, 1500)
+          setTimeout(() => { this.switchToNext()}, 1500)
           this.$store.dispatch('setSimultanerfassungDone', this.level)
         }
         if (this.seperateInstructions){
@@ -112,7 +124,7 @@ export default {
         }
       }
     },
-    switchToTutoring: function() {
+    switchToNext: function() {
       this.$router.push({ path: '/tutoring/vorschule' });
     },
     preventDoubleClick: function() {
@@ -184,5 +196,32 @@ export default {
 .puzzle_background {
   width: 100%;
   max-height: 16vh;
+}
+.activeBackground {
+  background-image: url('../../assets/simultanerfassung_one/background.svg');
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+.backgroundFadeIn {
+  background-image: url('../../assets/simultanerfassung_two/background.svg');
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+  position: absolute;
+  -webkit-animation: fadeinout 4s linear forwards;
+  animation: fadeinout 4s linear forwards;
+}
+
+@-webkit-keyframes fadeinout {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@keyframes fadeinout {
+  0% {opacity:0;}
+  100% {opacity:1;}
 }
 </style>
