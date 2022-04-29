@@ -25,12 +25,12 @@
 <script>
 import { mapActions } from 'vuex'
 export default {
-  name: 'SimultanerfassungTwo',
+  name: 'SimultanerfassungThree',
   data() {
     return {
       completed: false,
       badgeIndex: 0,
-      gamePath: 'simultanerfassung_two',
+      gamePath: 'simultanerfassung_three',
       puzzleIndex: 0,
       getHelpButtonImage: require('../../assets/greenHelp.svg'),
       cooldownTimeMiliseconds: 1000,
@@ -40,12 +40,12 @@ export default {
       countButtons: 6,
       title: 'Du siehst das Bild nur für eine kurze Zeit. Wie viele Muscheln kannst du erkennen?',
       audioDuration: 6000,
-      gameName: 'Simultanerfassung_Two',
+      gameName: 'Simultanerfassung_Three',
       showDemo: true,
       randomIndex: 0,
       solutions: 0,
-      showDuration: 2400,
-      level: 2,
+      showDuration: 2000,
+      level: 3,
       bigBackground: true,
       bigBackgroundTime: 4000,
     }
@@ -124,7 +124,7 @@ export default {
       }
     },
     switchToNext: function() {
-      this.$router.push({ path: '/tutoring/vorschule/simultanerfassung_three' });
+      this.$router.push({ path: '/tutoring/vorschule/simultanerfassung_four' });
     },
     preventDoubleClick: function() {
       return Date.now() > this.date + this.cooldownTimeMiliseconds;
@@ -197,14 +197,14 @@ export default {
   max-height: 16vh;
 }
 .activeBackground {
-  background-image: url('../../assets/simultanerfassung_one/background.svg');
+  background-image: url('../../assets/simultanerfassung_two/background.svg');
   background-size: cover;
   height: 100%;
   width: 100%;
   position: absolute;
 }
 .backgroundFadeIn {
-  background-image: url('../../assets/simultanerfassung_two/background.svg');
+  background-image: url('../../assets/simultanerfassung_three/background.svg');
   background-size: cover;
   height: 100%;
   width: 100%;

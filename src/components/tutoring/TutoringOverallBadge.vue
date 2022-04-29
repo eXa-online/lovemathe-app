@@ -4,8 +4,16 @@
       Simultanerfassung LVL-1
     </router-link>
     <br>
-    <router-link class="" to="/tutoring/vorschule/simultanerfassung_two" title="Level 1" v-bind:class="[simultanerfassungDone.includes(1) ? 'gameEnabled' :  'gameDisabled']">
+    <router-link class="" to="/tutoring/vorschule/simultanerfassung_two" title="Level 2">
       Simultanerfassung LVL-2
+    </router-link>
+    <br>
+    <router-link class="" to="/tutoring/vorschule/simultanerfassung_three" title="Level 3">
+      Simultanerfassung LVL-3
+    </router-link>
+    <br>
+    <router-link class="" to="/tutoring/vorschule/simultanerfassung_four" title="Level 4">
+      Simultanerfassung LVL-4
     </router-link>
   </div>
 </template>
