@@ -4,8 +4,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/lovemathe/404.html"
   },
   {
-    "revision": "f51523c8be767730ce73",
-    "url": "/lovemathe/css/app.39038730.css"
+    "revision": "28898b0d1f9848bc597d",
+    "url": "/lovemathe/css/app.dec1c8af.css"
   },
   {
     "revision": "10ea12562dd427ded50bfb33ce65fa8e",
@@ -64,6 +64,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/lovemathe/img/0.78077280.svg"
   },
   {
+    "revision": "81b0708649a035bedbeed47b4aaff022",
+    "url": "/lovemathe/img/0.81b07086.svg"
+  },
+  {
     "revision": "8b39779cb36ad2a2842d8a07a1e32ba6",
     "url": "/lovemathe/img/0.8b39779c.svg"
   },
@@ -78,6 +82,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "96605d67016dfaf124a4d8db411feeac",
     "url": "/lovemathe/img/0.96605d67.svg"
+  },
+  {
+    "revision": "97433e63ed0b0e5a89d7ff7ef8baf7f5",
+    "url": "/lovemathe/img/0.97433e63.svg"
   },
   {
     "revision": "9d35e73d5edc086767398d65ba9da6c8",
@@ -200,6 +208,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/lovemathe/img/1.817bd581.svg"
   },
   {
+    "revision": "8f777ac9bd77f574e9420af9ea0344f2",
+    "url": "/lovemathe/img/1.8f777ac9.svg"
+  },
+  {
     "revision": "c56104450d4250dabfc9353a528855e8",
     "url": "/lovemathe/img/1.c5610445.svg"
   },
@@ -214,6 +226,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "dbbcaf5a715d24fc1db81f7ed997dc5f",
     "url": "/lovemathe/img/1.dbbcaf5a.svg"
+  },
+  {
+    "revision": "e1426342406445c8a6f3bb2795de942c",
+    "url": "/lovemathe/img/1.e1426342.svg"
   },
   {
     "revision": "e4544093cfe2a52dcc685af3bb336d41",
@@ -234,6 +250,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "00ab99020e200d1e6d08cfef2d5d77f3",
     "url": "/lovemathe/img/2.00ab9902.svg"
+  },
+  {
+    "revision": "03bd4058135a36ec0ce109c3d375e105",
+    "url": "/lovemathe/img/2.03bd4058.svg"
   },
   {
     "revision": "0c6dfa8d53d458b92f4fb1dac3645db2",
@@ -286,6 +306,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "a5a2edcf353b1de80ec8cb774d556842",
     "url": "/lovemathe/img/2.a5a2edcf.svg"
+  },
+  {
+    "revision": "abc59efd690c59376758a81aecb73767",
+    "url": "/lovemathe/img/2.abc59efd.svg"
   },
   {
     "revision": "ad15fc6bac0ce0a8d93982783ae02db2",
@@ -346,6 +370,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "1faddab01f0a22fa81d54cedf746003e",
     "url": "/lovemathe/img/3.1faddab0.svg"
+  },
+  {
+    "revision": "226b98ea0139555568f7475aa15262dc",
+    "url": "/lovemathe/img/3.226b98ea.svg"
   },
   {
     "revision": "24854d4989af8fbf213ce0100e4636ad",
@@ -412,6 +440,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/lovemathe/img/3.c4ba9573.svg"
   },
   {
+    "revision": "ccb70f9e4f828d2e291d9e3aa5be817f",
+    "url": "/lovemathe/img/3.ccb70f9e.svg"
+  },
+  {
     "revision": "f402b0f77c8d412e8cc33aaa6ce26574",
     "url": "/lovemathe/img/3.f402b0f7.svg"
   },
@@ -452,6 +484,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/lovemathe/img/4.56824e32.svg"
   },
   {
+    "revision": "587c5450513b15eb06e004f0aabfed32",
+    "url": "/lovemathe/img/4.587c5450.svg"
+  },
+  {
     "revision": "672cfb7bf6a39cdaa0c8d16d773cc3e0",
     "url": "/lovemathe/img/4.672cfb7b.svg"
   },
@@ -482,6 +518,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "a9ce09a8068733a283f49199ed22ee17",
     "url": "/lovemathe/img/4.a9ce09a8.svg"
+  },
+  {
+    "revision": "b2d4165bc2a13be9568cd1837b0eb1e9",
+    "url": "/lovemathe/img/4.b2d4165b.svg"
   },
   {
     "revision": "c00361ea9f0c3c53eea9ac5c4fe0d719",
@@ -520,6 +560,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/lovemathe/img/5.09f15f04.svg"
   },
   {
+    "revision": "1a32364ffe81bb9b06986380964ff7a5",
+    "url": "/lovemathe/img/5.1a32364f.svg"
+  },
+  {
     "revision": "23fd82c1460d8dfb615325e6fe11ce18",
     "url": "/lovemathe/img/5.23fd82c1.svg"
   },
@@ -554,6 +598,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "87b56344a96d50701fec4234daff818f",
     "url": "/lovemathe/img/5.87b56344.svg"
+  },
+  {
+    "revision": "8950c3183fb519c4f9449333af31decf",
+    "url": "/lovemathe/img/5.8950c318.svg"
   },
   {
     "revision": "94f7e79195e4a88201338be45e5fa627",
@@ -652,20 +700,28 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/lovemathe/img/6.eb5eb242.svg"
   },
   {
-    "revision": "07d99432196d2b74e0386c58b9b59dc3",
-    "url": "/lovemathe/img/background.07d99432.svg"
+    "revision": "0f37f22cc6b12a08badd6c3a98628fb5",
+    "url": "/lovemathe/img/background.0f37f22c.svg"
   },
   {
-    "revision": "563ce9f793391d5bcc0e38672e1baed3",
-    "url": "/lovemathe/img/background.563ce9f7.svg"
+    "revision": "372ded473cebc86d8a658d2eb4ee88cc",
+    "url": "/lovemathe/img/background.372ded47.svg"
   },
   {
-    "revision": "88125667593e86119e38d6b96038f5aa",
-    "url": "/lovemathe/img/background.88125667.svg"
+    "revision": "72ea3f2a3ec8ea70d0e7db82abc35f6b",
+    "url": "/lovemathe/img/background.72ea3f2a.svg"
   },
   {
-    "revision": "c55e5e1725a17e4436715b7c2ee5d3e1",
-    "url": "/lovemathe/img/background.c55e5e17.svg"
+    "revision": "b4f5ee13211771024c344c52dcb9f6ee",
+    "url": "/lovemathe/img/background.b4f5ee13.svg"
+  },
+  {
+    "revision": "d5b418b8f6f55809abd999182b94f0a6",
+    "url": "/lovemathe/img/background.d5b418b8.svg"
+  },
+  {
+    "revision": "e32f3cee466225fecef68ccfcc818da7",
+    "url": "/lovemathe/img/background.e32f3cee.svg"
   },
   {
     "revision": "c6fea0afe9f60b424f4e5b9205749c7d",
@@ -692,12 +748,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/lovemathe/img/overall_badge_background_color.e3b62628.svg"
   },
   {
-    "revision": "a5b5bb3fc04b6a156c86ba065788e3dd",
+    "revision": "4802676e39615271e43f2581aeccf9e8",
     "url": "/lovemathe/index.html"
   },
   {
-    "revision": "f51523c8be767730ce73",
-    "url": "/lovemathe/js/app.b65c04d7.js"
+    "revision": "28898b0d1f9848bc597d",
+    "url": "/lovemathe/js/app.14931b30.js"
   },
   {
     "revision": "7784022f24a09caa397d",
