@@ -15,6 +15,14 @@
     <router-link class="" to="/tutoring/vorschule/simultanerfassung_four" title="Level 4">
       Simultanerfassung LVL-4
     </router-link>
+    <br>
+    <router-link class="" to="/tutoring/vorschule/simultanerfassung_five" title="Level 5">
+      Simultanerfassung LVL-5
+    </router-link>
+    <br>
+    <router-link class="" to="/tutoring/vorschule/simultanerfassung_six" title="Level 6">
+      Simultanerfassung LVL-6
+    </router-link>
   </div>
 </template>
 

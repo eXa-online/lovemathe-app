@@ -44,19 +44,19 @@ export default {
       solutions: 0,
       showDuration: 3000,
       level: 1,
-      bigBackground: true,
+      bigBackground: false,
       bigBackgroundTime: 4000,
     }
   },
   props: ['seperateInstructions', 'seperateTitles'],
   created() {
-    // this.playInstruction()
-    setTimeout(() => {this.playInstruction()}, this.bigBackgroundTime)
+    this.playInstruction()
+    // setTimeout(() => {this.playInstruction()}, this.bigBackgroundTime)
     this.randomNumber()
-    this.bigBackgroundTimer()
+    // this.bigBackgroundTimer()
     if (this.showDuration){
-      // this.showPuzzleForDuration(this.showDuration)
-      setTimeout(() => {this.showPuzzleForDuration(this.showDuration)}, this.bigBackgroundTime)
+      this.showPuzzleForDuration(this.showDuration)
+      // setTimeout(() => {this.showPuzzleForDuration(this.showDuration)}, this.bigBackgroundTime)
     }
   },
   computed: {
@@ -94,9 +94,11 @@ export default {
         new Audio(require(`../../assets/${this.gamePath}/instruction.mp3`)).play()
       }
     },
+    /*
     bigBackgroundTimer () {
-      setTimeout(() => {this.bigBackground = false}, this.bigBackgroundTime)
+      setTimeout(() => {this.bigBackground = true}, this.bigBackgroundTime)
     },
+     */
     evalSelection(givenSolution) {
       if (this.preventDoubleClick()) {
         let isCorrect = givenSolution == this.solutions
@@ -113,7 +115,9 @@ export default {
           this.showPuzzleForDuration(this.showDuration)
         }
         if (this.badgeIndex === 4) {
-          setTimeout(() => { this.switchToNext()}, 1500)
+          // setTimeout(() => { this.switchToNext()}, 1500)
+          this.bigBackground = true
+          setTimeout(() => {this.switchToNext()}, this.bigBackgroundTime)
           this.$store.dispatch('setSimultanerfassungDone', this.level)
         }
         if (this.seperateInstructions){

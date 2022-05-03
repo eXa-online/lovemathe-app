@@ -14,6 +14,8 @@ import SimultanerfassungOne from '@/components/tutoring/SimultanerfassungOne';
 import SimultanerfassungTwo from '@/components/tutoring/SimultanerfassungTwo';
 import SimultanerfassungThree from '@/components/tutoring/SimultanerfassungThree';
 import SimultanerfassungFour from '@/components/tutoring/SimultanerfassungFour';
+import SimultanerfassungFive from '@/components/tutoring/SimultanerfassungFive';
+import SimultanerfassungSix from '@/components/tutoring/SimultanerfassungSix';
 
 const routes = [
   { path: '/', component: OverallBadge },
@@ -31,6 +33,8 @@ const routes = [
   { path: '/tutoring/vorschule/simultanerfassung_two', component: SimultanerfassungTwo },
   { path: '/tutoring/vorschule/simultanerfassung_three', component: SimultanerfassungThree },
   { path: '/tutoring/vorschule/simultanerfassung_four', component: SimultanerfassungFour },
+  { path: '/tutoring/vorschule/simultanerfassung_five', component: SimultanerfassungFive },
+  { path: '/tutoring/vorschule/simultanerfassung_six', component: SimultanerfassungSix },
 ]
 
 const router = createRouter({
