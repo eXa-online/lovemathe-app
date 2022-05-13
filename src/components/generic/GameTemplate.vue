@@ -106,7 +106,7 @@ export default {
       }
     },
     switchToHome: function() {
-      this.$router.push({ path: '/' });
+      this.$router.push({ path: '/overall-badge' });
     },
     preventDoubleClick: function() {
       return Date.now() > this.date + this.cooldownTimeMiliseconds;

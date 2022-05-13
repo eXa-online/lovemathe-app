@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import Introduction from '@/components/Introduction.vue'
 import AddQuantities from '@/components/AddQuantities.vue'
 import Counting from '@/components/Counting.vue'
 import OneLook from '@/components/OneLook.vue'
@@ -18,7 +19,9 @@ import SimultanerfassungFive from '@/components/tutoring/SimultanerfassungFive';
 import SimultanerfassungSix from '@/components/tutoring/SimultanerfassungSix';
 
 const routes = [
-  { path: '/', component: OverallBadge },
+  { path: '/', component: Introduction},
+
+  { path: '/overall-badge', component: OverallBadge },
   { path: '/add_quantities', component: AddQuantities },
   { path: '/counting', component: Counting },
   { path: '/one_look', component: OneLook },
