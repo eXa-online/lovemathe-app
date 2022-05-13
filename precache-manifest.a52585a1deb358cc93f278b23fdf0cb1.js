@@ -4,7 +4,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/lovemathe/404.html"
   },
   {
-    "revision": "0e0f71fbb5bc71d05121",
+    "revision": "7305039f8e9af0d9773b",
     "url": "/lovemathe/css/app.2ed2db2a.css"
   },
   {
@@ -796,8 +796,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/lovemathe/img/greenHelp.1c973913.svg"
   },
   {
-    "revision": "812761d18bff3007148bce6937101483",
-    "url": "/lovemathe/img/help.812761d1.svg"
+    "revision": "b7fb100cc5ceabb07c52519aef647b42",
+    "url": "/lovemathe/img/help.b7fb100c.svg"
   },
   {
     "revision": "4be6eaecf4fe6ba93723dcc7e47ca1d0",
@@ -828,12 +828,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/lovemathe/img/thirdImage.613c9d7e.svg"
   },
   {
-    "revision": "59bf36e27340e8e97d1e7fae2b37d451",
+    "revision": "53862c55b69b3583a4fd955539692914",
     "url": "/lovemathe/index.html"
   },
   {
-    "revision": "0e0f71fbb5bc71d05121",
-    "url": "/lovemathe/js/app.bb827cc9.js"
+    "revision": "7305039f8e9af0d9773b",
+    "url": "/lovemathe/js/app.435d25c2.js"
   },
   {
     "revision": "7784022f24a09caa397d",
