@@ -52,7 +52,7 @@ export default {
       return [...Array(this.countButtons)].map((_, index)  => require(`../../assets/${this.gamePath}/buttons/${index}.svg`));
     },
     currentBadge: function() {
-      return require(`../../assets/${this.gamePath}/badges/${this.badgeIndex}.svg`)
+      return require(`../../assets/${this.gamePath}/badges/${this.badgeIndex}.png`)
     },
     currentPuzzleBody: function() {
       return require(`../../assets/${this.gamePath}/puzzles/${this.puzzleIndex}.svg`)
@@ -144,7 +144,7 @@ export default {
   max-height: 10vh;
   max-width: 10vw;
   position: absolute;
-  width: -webkit-fit-content;
+  /*width: -webkit-fit-content;*/
 }
 .puzzle_badge__large {
   position: absolute;
@@ -183,7 +183,8 @@ export default {
 }
 .puzzle_help {
   width: 100%;
-  height: 16vh;
+  /*height: 16vh;*/
+  height: 19vh;
 }
 .puzzle_background {
   width: 100%;

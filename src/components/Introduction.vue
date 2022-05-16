@@ -53,13 +53,11 @@ export default {
       showStartButton: true,
       image: 0,
       introduction: true,
-      // great: true,
       isFalse: true,
       activeButtons: false,
       activeTimer: false,
       letsStart: require('../assets/introduction/start.svg'),
       firstImage:require('../assets/introduction/firstImage.svg'),
-
       completed: false,
       badgeIndex: 0,
       gamePath: 'introduction',
@@ -121,31 +119,29 @@ export default {
     },
     switchImage() {
       this.image = 1
-      setTimeout(() => {this.image = 2}, 12000)
-      setTimeout(() => {this.image = 3}, 35000)
-      setTimeout(() => {this.image = 4}, 39000)
-      setTimeout(() => {this.image = 5}, 44000)
-      setTimeout(() => {this.image = 6}, 51000)
-      setTimeout(() => {this.activeTimer = true}, 51000)
-      setTimeout(() => {this.great = false}, 51000)
+      setTimeout(() => {this.image = 2}, 15000)
+      setTimeout(() => {this.image = 3}, 44000)
+      setTimeout(() => {this.image = 4}, 48000)
+      setTimeout(() => {this.image = 5}, 53000)
+      setTimeout(() => {this.image = 6}, 60000)
+      setTimeout(() => {this.activeTimer = true}, 63000)
     },
     playAudio(){
-      new Audio(require(`../assets/introduction/firstAudio.mp3`)).play()
-      setTimeout(() => {new Audio(require(`../assets/introduction/secondAudio.mp3`)).play()},12000)
-      setTimeout(() => {new Audio(require(`../assets/introduction/thirdAudio.mp3`)).play()},35000)
-      setTimeout(() => {new Audio(require(`../assets/introduction/fourthAudio.mp3`)).play()},52000)
-      /*
-      if(this.great === false) {
-        return(setTimeout(() => {new Audio(require(`../assets/introduction/2sec.mp3`)).play()},5000))
-      }
-       */
+      let introductionAudio = new Audio()
+      introductionAudio.src = require(`../assets/introduction/firstAudio.mp3`)
+      introductionAudio.play()
+      setTimeout(() => {introductionAudio.src = require(`../assets/introduction/secondAudio.mp3`)},16000)
+      setTimeout(() => {introductionAudio.play()},17000)
+      setTimeout(() => {introductionAudio.src = require(`../assets/introduction/thirdAudio.mp3`)},43000)
+      setTimeout(() => {introductionAudio.play()},44000)
+      setTimeout(() => {introductionAudio.src = require(`../assets/introduction/fourthAudio.mp3`)},62000)
+      setTimeout(() => {introductionAudio.play()},63000)
     },
     activateGame() {
       new Audio(require(`../assets/introduction/great.mp3`)).play()
       setTimeout(() => {new Audio(require(`../assets/introduction/game/instructions/${this.puzzleIndex}.mp3`)).play()},3000)
       this.isFalse = false
       this.activeButtons = true
-      // this.great = true
     },
     playFalseSound() {
       new Audio(require(`../assets/introduction/false.mp3`)).play()
@@ -155,7 +151,6 @@ export default {
       this.randomIndex = Math.ceil((Math.random()*6)-1)
       this.puzzleIndex = this.randomIndex
       this.solutions = this.randomIndex
-      // this.seperateInstructions = this.randomIndex
     },
     playInstruction(){
       new Audio(require(`../assets/introduction/game/instructions/${this.puzzleIndex}.mp3`)).play()
@@ -210,7 +205,7 @@ export default {
 <style scoped>
 .startButtonStyling {
   max-width: 30vw;
-  margin:20vh auto 0;
+  margin:35vh auto 0;
 }
 .puzzle_additionals {
   display: flex;
@@ -265,7 +260,7 @@ export default {
 }
 .puzzle_help {
   width: 100%;
-  height: 16vh;
+  height: 19vh;
 }
 .puzzle_background {
   width: 100%;
