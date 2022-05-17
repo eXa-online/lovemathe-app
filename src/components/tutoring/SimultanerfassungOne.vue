@@ -1,13 +1,13 @@
 <template>
   <div v-bind:class="[bigBackground ? 'activeBackground' :  '']">
   </div>
+  <div class="puzzle_additionals" v-if="!completed">
+    <img class="puzzle_help" @click="playInstruction" :src="getHelpButtonImage">
+  </div>
   <div class="puzzle_body" @[completed&&`click`]="switchToNext">
     <img v-if="showPuzzle" class="puzzle" :src="currentPuzzleBody">
     <img v-if="!showPuzzle" class="puzzle" :src="emptyBackground">
     <img class="puzzle_badge__large" :src="currentBadge" v-if="completed">
-    <div class="puzzle_additionals" v-if="!completed">
-      <img class="puzzle_help" @click="playInstruction" :src="getHelpButtonImage">
-    </div>
   </div>
   <div class="puzzle_bottom" v-if="!completed">
     <div class="puzzle_buttons">
@@ -36,7 +36,7 @@ export default {
       firstPuzzle: true,
       date: Date.now() + 6000,
       countButtons: 6,
-      title: 'Du siehst das Bild nur für eine kurze Zeit. Wie viele Muscheln kannst du erkennen?',
+      title: 'Du siehst das Bild nur für eine kurze Zeit. Wie viele Fische kannst du erkennen?',
       audioDuration: 6000,
       gameName: 'Simultanerfassung_One',
       showDemo: true,
@@ -51,12 +51,9 @@ export default {
   props: ['seperateInstructions', 'seperateTitles'],
   created() {
     this.playInstruction()
-    // setTimeout(() => {this.playInstruction()}, this.bigBackgroundTime)
     this.randomNumber()
-    // this.bigBackgroundTimer()
     if (this.showDuration){
       this.showPuzzleForDuration(this.showDuration)
-      // setTimeout(() => {this.showPuzzleForDuration(this.showDuration)}, this.bigBackgroundTime)
     }
   },
   computed: {
@@ -68,9 +65,6 @@ export default {
     },
     currentPuzzleBody: function() {
       return require(`../../assets/${this.gamePath}/puzzles/${this.randomIndex}.svg`)
-    },
-    badgeBackground: function() {
-      return require('../../assets/badge_background.svg')
     },
     emptyBackground: function(){
       return require(`../../assets/${this.gamePath}/puzzles/6.svg`)
@@ -94,11 +88,6 @@ export default {
         new Audio(require(`../../assets/${this.gamePath}/instruction.mp3`)).play()
       }
     },
-    /*
-    bigBackgroundTimer () {
-      setTimeout(() => {this.bigBackground = true}, this.bigBackgroundTime)
-    },
-     */
     evalSelection(givenSolution) {
       if (this.preventDoubleClick()) {
         let isCorrect = givenSolution == this.solutions
@@ -115,7 +104,6 @@ export default {
           this.showPuzzleForDuration(this.showDuration)
         }
         if (this.badgeIndex === 4) {
-          // setTimeout(() => { this.switchToNext()}, 1500)
           this.bigBackground = true
           setTimeout(() => {this.switchToNext()}, this.bigBackgroundTime)
           this.$store.dispatch('setSimultanerfassungDone', this.level)
@@ -154,6 +142,8 @@ export default {
   display: flex;
   flex-direction: column;
   row-gap: 1vw;
+  margin-bottom: -6vh;
+  margin-left: 15vw;
 }
 .puzzle_badge__large {
   position: absolute;
@@ -169,11 +159,11 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  padding: 3vh 3vw;
+  padding: 0vh 3vw;
 }
 .puzzle_body .puzzle {
   min-height: 7vh;
-  max-height: 45vh;
+  max-width: 50vw;
 }
 .puzzle_bottom {
   padding: 0 3vw;
@@ -181,6 +171,8 @@ export default {
 .puzzle_buttons {
   display: flex;
   justify-content: center;
+  max-width: 50vw;
+  margin: auto;
 }
 .puzzle_buttons button {
   border: none;
@@ -193,6 +185,7 @@ export default {
 .puzzle_help {
   width: 100%;
   height: 16vh;
+  z-index: 10;
 }
 .puzzle_background {
   width: 100%;
@@ -204,5 +197,6 @@ export default {
   height: 100%;
   width: 100%;
   position: absolute;
+  z-index: 20;
 }
 </style>

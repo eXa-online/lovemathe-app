@@ -3,13 +3,13 @@
   </div>
   <div :class="[bigBackground ? 'activeBackground' : '']">
   </div>
+  <div class="puzzle_additionals" v-if="!completed">
+    <img class="puzzle_help" @click="playInstruction" :src="getHelpButtonImage">
+  </div>
   <div class="puzzle_body" @[completed&&`click`]="switchToNext">
     <img v-if="showPuzzle" class="puzzle" :src="currentPuzzleBody">
     <img v-if="!showPuzzle" class="puzzle" :src="emptyBackground">
     <img class="puzzle_badge__large" :src="currentBadge" v-if="completed">
-    <div class="puzzle_additionals" v-if="!completed">
-      <img class="puzzle_help" @click="playInstruction" :src="getHelpButtonImage">
-    </div>
   </div>
   <div class="puzzle_bottom" v-if="!completed">
     <div class="puzzle_buttons">
@@ -156,6 +156,8 @@ export default {
   display: flex;
   flex-direction: column;
   row-gap: 1vw;
+  margin-bottom: -6vh;
+  margin-left: 15vw;
 }
 .puzzle_badge__large {
   position: absolute;
@@ -171,11 +173,11 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  padding: 3vh 3vw;
+  padding: 0vh 3vw;
 }
 .puzzle_body .puzzle {
   min-height: 7vh;
-  max-height: 45vh;
+  max-width: 50vw;
 }
 .puzzle_bottom {
   padding: 0 3vw;
@@ -183,6 +185,8 @@ export default {
 .puzzle_buttons {
   display: flex;
   justify-content: center;
+  max-width: 50vw;
+  margin: auto;
 }
 .puzzle_buttons button {
   border: none;
@@ -195,6 +199,7 @@ export default {
 .puzzle_help {
   width: 100%;
   height: 16vh;
+  z-index: 10;
 }
 .puzzle_background {
   width: 100%;
@@ -206,14 +211,15 @@ export default {
   height: 100%;
   width: 100%;
   position: absolute;
+  z-index: 20;
 }
 .backgroundFadeIn {
   background-image: url('../../assets/simultanerfassung_four/background.svg');
   background-size: cover;
   height: 100%;
   width: 100%;
-  z-index: 100;
   position: absolute;
+  z-index: 30;
   -webkit-animation: fadeinout 4s linear forwards;
   animation: fadeinout 4s linear forwards;
 }
