@@ -38,7 +38,7 @@ export default {
       firstPuzzle: true,
       date: Date.now() + 6000,
       countButtons: 6,
-      title: 'Du siehst das Bild nur für eine kurze Zeit. Wie viele Muscheln kannst du erkennen?',
+      title: 'Du siehst das Bild nur für eine kurze Zeit. Wie viele Quallen kannst du erkennen?',
       audioDuration: 6000,
       gameName: 'Simultanerfassung_Four',
       showDemo: true,
