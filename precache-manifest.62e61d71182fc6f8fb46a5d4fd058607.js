@@ -4,8 +4,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/lovemathe/404.html"
   },
   {
-    "revision": "fdc4bd22c88354c37092",
-    "url": "/lovemathe/css/app.0f3cfcde.css"
+    "revision": "4a0d4cc3ffa9610942de",
+    "url": "/lovemathe/css/app.98eeafac.css"
   },
   {
     "revision": "0c15557ae7dca8837f5e7f0f74b293ef",
@@ -1004,12 +1004,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/lovemathe/img/thirdImage.613c9d7e.svg"
   },
   {
-    "revision": "9d3f73d800037492560b090f9886f140",
+    "revision": "ee5b0fdb61f260f00295c4f99ed83afd",
     "url": "/lovemathe/index.html"
   },
   {
-    "revision": "fdc4bd22c88354c37092",
-    "url": "/lovemathe/js/app.093e86ec.js"
+    "revision": "4a0d4cc3ffa9610942de",
+    "url": "/lovemathe/js/app.256a4a51.js"
   },
   {
     "revision": "1d2235cc3c34c9fdb30c",
@@ -1088,12 +1088,28 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/lovemathe/media/great.d559d22e.mp3"
   },
   {
+    "revision": "0993c8fd6dcf68c66da25d85a6fad1bf",
+    "url": "/lovemathe/media/instruction.0993c8fd.mp3"
+  },
+  {
     "revision": "0b765fd45a2699b18a02df44cd832e84",
     "url": "/lovemathe/media/instruction.0b765fd4.mp3"
   },
   {
+    "revision": "0ffabb69f7023ba5fa7216f52d0f42d0",
+    "url": "/lovemathe/media/instruction.0ffabb69.mp3"
+  },
+  {
     "revision": "18d283912bdab5cd65c5cdd035905ec8",
     "url": "/lovemathe/media/instruction.18d28391.mp3"
+  },
+  {
+    "revision": "312aee20236d8c61f57567dca8de362f",
+    "url": "/lovemathe/media/instruction.312aee20.mp3"
+  },
+  {
+    "revision": "94fd657a8879b43278047dd3a56c7245",
+    "url": "/lovemathe/media/instruction.94fd657a.mp3"
   },
   {
     "revision": "9b482037234a9c701f6ff65f5a1c487f",
@@ -1110,6 +1126,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "dcc568d8e2d9ab7b3cac975616f54689",
     "url": "/lovemathe/media/instruction.dcc568d8.mp3"
+  },
+  {
+    "revision": "f09c79ee424f274505078eb8ca777539",
+    "url": "/lovemathe/media/instruction.f09c79ee.mp3"
   },
   {
     "revision": "f951b6c492e509a5667b0d843e5ebbde",
