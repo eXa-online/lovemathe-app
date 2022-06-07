@@ -4,8 +4,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/lovemathe/404.html"
   },
   {
-    "revision": "4a0d4cc3ffa9610942de",
-    "url": "/lovemathe/css/app.98eeafac.css"
+    "revision": "ff37beada9fbaf033932",
+    "url": "/lovemathe/css/app.1d27b0d7.css"
   },
   {
     "revision": "0c15557ae7dca8837f5e7f0f74b293ef",
@@ -1004,12 +1004,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/lovemathe/img/thirdImage.613c9d7e.svg"
   },
   {
-    "revision": "ee5b0fdb61f260f00295c4f99ed83afd",
+    "revision": "6b64811229bb2798e366fda3ccdb213c",
     "url": "/lovemathe/index.html"
   },
   {
-    "revision": "4a0d4cc3ffa9610942de",
-    "url": "/lovemathe/js/app.256a4a51.js"
+    "revision": "ff37beada9fbaf033932",
+    "url": "/lovemathe/js/app.42b92259.js"
   },
   {
     "revision": "1d2235cc3c34c9fdb30c",
@@ -1070,6 +1070,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "c424c6667a73ecd1a3ec272826636ba3",
     "url": "/lovemathe/media/5.c424c666.mp3"
+  },
+  {
+    "revision": "fb3060bdef28946e2f899d5433883c75",
+    "url": "/lovemathe/media/correct.fb3060bd.mp3"
   },
   {
     "revision": "cc068bdd51bbac69e02821e6bc8afca3",
