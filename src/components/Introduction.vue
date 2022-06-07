@@ -153,7 +153,12 @@ export default {
       this.solutions = this.randomIndex
     },
     playInstruction(){
-      new Audio(require(`../assets/introduction/game/instructions/${this.puzzleIndex}.mp3`)).play()
+      if (this.badgeIndex < 4) {
+        new Audio(require(`../assets/introduction/game/instructions/${this.puzzleIndex}.mp3`)).play()
+      }
+      else {
+        new Audio(require(`../assets/introduction/correct.mp3`)).play()
+      }
     },
     evalSelection(givenSolution) {
       if (this.preventDoubleClick()) {
