@@ -35,7 +35,7 @@
         <router-link
             :class="[(completedGames.length === 5 ? 'animated-cloud' : ''),(completedGames.includes('Reduce_Quantities') ? 'gameEnabled' :  'gameDisabled')]"
             class="badge one_look" to="/one_look"
-            title="Mengen reduzieren"
+            title="Simultanerfassung"
         >
           <img v-bind:class="[completedGames.includes('Reduce_Quantities') ? '' :  'non_active_badge']" class="one_look_img" :src="currentBadgeByName('One_Look')"/>
         </router-link>
