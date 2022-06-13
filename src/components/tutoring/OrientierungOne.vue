@@ -3,7 +3,6 @@
   </div>
   <div v-bind:class="[bigBackground ? 'activeBackground' :  '']">
   </div>
-  {{badgeIndex}}
   <div class="puzzle_additionals" v-if="!completed">
     <img class="puzzle_help" @click="playInstruction" :src="getHelpButtonImage">
   </div>
