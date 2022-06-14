@@ -5,20 +5,6 @@
           <img class="counting_img" :src="currentBadgeByName('Counting')"/>
         </router-link>
         <router-link
-            :class="[(completedGames.length === 2 ? 'animated_badge_small' : ''),(completedGames.includes('Quantity_Equality') ? 'gameEnabled' :  'gameDisabled')]"
-            class="badge add_quantities" to="/add_quantities"
-            title="Mengen ergänzen"
-        >
-          <img v-bind:class="[completedGames.includes('Quantity_Equality') ? '' :  'non_active_badge']" class="add_quantities_img" :src="currentBadgeByName('Add_Quantities')"/>
-        </router-link>
-        <router-link
-            :class="[(completedGames.length === 3 ? 'animated_badge_big' : ''),(completedGames.includes('Add_Quantities') ? 'gameEnabled' :  'gameDisabled')]"
-            class="badge quantity_comparison" to="/quantity_comparison"
-            title="Mengenvergleich"
-        >
-          <img v-bind:class="[completedGames.includes('Add_Quantities') ? '' :  'non_active_badge']" class="quantity_comparison_img" :src="currentBadgeByName('Quantity_Comparison')"/>
-        </router-link>
-        <router-link
             :class="[(completedGames.length === 1 ? 'animated_badge_big' : ''),(completedGames.includes('Counting') ? 'gameEnabled' :  'gameDisabled')]"
             class="badge quantity_equality" to="/quantity_equality"
             title="Mengengleichheit"
@@ -26,31 +12,45 @@
           <img v-bind:class="[completedGames.includes('Counting') ? '' :  'non_active_badge']" class="quantity_equality_img" :src="currentBadgeByName('Quantity_Equality')"/>
         </router-link>
         <router-link
-            :class="[(completedGames.length === 4 ? 'animated_badge_small' : ''),(completedGames.includes('Quantity_Comparison') ? 'gameEnabled' :  'gameDisabled')]"
-            class="badge reduce_quantities" to="/reduce_quantities"
-            title="Mengen reduzieren"
-        >
-          <img v-bind:class="[completedGames.includes('Quantity_Comparison') ? '' :  'non_active_badge']" class="reduce_quantities_img" :src="currentBadgeByName('Reduce_Quantities')"/>
-        </router-link>
-        <router-link
-            :class="[(completedGames.length === 5 ? 'animated-cloud' : ''),(completedGames.includes('Reduce_Quantities') ? 'gameEnabled' :  'gameDisabled')]"
+            :class="[(completedGames.length === 2 ? 'animated-cloud' : ''),(completedGames.includes('Quantity_Equality') ? 'gameEnabled' :  'gameDisabled')]"
             class="badge one_look" to="/one_look"
             title="Simultanerfassung"
         >
-          <img v-bind:class="[completedGames.includes('Reduce_Quantities') ? '' :  'non_active_badge']" class="one_look_img" :src="currentBadgeByName('One_Look')"/>
+          <img v-bind:class="[completedGames.includes('Quantity_Equality') ? '' :  'non_active_badge']" class="one_look_img" :src="currentBadgeByName('One_Look')"/>
         </router-link>
         <router-link
-            :class="[(completedGames.length === 6 ? 'animated_badge_small' : ''),(completedGames.includes('One_Look') ? 'gameEnabled' :  'gameDisabled')]"
+            :class="[(completedGames.length === 3 ? 'animated_badge_small' : ''),(completedGames.includes('One_Look') ? 'gameEnabled' :  'gameDisabled')]"
+            class="badge add_quantities" to="/add_quantities"
+            title="Mengen ergänzen"
+        >
+          <img v-bind:class="[completedGames.includes('One_Look') ? '' :  'non_active_badge']" class="add_quantities_img" :src="currentBadgeByName('Add_Quantities')"/>
+        </router-link>
+        <router-link
+            :class="[(completedGames.length === 4 ? 'animated_badge_small' : ''),(completedGames.includes('Add_Quantities') ? 'gameEnabled' :  'gameDisabled')]"
             class="badge seriation" to="/seriation"
             title="Seriation"
         >
-          <img v-bind:class="[completedGames.includes('One_Look') ? '' :  'non_active_badge']" class="seriation_img" :src="currentBadgeByName('Seriation')"/>
+          <img v-bind:class="[completedGames.includes('Add_Quantities') ? '' :  'non_active_badge']" class="seriation_img" :src="currentBadgeByName('Seriation')"/>
         </router-link>
         <router-link
-            :class="[(completedGames.length === 7 ? 'animated-house' : ''),(completedGames.includes('Seriation') ? 'gameEnabled' :  'gameDisabled')]"
+            :class="[(completedGames.length === 5 ? 'animated_badge_big' : ''),(completedGames.includes('Seriation') ? 'gameEnabled' :  'gameDisabled')]"
+            class="badge quantity_comparison" to="/quantity_comparison"
+            title="Mengenvergleich"
+        >
+          <img v-bind:class="[completedGames.includes('Seriation') ? '' :  'non_active_badge']" class="quantity_comparison_img" :src="currentBadgeByName('Quantity_Comparison')"/>
+        </router-link>
+        <router-link
+            :class="[(completedGames.length === 6 ? 'animated-house' : ''),(completedGames.includes('Quantity_Comparison') ? 'gameEnabled' :  'gameDisabled')]"
             class="badge orientation" to="/orientation" title="Orientation"
         >
-          <img v-bind:class="[completedGames.includes('Seriation') ? '' :  'non_active_badge']" class="orientation_img" :src="currentBadgeByName('Orientation')"/>
+          <img v-bind:class="[completedGames.includes('Quantity_Comparison') ? '' :  'non_active_badge']" class="orientation_img" :src="currentBadgeByName('Orientation')"/>
+        </router-link>
+        <router-link
+            :class="[(completedGames.length === 7 ? 'animated_badge_small' : ''),(completedGames.includes('Orientation') ? 'gameEnabled' :  'gameDisabled')]"
+            class="badge reduce_quantities" to="/reduce_quantities"
+            title="Mengen reduzieren"
+        >
+          <img v-bind:class="[completedGames.includes('Orientation') ? '' :  'non_active_badge']" class="reduce_quantities_img" :src="currentBadgeByName('Reduce_Quantities')"/>
         </router-link>
         <img v-if="isFine" class="badge isGood" src="../assets/kid_has_no_problems.svg" alt=""/>
       </div>
