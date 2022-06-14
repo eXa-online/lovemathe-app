@@ -52,7 +52,7 @@
         >
           <img v-bind:class="[completedGames.includes('Seriation') ? '' :  'non_active_badge']" class="orientation_img" :src="currentBadgeByName('Orientation')"/>
         </router-link>
-        <img v-if="isFine" class="isGood" src="../assets/kid_has_no_problems.svg" alt=""/>
+        <img v-if="isFine" class="badge isGood" src="../assets/kid_has_no_problems.svg" alt=""/>
       </div>
   </div>
 </template>
