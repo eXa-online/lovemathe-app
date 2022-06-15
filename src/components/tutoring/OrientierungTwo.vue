@@ -13,8 +13,8 @@
   </div>
   <div class="puzzle_bottom" v-if="!completed">
     <div class="puzzle_buttons">
-      <button v-for="(buttonImage, index) in buttonImages" :key="buttonImage" @click="evalSelection(index)">
-        <img class="puzzle_button" :src="buttonImage">
+      <button class="" :id="'button-'+index" v-for="(buttonImage, index) in buttonImages" :key="buttonImage" @click="evalSelection(index)">
+        <img :id="'image-'+index" class="puzzle_button" :src="buttonImage">
       </button>
     </div>
   </div>
@@ -107,10 +107,22 @@ export default {
       if (this.preventDoubleClick()) {
         let isCorrect = givenSolution == this.solutions
         if (isCorrect) {
+          document.getElementById('button-'+givenSolution).classList.add('button_right');
+          document.getElementById('image-'+givenSolution).classList.add('button_image_valuation');
+          setTimeout(() => {
+            document.getElementById('button-'+givenSolution).classList.remove('button_right');
+            document.getElementById('image-'+givenSolution).classList.remove('button_image_valuation');
+          }, 2000)
           this.badgeIndex++;
           this.randomNumber();
         }
         if (!isCorrect) {
+          document.getElementById('button-'+givenSolution).classList.add('button_false');
+          document.getElementById('image-'+givenSolution).classList.add('button_image_valuation');
+          setTimeout(() => {
+            document.getElementById('button-'+givenSolution).classList.remove('button_false');
+            document.getElementById('image-'+givenSolution).classList.remove('button_image_valuation');
+          }, 2000)
           this.badgeIndex = 0;
           this.randomNumber();
         }
@@ -153,6 +165,18 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.button_right {
+  background-color: green !important;
+  border-radius: 35px;
+}
+.button_false {
+  background-color: red !important;
+  border-radius: 35px;
+}
+.button_image_valuation {
+  filter: grayscale(100%);
+  mix-blend-mode: screen;
+}
 .puzzle_additionals {
   display: flex;
   flex-direction: column;
@@ -195,7 +219,7 @@ export default {
 }
 .puzzle_button {
   width: 100%;
-  height: 20vh;
+  height: 8em;
 }
 .puzzle_help {
   width: 100%;
