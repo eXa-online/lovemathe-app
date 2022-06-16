@@ -4,7 +4,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/lovemathe/404.html"
   },
   {
-    "revision": "4ffd5ac4bcd816a3b066",
+    "revision": "cb4c15105145c55f213c",
     "url": "/lovemathe/css/app.ea0eb69e.css"
   },
   {
@@ -1260,12 +1260,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/lovemathe/img/thirdImage.613c9d7e.svg"
   },
   {
-    "revision": "bf83da8a7af530015ed1e181d42f8f7c",
+    "revision": "ccb22733bdf0567faa4ec30623562470",
     "url": "/lovemathe/index.html"
   },
   {
-    "revision": "4ffd5ac4bcd816a3b066",
-    "url": "/lovemathe/js/app.eab5512d.js"
+    "revision": "cb4c15105145c55f213c",
+    "url": "/lovemathe/js/app.8d29fe81.js"
   },
   {
     "revision": "1d2235cc3c34c9fdb30c",
@@ -1348,28 +1348,24 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/lovemathe/media/great.d559d22e.mp3"
   },
   {
-    "revision": "0993c8fd6dcf68c66da25d85a6fad1bf",
-    "url": "/lovemathe/media/instruction.0993c8fd.mp3"
-  },
-  {
     "revision": "0b765fd45a2699b18a02df44cd832e84",
     "url": "/lovemathe/media/instruction.0b765fd4.mp3"
-  },
-  {
-    "revision": "0ffabb69f7023ba5fa7216f52d0f42d0",
-    "url": "/lovemathe/media/instruction.0ffabb69.mp3"
   },
   {
     "revision": "18d283912bdab5cd65c5cdd035905ec8",
     "url": "/lovemathe/media/instruction.18d28391.mp3"
   },
   {
-    "revision": "312aee20236d8c61f57567dca8de362f",
-    "url": "/lovemathe/media/instruction.312aee20.mp3"
+    "revision": "2a87db3cdff7d6ec169c9ac8061e8ca0",
+    "url": "/lovemathe/media/instruction.2a87db3c.mp3"
   },
   {
-    "revision": "94fd657a8879b43278047dd3a56c7245",
-    "url": "/lovemathe/media/instruction.94fd657a.mp3"
+    "revision": "2fdadee84be0b0d812f49d7c8542c4ba",
+    "url": "/lovemathe/media/instruction.2fdadee8.mp3"
+  },
+  {
+    "revision": "4c7ba046f42f079d83b1edf56fa218ca",
+    "url": "/lovemathe/media/instruction.4c7ba046.mp3"
   },
   {
     "revision": "9b482037234a9c701f6ff65f5a1c487f",
@@ -1392,6 +1388,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/lovemathe/media/instruction.cafcb760.mp3"
   },
   {
+    "revision": "d81150cc8b6242c3514b633466a52097",
+    "url": "/lovemathe/media/instruction.d81150cc.mp3"
+  },
+  {
     "revision": "d9b88a9a7b9b9c9dc15ee0774d338d5d",
     "url": "/lovemathe/media/instruction.d9b88a9a.mp3"
   },
@@ -1400,12 +1400,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/lovemathe/media/instruction.dcc568d8.mp3"
   },
   {
-    "revision": "ef479c41ad52ceb9d40b840011dbaec3",
-    "url": "/lovemathe/media/instruction.ef479c41.mp3"
+    "revision": "ddad87b61bd4c08da32371a38bb96dbb",
+    "url": "/lovemathe/media/instruction.ddad87b6.mp3"
   },
   {
-    "revision": "f09c79ee424f274505078eb8ca777539",
-    "url": "/lovemathe/media/instruction.f09c79ee.mp3"
+    "revision": "ef479c41ad52ceb9d40b840011dbaec3",
+    "url": "/lovemathe/media/instruction.ef479c41.mp3"
   },
   {
     "revision": "f951b6c492e509a5667b0d843e5ebbde",
