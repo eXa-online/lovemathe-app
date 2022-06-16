@@ -4,7 +4,6 @@
   <div :class="[bigBackground ? 'activeBackground' : '']">
   </div>
   <div>
-    {{badgeIndex}}
     <div class="puzzle_additionals" v-if="!completed">
       <img class="puzzle_help" @click="playInstruction" :src="getHelpButtonImage">
     </div>
