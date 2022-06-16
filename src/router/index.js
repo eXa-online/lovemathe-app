@@ -11,6 +11,8 @@ import Seriation from '@/components/Seriation.vue'
 import Orientation from '@/components/Orientation.vue'
 
 import TutoringOverallBadge from '@/components/tutoring/TutoringOverallBadge.vue'
+import TutoringStart from '@/components/tutoring/TutoringStart.vue'
+
 import SimultanerfassungOne from '@/components/tutoring/SimultanerfassungOne';
 import SimultanerfassungTwo from '@/components/tutoring/SimultanerfassungTwo';
 import SimultanerfassungThree from '@/components/tutoring/SimultanerfassungThree';
@@ -31,6 +33,8 @@ import OrientierungThree from '@/components/tutoring/OrientierungThree';
 import OrientierungFour from '@/components/tutoring/OrientierungFour';
 import OrientierungFive from '@/components/tutoring/OrientierungFive';
 
+import MengenOne from '@/components/tutoring/MengenOne';
+
 const routes = [
   { path: '/', component: Introduction},
 
@@ -45,6 +49,8 @@ const routes = [
   { path: '/orientation', component: Orientation },
 
   { path: '/tutoring/vorschule', component: TutoringOverallBadge },
+  { path: '/tutoring/', component: TutoringStart },
+
   { path: '/tutoring/vorschule/simultanerfassung_one', component: SimultanerfassungOne },
   { path: '/tutoring/vorschule/simultanerfassung_two', component: SimultanerfassungTwo },
   { path: '/tutoring/vorschule/simultanerfassung_three', component: SimultanerfassungThree },
@@ -64,6 +70,8 @@ const routes = [
   { path: '/tutoring/vorschule/orientierung_three', component: OrientierungThree },
   { path: '/tutoring/vorschule/orientierung_four', component: OrientierungFour },
   { path: '/tutoring/vorschule/orientierung_five', component: OrientierungFive },
+
+  { path: '/tutoring/vorschule/mengen_one', component: MengenOne },
 
 ]
 
