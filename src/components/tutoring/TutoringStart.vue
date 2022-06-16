@@ -19,7 +19,6 @@ export default {
   },
   methods: {
     playIntroduction() {
-      new Audio(require(`../../assets/introduction/false.mp3`)).play()
       setTimeout(() => {this.$router.push({ path: '/tutoring/vorschule/' })}, 17000)
     },
   },
