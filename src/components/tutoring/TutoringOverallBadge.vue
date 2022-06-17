@@ -28,8 +28,6 @@
 </template>
 
 <script>
-import {mapGetters, mapState} from 'vuex'
-
 export default {
   name: "TutoringOverallBadge",
   data() {
@@ -40,13 +38,6 @@ export default {
       hover_4: false,
     }
   },
-  computed: {
-    ...mapGetters(['currentBadgeByName','allGamesDone']),
-    ...mapState(['completedGames', 'badgeIndexes', 'isFine']),
-    ...mapState({
-      simultanerfassungDone: state => state.simultanerfassung.completedGames
-    })
-  },
 };
 </script>
 
@@ -56,7 +47,6 @@ export default {
   background-size: cover;
   background-position: center;
   cursor: pointer;
-  /*width: 100%;*/
   border: none;
   text-align: center;
   word-break: break-word;
@@ -86,10 +76,11 @@ export default {
 .mengen {
   background-image: url("../../assets/mengen_one/background.svg");
 }
-a, a:visited {
-  text-decoration: none;
-}
 h2 {
   margin-top: 4%
+}
+a, a:visited {
+  text-decoration: none;
+  color: #ffffff;
 }
 </style>

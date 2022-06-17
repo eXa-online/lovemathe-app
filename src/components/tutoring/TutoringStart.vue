@@ -6,8 +6,6 @@
 </template>
 
 <script>
-import {mapGetters, mapState} from 'vuex'
-
 export default {
   name: "TutoringStart",
   data() {
@@ -21,13 +19,6 @@ export default {
     playIntroduction() {
       setTimeout(() => {this.$router.push({ path: '/tutoring/vorschule/' })}, 17000)
     },
-  },
-  computed: {
-    ...mapGetters(['currentBadgeByName','allGamesDone']),
-    ...mapState(['completedGames', 'badgeIndexes', 'isFine']),
-    ...mapState({
-      simultanerfassungDone: state => state.simultanerfassung.completedGames
-    })
   },
 };
 </script>
