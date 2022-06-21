@@ -54,8 +54,7 @@ export default {
       showDemo: true,
       randomIndex: 0,
       solutions: 0,
-      //showDuration: 2400,
-      level: 3,
+      level: 4,
       bigBackground: false,
       bigBackgroundTime: 4000,
       firstGame: true,
@@ -64,12 +63,9 @@ export default {
   props: ['seperateInstructions', 'seperateTitles'],
   created() {
     this.playInstruction()
-    // setTimeout(() => {this.playInstruction()}, this.bigBackgroundTime)
     this.randomNumber()
-    // this.bigBackgroundTimer()
     if (this.showDuration){
       this.showPuzzleForDuration(this.showDuration)
-      // setTimeout(() => {this.showPuzzleForDuration(this.showDuration)}, this.bigBackgroundTime)
     }
   },
   computed: {
@@ -100,7 +96,6 @@ export default {
     randomNumber: function () {
       this.randomIndex = Math.ceil((Math.random()*12)-1)
       this.puzzleIndex = this.randomIndex
-      // this.solutions = this.randomIndex
     },
     playInstruction(){
       if (this.seperateInstructions) {
@@ -110,28 +105,23 @@ export default {
         new Audio(require(`../../assets/${this.gamePath}/instruction.mp3`)).play()
       }
     },
-    /*
-    bigBackgroundTimer () {
-      setTimeout(() => {this.bigBackground = false}, this.bigBackgroundTime)
-    },
-     */
     evalSelection(givenSolution) {
       if (this.preventDoubleClick()) {
-        if(this.randomIndex === 0 ||
-            this.randomIndex === 1 ||
-            this.randomIndex === 2 ||
-            this.randomIndex === 3 ||
-            this.randomIndex === 4 ||
-            this.randomIndex === 5)
-        {
-          this.solutions = 0
-        }
         if(this.randomIndex === 6 ||
             this.randomIndex === 7 ||
             this.randomIndex === 8 ||
             this.randomIndex === 9 ||
             this.randomIndex === 10 ||
-            this.randomIndex === 11) {
+            this.randomIndex === 11)
+        {
+          this.solutions = 0
+        }
+        if(this.randomIndex === 0 ||
+            this.randomIndex === 1 ||
+            this.randomIndex === 2 ||
+            this.randomIndex === 3 ||
+            this.randomIndex === 4 ||
+            this.randomIndex === 5) {
           this.solutions = 1
         }
         let isCorrect = givenSolution == this.solutions
@@ -165,26 +155,23 @@ export default {
     },
     evalSelection2(givenSolution2) {
       if (this.preventDoubleClick()) {
-        if(this.randomIndex === 0 ||
-            this.randomIndex === 2 ||
-            this.randomIndex === 5 ||
+        if(this.randomIndex === 2 ||
+            this.randomIndex === 3 ||
+            this.randomIndex === 4 ||
             this.randomIndex === 6 ||
-            this.randomIndex === 8 ||
+            this.randomIndex === 7 ||
             this.randomIndex === 11)
         {
           this.solutions = 0
         }
-        if(this.randomIndex === 1 ||
-            this.randomIndex === 4 ||
-            this.randomIndex === 7 ||
+        if(this.randomIndex === 0 ||
+            this.randomIndex === 1 ||
+            this.randomIndex === 5 ||
+            this.randomIndex === 8 ||
+            this.randomIndex === 9 ||
             this.randomIndex === 10)
         {
           this.solutions = 1
-        }
-        if(this.randomIndex === 3 ||
-            this.randomIndex === 9)
-        {
-          this.solutions = 2
         }
         let isCorrect = givenSolution2 == this.solutions
         if (isCorrect) {
@@ -197,10 +184,8 @@ export default {
             this.badgeIndex++;
             this.randomNumber();
             if (this.badgeIndex === 4) {
-              // setTimeout(() => { this.switchToNext()}, 1500)
               this.bigBackground = true
               setTimeout(() => {this.switchToNext()}, this.bigBackgroundTime)
-              // this.$store.dispatch('setSimultanerfassungDone', this.level)
             }
           }, 2000)
         }
