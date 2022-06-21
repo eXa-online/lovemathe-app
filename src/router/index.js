@@ -37,6 +37,7 @@ import MengenOne from '@/components/tutoring/MengenOne';
 import MengenTwo from '@/components/tutoring/MengenTwo';
 import MengenThree from '@/components/tutoring/MengenThree';
 import MengenFour from '@/components/tutoring/MengenFour';
+import MengenFive from '@/components/tutoring/MengenFive';
 
 const routes = [
   { path: '/', component: Introduction},
@@ -78,6 +79,7 @@ const routes = [
   { path: '/tutoring/vorschule/mengen_two', component: MengenTwo },
   { path: '/tutoring/vorschule/mengen_three', component: MengenThree },
   { path: '/tutoring/vorschule/mengen_four', component: MengenFour },
+  { path: '/tutoring/vorschule/mengen_five', component: MengenFive },
 
 ]
 

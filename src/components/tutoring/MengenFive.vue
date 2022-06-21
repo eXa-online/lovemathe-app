@@ -33,12 +33,12 @@
 <script>
 import { mapActions } from 'vuex'
 export default {
-  name: 'MengenFour',
+  name: 'MengenFive',
   data() {
     return {
       completed: false,
       badgeIndex: 0,
-      gamePath: 'mengen_four',
+      gamePath: 'mengen_five',
       puzzleIndex: 0,
       getHelpButtonImage: require('../../assets/greenHelp.svg'),
       cooldownTimeMiliseconds: 1000,
@@ -46,15 +46,15 @@ export default {
       firstPuzzle: true,
       date: Date.now() + 6000,
       countButtons: 2,
-      countButtons2: 4,
+      countButtons2: 6,
       title: 'Von was siehst du mehr auf dem Bild?',
       title2: 'Wieviel mehr sind es?',
       audioDuration: 6000,
-      gameName: 'Mengen_Four',
+      gameName: 'Mengen_Five',
       showDemo: true,
       randomIndex: 0,
       solutions: 0,
-      level: 4,
+      level: 5,
       bigBackground: false,
       bigBackgroundTime: 4000,
       firstGame: true,
@@ -210,7 +210,7 @@ export default {
       }
     },
     switchToNext: function() {
-      this.$router.push({ path: '/tutoring/vorschule/mengen_five' });
+      this.$router.push({ path: '/tutoring/vorschule/mengen_six' });
     },
     preventDoubleClick: function() {
       return Date.now() > this.date + this.cooldownTimeMiliseconds;
@@ -300,7 +300,7 @@ export default {
   max-height: 16vh;
 }
 .activeBackground {
-  background-image: url('../../assets/mengen_three/background.svg');
+  background-image: url('../../assets/mengen_four/background.svg');
   background-size: cover;
   height: 100%;
   width: 100%;
@@ -308,7 +308,7 @@ export default {
   z-index: 20;
 }
 .backgroundFadeIn {
-  background-image: url('../../assets/mengen_four/background.svg');
+  background-image: url('../../assets/mengen_five/background.svg');
   background-size: cover;
   height: 100%;
   width: 100%;
