@@ -196,7 +196,7 @@ export default {
       }
     },
     switchToNext: function() {
-      this.$router.push({ path: '/tutoring/vorschule/' });
+      this.$router.push({ path: '/tutoring/vorschule/mengen_two' });
     },
     preventDoubleClick: function() {
       return Date.now() > this.date + this.cooldownTimeMiliseconds;

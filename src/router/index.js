@@ -34,6 +34,8 @@ import OrientierungFour from '@/components/tutoring/OrientierungFour';
 import OrientierungFive from '@/components/tutoring/OrientierungFive';
 
 import MengenOne from '@/components/tutoring/MengenOne';
+import MengenTwo from '@/components/tutoring/MengenTwo';
+import MengenThree from '@/components/tutoring/MengenThree';
 
 const routes = [
   { path: '/', component: Introduction},
@@ -72,6 +74,8 @@ const routes = [
   { path: '/tutoring/vorschule/orientierung_five', component: OrientierungFive },
 
   { path: '/tutoring/vorschule/mengen_one', component: MengenOne },
+  { path: '/tutoring/vorschule/mengen_two', component: MengenTwo },
+  { path: '/tutoring/vorschule/mengen_three', component: MengenThree },
 
 ]
 

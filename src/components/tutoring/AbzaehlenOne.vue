@@ -47,7 +47,7 @@ export default {
       //showDuration: 2400,
       level: 1,
       bigBackground: false,
-      bigBackgroundTime: 4000,
+      bigBackgroundTime: 10000,
     }
   },
   props: ['seperateInstructions', 'seperateTitles'],
@@ -132,6 +132,7 @@ export default {
           // setTimeout(() => { this.switchToNext()}, 1500)
           this.bigBackground = true
           setTimeout(() => {this.switchToNext()}, this.bigBackgroundTime)
+          new Audio(require(`../../assets/${this.gamePath}/inBetweenAudio.mp3`)).play()
           // this.$store.dispatch('setSimultanerfassungDone', this.level)
         }
         if (this.seperateInstructions){

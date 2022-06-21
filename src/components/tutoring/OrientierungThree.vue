@@ -46,7 +46,7 @@ export default {
       solutions: 0,
       level: 1,
       bigBackground: false,
-      bigBackgroundTime: 4000,
+      bigBackgroundTime: 10000,
       seperateInstructions: true,
       seperateTitles: {
         0: 'Mitte',
@@ -135,6 +135,7 @@ export default {
           // setTimeout(() => { this.switchToNext()}, 1500)
           this.bigBackground = true
           setTimeout(() => {this.switchToNext()}, this.bigBackgroundTime)
+          new Audio(require(`../../assets/${this.gamePath}/inBetweenAudio.mp3`)).play()
         }
         if (this.seperateInstructions){
           this.playInstruction()
@@ -262,8 +263,8 @@ export default {
   width: 100%;
   position: absolute;
   z-index: 30;
-  -webkit-animation: fadeinout 4s linear forwards;
-  animation: fadeinout 4s linear forwards;
+  -webkit-animation: fadeinout 8s linear forwards;
+  animation: fadeinout 8s linear forwards;
 }
 @-webkit-keyframes fadeinout {
   0% {opacity:0;}
