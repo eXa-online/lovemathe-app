@@ -97,18 +97,11 @@ let store = new Vuex.Store({
         currentBadgeByName: (state) => (name) => {
             return state.currentBadges[name];
         },
-        allGamesDone (state) {
-            let arr1 = state.gameOrder;
-            let arr2 = state.completedGames;
-
-            const is_same = arr1.length == arr2.length &&
-                (arr1.every((currElem)=>{
-                        if(arr2.indexOf(currElem)> -1){
-                            return true;
-                        } else {return false}
-                    })
-                )
-            return is_same
+        areAllGamesDone (state) {
+            return state.gameOrder.length === state.completedGames.length &&
+                state.gameOrder.every((gameName)=>{
+                    return state.completedGames.indexOf(gameName)> -1;
+                });
         }
     },
     modules: {
