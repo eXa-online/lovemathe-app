@@ -1,5 +1,5 @@
 <template>
-  <div class="home" v-bind:style="[allGamesDone === true ? {'backgroundImage': 'url('+allGamesDoneImage+')'} : {'backgroundImage': 'url('+notAllGamesDoneImage+')'}]">
+  <div class="home" v-bind:style="[areAllGamesDone === true ? {'backgroundImage': 'url('+allGamesDoneImage+')'} : {'backgroundImage': 'url('+gamesNotDoneYetImage+')'}]">
       <div class="badges">
         <router-link :class="[completedGames.length === 0 ? 'animated-tree' : '']" class="badge counting" to="/counting" title="Abzählen">
           <img class="counting_img" :src="currentBadgeByName('Counting')"/>
@@ -65,11 +65,11 @@ export default {
   data() {
     return {
       allGamesDoneImage: require('../assets/overall_badge_background_color.svg'),
-      notAllGamesDoneImage: require('../assets/overall_badge_background.svg'),
+      gamesNotDoneYetImage: require('../assets/overall_badge_background.svg'),
     }
   },
   computed: {
-    ...mapGetters(['currentBadgeByName','allGamesDone']),
+    ...mapGetters(['currentBadgeByName','areAllGamesDone']),
     ...mapState(['completedGames', 'badgeIndexes', 'isFine']),
   },
 };
