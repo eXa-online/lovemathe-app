@@ -9,7 +9,7 @@ let store = new Vuex.Store({
         badgeIndexes: [],
         isFine: false,
         gameOrder: ['Counting', 'Quantity_Equality', 'Add_Quantities','Quantity_Comparison', 'Reduce_Quantities', 'One_Look', 'Seriation', 'Orientation'],
-        activeGames: new Set(), 
+        activeGames: new Set(),
         currentBadges: {
             'Quantity_Equality': require('../assets/quantity_equality/badges/0.png'),
             'Quantity_Comparison': require('../assets/quantity_comparison/badges/0.png'),
