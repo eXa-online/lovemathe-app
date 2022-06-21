@@ -33,12 +33,12 @@
 <script>
 import { mapActions } from 'vuex'
 export default {
-  name: 'MengenFive',
+  name: 'MengenSix',
   data() {
     return {
       completed: false,
       badgeIndex: 0,
-      gamePath: 'mengen_five',
+      gamePath: 'mengen_six',
       puzzleIndex: 0,
       getHelpButtonImage: require('../../assets/greenHelp.svg'),
       cooldownTimeMiliseconds: 1000,
@@ -50,11 +50,11 @@ export default {
       title: 'Von was siehst du mehr auf dem Bild?',
       title2: 'Wieviel mehr sind es?',
       audioDuration: 6000,
-      gameName: 'Mengen_Five',
+      gameName: 'Mengen_Six',
       showDemo: true,
       randomIndex: 0,
       solutions: 0,
-      level: 5,
+      level: 6,
       bigBackground: false,
       bigBackgroundTime: 4000,
       firstGame: true,
@@ -107,21 +107,21 @@ export default {
     },
     evalSelection(givenSolution) {
       if (this.preventDoubleClick()) {
-        if(this.randomIndex === 6 ||
-            this.randomIndex === 7 ||
-            this.randomIndex === 8 ||
-            this.randomIndex === 9 ||
-            this.randomIndex === 10 ||
-            this.randomIndex === 11)
-        {
-          this.solutions = 0
-        }
         if(this.randomIndex === 0 ||
             this.randomIndex === 1 ||
             this.randomIndex === 2 ||
             this.randomIndex === 3 ||
             this.randomIndex === 4 ||
-            this.randomIndex === 5) {
+            this.randomIndex === 5)
+        {
+          this.solutions = 0
+        }
+        if(this.randomIndex === 6 ||
+            this.randomIndex === 7 ||
+            this.randomIndex === 8 ||
+            this.randomIndex === 9 ||
+            this.randomIndex === 10 ||
+            this.randomIndex === 11) {
           this.solutions = 1
         }
         let isCorrect = givenSolution == this.solutions
@@ -155,21 +155,21 @@ export default {
     },
     evalSelection2(givenSolution2) {
       if (this.preventDoubleClick()) {
-        if(this.randomIndex === 3 ||
-            this.randomIndex === 4 ||
-            this.randomIndex === 5 ||
+        if(this.randomIndex === 2 ||
+            this.randomIndex === 3 ||
             this.randomIndex === 6 ||
-            this.randomIndex === 7 ||
-            this.randomIndex === 9)
+            this.randomIndex === 9 ||
+            this.randomIndex === 10 ||
+            this.randomIndex === 11)
         {
           this.solutions = 0
         }
         if(this.randomIndex === 0 ||
             this.randomIndex === 1 ||
-            this.randomIndex === 2 ||
-            this.randomIndex === 8 ||
-            this.randomIndex === 10 ||
-            this.randomIndex === 11)
+            this.randomIndex === 4 ||
+            this.randomIndex === 5 ||
+            this.randomIndex === 7 ||
+            this.randomIndex === 8)
         {
           this.solutions = 1
         }
@@ -210,7 +210,7 @@ export default {
       }
     },
     switchToNext: function() {
-      this.$router.push({ path: '/tutoring/vorschule/mengen_six' });
+      this.$router.push({ path: '/tutoring/vorschule/' });
     },
     preventDoubleClick: function() {
       return Date.now() > this.date + this.cooldownTimeMiliseconds;
@@ -300,7 +300,7 @@ export default {
   max-height: 16vh;
 }
 .activeBackground {
-  background-image: url('../../assets/mengen_four/background.svg');
+  background-image: url('../../assets/mengen_five/background.svg');
   background-size: cover;
   height: 100%;
   width: 100%;
@@ -308,7 +308,7 @@ export default {
   z-index: 20;
 }
 .backgroundFadeIn {
-  background-image: url('../../assets/mengen_five/background.svg');
+  background-image: url('../../assets/mengen_six/background.svg');
   background-size: cover;
   height: 100%;
   width: 100%;
