@@ -4,7 +4,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/lovemathe/404.html"
   },
   {
-    "revision": "d7470db158592df06d53",
+    "revision": "7df2b60a3a9ef87d3aa8",
     "url": "/lovemathe/css/app.69ff4d99.css"
   },
   {
@@ -1552,12 +1552,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/lovemathe/img/thirdImage.613c9d7e.svg"
   },
   {
-    "revision": "66ce2d737b96b2077a65d3dba2c611cb",
+    "revision": "6b262032cf6a8f35228502e4156423e2",
     "url": "/lovemathe/index.html"
   },
   {
-    "revision": "d7470db158592df06d53",
-    "url": "/lovemathe/js/app.4b2ef49b.js"
+    "revision": "7df2b60a3a9ef87d3aa8",
+    "url": "/lovemathe/js/app.d801bf25.js"
   },
   {
     "revision": "f3320bcc2438b44db17a",
@@ -1724,16 +1724,28 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/lovemathe/media/instruction.2fdadee8.mp3"
   },
   {
+    "revision": "3b005876e2282fdddf43f8c6005fe828",
+    "url": "/lovemathe/media/instruction.3b005876.mp3"
+  },
+  {
+    "revision": "407dfec25d3d428de435292799f1a26c",
+    "url": "/lovemathe/media/instruction.407dfec2.mp3"
+  },
+  {
     "revision": "4c7ba046f42f079d83b1edf56fa218ca",
     "url": "/lovemathe/media/instruction.4c7ba046.mp3"
   },
   {
-    "revision": "9054e39f45232f4635a05164a164bb6c",
-    "url": "/lovemathe/media/instruction.9054e39f.mp3"
+    "revision": "85e57002a3f994114b9c4831f5141a5b",
+    "url": "/lovemathe/media/instruction.85e57002.mp3"
   },
   {
     "revision": "9b482037234a9c701f6ff65f5a1c487f",
     "url": "/lovemathe/media/instruction.9b482037.mp3"
+  },
+  {
+    "revision": "9efe556939458c957ffe068d9ad5de12",
+    "url": "/lovemathe/media/instruction.9efe5569.mp3"
   },
   {
     "revision": "a83b071cf33310d626a2b997ff65bde2",
@@ -1742,6 +1754,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "bfea24b7ae74e2121dc7cf5e38cd24ff",
     "url": "/lovemathe/media/instruction.bfea24b7.mp3"
+  },
+  {
+    "revision": "c1efafab723661b298b27d9d304fe7d4",
+    "url": "/lovemathe/media/instruction.c1efafab.mp3"
   },
   {
     "revision": "c7c214a81898298cba014a96c0e8943f",
@@ -1766,6 +1782,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "ddad87b61bd4c08da32371a38bb96dbb",
     "url": "/lovemathe/media/instruction.ddad87b6.mp3"
+  },
+  {
+    "revision": "e78fb3f65841693a81ea9eca5e9986b1",
+    "url": "/lovemathe/media/instruction.e78fb3f6.mp3"
   },
   {
     "revision": "ef479c41ad52ceb9d40b840011dbaec3",
