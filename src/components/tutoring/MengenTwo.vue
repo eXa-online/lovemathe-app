@@ -64,12 +64,9 @@ export default {
   props: ['seperateInstructions', 'seperateTitles'],
   created() {
     this.playInstruction()
-    // setTimeout(() => {this.playInstruction()}, this.bigBackgroundTime)
     this.randomNumber()
-    // this.bigBackgroundTimer()
     if (this.showDuration){
       this.showPuzzleForDuration(this.showDuration)
-      // setTimeout(() => {this.showPuzzleForDuration(this.showDuration)}, this.bigBackgroundTime)
     }
   },
   computed: {
@@ -110,11 +107,6 @@ export default {
         new Audio(require(`../../assets/${this.gamePath}/instruction.mp3`)).play()
       }
     },
-    /*
-    bigBackgroundTimer () {
-      setTimeout(() => {this.bigBackground = false}, this.bigBackgroundTime)
-    },
-     */
     evalSelection(givenSolution) {
       if (this.preventDoubleClick()) {
         if(this.randomIndex === 0 || this.randomIndex === 1 || this.randomIndex === 2) {
@@ -172,11 +164,9 @@ export default {
             this.badgeIndex++;
             this.randomNumber();
             if (this.badgeIndex === 4) {
-              // setTimeout(() => { this.switchToNext()}, 1500)
               this.bigBackground = true
               setTimeout(() => {this.switchToNext()}, this.bigBackgroundTime)
               new Audio(require(`../../assets/${this.gamePath}/inBetweenAudio.mp3`)).play()
-              // this.$store.dispatch('setSimultanerfassungDone', this.level)
             }
           }, 2000)
         }
