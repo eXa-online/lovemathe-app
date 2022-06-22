@@ -47,8 +47,8 @@ export default {
       date: Date.now() + 6000,
       countButtons: 2,
       countButtons2: 6,
-      title: 'Von was siehst du mehr auf dem Bild?',
-      title2: 'Wieviel mehr sind es?',
+      title: 'Siehst du mehr Wale oder mehr Seepferdchen, klicke auf das richtige Bild!',
+      title2: 'Wieviele mehr mehr kannst du erkennen?',
       audioDuration: 6000,
       gameName: 'Mengen_Six',
       showDemo: true,
@@ -132,6 +132,7 @@ export default {
             document.getElementById('button-'+givenSolution).classList.remove('button_right');
             document.getElementById('image-'+givenSolution).classList.remove('button_image_valuation');
             this.firstGame = false
+            new Audio(require(`../../assets/${this.gamePath}/second_instruction.mp3`)).play()
           }, 2000)
         }
         if (!isCorrect) {
