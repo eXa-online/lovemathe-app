@@ -46,7 +46,7 @@ export default {
       firstPuzzle: true,
       date: Date.now() + 6000,
       countButtons: 2,
-      countButtons2: 4,
+      countButtons2: 6,
       title: 'Von was siehst du mehr auf dem Bild?',
       title2: 'Wieviel mehr sind es?',
       audioDuration: 6000,
