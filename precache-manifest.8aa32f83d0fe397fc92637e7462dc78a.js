@@ -4,8 +4,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/lovemathe/404.html"
   },
   {
-    "revision": "7df2b60a3a9ef87d3aa8",
-    "url": "/lovemathe/css/app.69ff4d99.css"
+    "revision": "cc3e911f8c1afebc740d",
+    "url": "/lovemathe/css/app.154e9eec.css"
   },
   {
     "revision": "02cd2c3af4e9c1f793dcf9a2919b36f2",
@@ -120,6 +120,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/lovemathe/img/0.75850914.svg"
   },
   {
+    "revision": "7f93161b3e71f4b9e8ab7b88f2e3aaa2",
+    "url": "/lovemathe/img/0.7f93161b.svg"
+  },
+  {
     "revision": "86b81d7114edc82e849094ca08880693",
     "url": "/lovemathe/img/0.86b81d71.svg"
   },
@@ -206,10 +210,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "cb1abb73e0f64f5d8a2eadf6dadd52c0",
     "url": "/lovemathe/img/0.cb1abb73.svg"
-  },
-  {
-    "revision": "d1e840f195712b16220192bfda1c0823",
-    "url": "/lovemathe/img/0.d1e840f1.svg"
   },
   {
     "revision": "d5aef3a9689031a973971255140daf0c",
@@ -1552,12 +1552,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/lovemathe/img/thirdImage.613c9d7e.svg"
   },
   {
-    "revision": "6b262032cf6a8f35228502e4156423e2",
+    "revision": "40ef992711723b875f8b16f362308b58",
     "url": "/lovemathe/index.html"
   },
   {
-    "revision": "7df2b60a3a9ef87d3aa8",
-    "url": "/lovemathe/js/app.d801bf25.js"
+    "revision": "cc3e911f8c1afebc740d",
+    "url": "/lovemathe/js/app.563f622f.js"
   },
   {
     "revision": "f3320bcc2438b44db17a",
@@ -1668,6 +1668,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/lovemathe/media/inBetweenAudio.552396cd.mp3"
   },
   {
+    "revision": "5742b6136d3109481945524987dbeae3",
+    "url": "/lovemathe/media/inBetweenAudio.5742b613.mp3"
+  },
+  {
     "revision": "81c2de345d9df8359061f103b795e98d",
     "url": "/lovemathe/media/inBetweenAudio.81c2de34.mp3"
   },
@@ -1678,6 +1682,18 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "9dbe9a5c93f791e207513460d59a307c",
     "url": "/lovemathe/media/inBetweenAudio.9dbe9a5c.mp3"
+  },
+  {
+    "revision": "be1dfd5526e34ad73e41d1a42db6dc71",
+    "url": "/lovemathe/media/inBetweenAudio.be1dfd55.mp3"
+  },
+  {
+    "revision": "c6103c27270923961cab79603e167074",
+    "url": "/lovemathe/media/inBetweenAudio.c6103c27.mp3"
+  },
+  {
+    "revision": "c63a484836f07048fb79944ca921df8e",
+    "url": "/lovemathe/media/inBetweenAudio.c63a4848.mp3"
   },
   {
     "revision": "c8dfb83ebde364815c8f697f3ea888be",
@@ -1694,6 +1710,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "da0c792502a1c0655ce44f506f4c912b",
     "url": "/lovemathe/media/inBetweenAudio.da0c7925.mp3"
+  },
+  {
+    "revision": "e0a0fcf46cb6dd25553055288704537d",
+    "url": "/lovemathe/media/inBetweenAudio.e0a0fcf4.mp3"
+  },
+  {
+    "revision": "e1dda7edb7b174683591b6e8e41aab1d",
+    "url": "/lovemathe/media/inBetweenAudio.e1dda7ed.mp3"
   },
   {
     "revision": "e23cd73a9d7ab6ab7e6431701ee2359e",
@@ -1810,6 +1834,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "2139c3b9de443d211ce4e617d0d54f6d",
     "url": "/lovemathe/media/secondAudio.2139c3b9.mp3"
+  },
+  {
+    "revision": "696cb491e6e6000ed7b542e23076b5dd",
+    "url": "/lovemathe/media/second_instruction.696cb491.mp3"
   },
   {
     "revision": "67c935a632d7bb6802193cbd7559a567",
