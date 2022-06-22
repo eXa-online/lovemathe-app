@@ -56,7 +56,7 @@ export default {
       solutions: 0,
       level: 6,
       bigBackground: false,
-      bigBackgroundTime: 4000,
+      bigBackgroundTime: 10000,
       firstGame: true,
     }
   },
@@ -186,6 +186,7 @@ export default {
             if (this.badgeIndex === 4) {
               this.bigBackground = true
               setTimeout(() => {this.switchToNext()}, this.bigBackgroundTime)
+              new Audio(require(`../../assets/${this.gamePath}/inBetweenAudio.mp3`)).play()
             }
           }, 2000)
         }

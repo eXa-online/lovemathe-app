@@ -56,7 +56,7 @@ export default {
       solutions: 0,
       level: 5,
       bigBackground: false,
-      bigBackgroundTime: 4000,
+      bigBackgroundTime: 10000,
       firstGame: true,
     }
   },
@@ -186,6 +186,7 @@ export default {
             if (this.badgeIndex === 4) {
               this.bigBackground = true
               setTimeout(() => {this.switchToNext()}, this.bigBackgroundTime)
+              new Audio(require(`../../assets/${this.gamePath}/inBetweenAudio.mp3`)).play()
             }
           }, 2000)
         }
@@ -314,8 +315,8 @@ export default {
   width: 100%;
   position: absolute;
   z-index: 30;
-  -webkit-animation: fadeinout 4s linear forwards;
-  animation: fadeinout 4s linear forwards;
+  -webkit-animation: fadeinout 8s linear forwards;
+  animation: fadeinout 8s linear forwards;
 }
 @-webkit-keyframes fadeinout {
   0% {opacity:0;}
