@@ -56,13 +56,10 @@ export default {
   },
   props: [],
   created() {
-    // this.playInstruction()
-    setTimeout(() => {this.playInstruction()}, this.bigBackgroundTime)
+    this.playInstruction()
     this.randomNumber()
-    //this.bigBackgroundTimer()
     if (this.showDuration){
       this.showPuzzleForDuration(this.showDuration)
-      // setTimeout(() => {this.showPuzzleForDuration(this.showDuration)}, this.bigBackgroundTime)
     }
   },
   computed: {
@@ -94,17 +91,14 @@ export default {
     },
     playInstruction(){
       if (this.seperateInstructions) {
-        new Audio(require(`../../assets/${this.gamePath}/instructions/${this.puzzleIndex}.mp3`)).play()
+        if (this.badgeIndex < 4) {
+          new Audio(require(`../../assets/${this.gamePath}/instructions/${this.puzzleIndex}.mp3`)).play()
+        }
       }
       else {
         new Audio(require(`../../assets/${this.gamePath}/instruction.mp3`)).play()
       }
     },
-    /*
-    bigBackgroundTimer () {
-      setTimeout(() => {this.bigBackground = false}, this.bigBackgroundTime)
-    },
-     */
     evalSelection(givenSolution) {
       if (this.preventDoubleClick()) {
         let isCorrect = givenSolution == this.solutions

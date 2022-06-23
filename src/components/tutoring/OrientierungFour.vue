@@ -38,7 +38,6 @@ export default {
       firstPuzzle: true,
       date: Date.now() + 6000,
       countButtons: 4,
-      // title: 'Wie viele Fische siehst du? Klicke auf das passende Würfelbild.',
       audioDuration: 6000,
       gameName: 'Orientation_Four',
       showDemo: true,
@@ -58,13 +57,11 @@ export default {
   },
   props: [],
   created() {
-    // this.playInstruction()
-    setTimeout(() => {this.playInstruction()}, this.bigBackgroundTime)
+    this.playInstruction()
     this.randomNumber()
     this.bigBackgroundTimer()
     if (this.showDuration){
       this.showPuzzleForDuration(this.showDuration)
-      // setTimeout(() => {this.showPuzzleForDuration(this.showDuration)}, this.bigBackgroundTime)
     }
   },
   computed: {
@@ -96,7 +93,9 @@ export default {
     },
     playInstruction(){
       if (this.seperateInstructions) {
-        new Audio(require(`../../assets/${this.gamePath}/instructions/${this.puzzleIndex}.mp3`)).play()
+        if (this.badgeIndex < 4) {
+          new Audio(require(`../../assets/${this.gamePath}/instructions/${this.puzzleIndex}.mp3`)).play()
+        }
       }
       else {
         new Audio(require(`../../assets/${this.gamePath}/instruction.mp3`)).play()
