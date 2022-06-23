@@ -227,7 +227,8 @@ export default {
   display: flex;
   flex-direction: column;
   row-gap: 1vw;
-  margin-bottom: -6vh;
+  padding-top: 20px;
+  margin-bottom: -3vh;
   margin-left: 15vw;
 }
 .puzzle_badge__large {
@@ -245,6 +246,7 @@ export default {
   align-items: center;
   justify-content: space-evenly;
   padding: 0vh 3vw;
+  margin-bottom: 20px;
 }
 .puzzle_body .puzzle {
   min-height: 7vh;
