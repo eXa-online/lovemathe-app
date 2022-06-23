@@ -4,8 +4,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/lovemathe/404.html"
   },
   {
-    "revision": "b7883156471963fa44a6",
-    "url": "/lovemathe/css/app.80911c29.css"
+    "revision": "2b21aa07a38a2754a1fd",
+    "url": "/lovemathe/css/app.0665c79b.css"
   },
   {
     "revision": "02cd2c3af4e9c1f793dcf9a2919b36f2",
@@ -1552,12 +1552,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/lovemathe/img/thirdImage.613c9d7e.svg"
   },
   {
-    "revision": "250db82e598d7ac07b017c0e791ecc03",
+    "revision": "9271e154643935cb3d93cb7781a93946",
     "url": "/lovemathe/index.html"
   },
   {
-    "revision": "b7883156471963fa44a6",
-    "url": "/lovemathe/js/app.6ff4ffbb.js"
+    "revision": "2b21aa07a38a2754a1fd",
+    "url": "/lovemathe/js/app.4420e7d7.js"
   },
   {
     "revision": "f3320bcc2438b44db17a",
