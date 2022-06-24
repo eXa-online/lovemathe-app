@@ -27,17 +27,17 @@
         </router-link>
         <router-link
             :class="[(completedGames.length === 4 ? 'animated_badge_small' : ''),(completedGames.includes('Add_Quantities') ? 'gameEnabled' :  'gameDisabled')]"
-            class="badge seriation" to="/seriation"
+            class="badge complete_seriation" to="/complete_seriation"
             title="Seriation"
         >
-          <img v-bind:class="[completedGames.includes('Add_Quantities') ? '' :  'non_active_badge']" class="seriation_img" :src="currentBadgeByName('Seriation')"/>
+          <img v-bind:class="[completedGames.includes('Add_Quantities') ? '' :  'non_active_badge']" class="complete_seriation_img" :src="currentBadgeByName('Complete_Seriation')"/>
         </router-link>
         <router-link
-            :class="[(completedGames.length === 5 ? 'animated_badge_big' : ''),(completedGames.includes('Seriation') ? 'gameEnabled' :  'gameDisabled')]"
+            :class="[(completedGames.length === 5 ? 'animated_badge_big' : ''),(completedGames.includes('Complete_Seriation') ? 'gameEnabled' :  'gameDisabled')]"
             class="badge quantity_comparison" to="/quantity_comparison"
             title="Mengenvergleich"
         >
-          <img v-bind:class="[completedGames.includes('Seriation') ? '' :  'non_active_badge']" class="quantity_comparison_img" :src="currentBadgeByName('Quantity_Comparison')"/>
+          <img v-bind:class="[completedGames.includes('Complete_Seriation') ? '' :  'non_active_badge']" class="quantity_comparison_img" :src="currentBadgeByName('Quantity_Comparison')"/>
         </router-link>
         <router-link
             :class="[(completedGames.length === 6 ? 'animated-house' : ''),(completedGames.includes('Quantity_Comparison') ? 'gameEnabled' :  'gameDisabled')]"
@@ -158,11 +158,11 @@ export default {
   max-width: 25vw;
 }
 
-.seriation {
+.complete_seriation {
   grid-area: 24 / 11 / auto / auto;
   transform: scale(1.4);
 }
-.seriation_img {
+.complete_seriation_img {
   max-height: 20vh;
   max-width: 20vw;
 }

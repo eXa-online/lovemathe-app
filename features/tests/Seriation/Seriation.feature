@@ -5,7 +5,7 @@ Funktionalität Gegenstände in Zahlenfolgen einordnen
   ein Spiel haben in dem die Kinder Gegenstände in Lücken, der entsprechenden Zahlenfolge, einordnen müssen
   # Lösung in From von Eimern mit 1..6 Löchern
   # Buttons mit Eimern von denen einer in der Reihe fehlt
-  Szenario Seriation
+  Szenario CompleteSeriation
     Gegeben sei das Seriationsspiel mit mit folgenden Parametern
       | Level | Anordnung/Bild       | Zahlenfolge (Eimer)  | Buttons (Eimer) | Lösung |
       | 1     | wie Würfelbilder     | 1, 2, 4, 5, 6        | 2, 3, 5         | 3      |
