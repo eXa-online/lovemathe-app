@@ -41,16 +41,17 @@
         </router-link>
         <router-link
             :class="[(completedGames.length === 6 ? 'animated-house' : ''),(completedGames.includes('Quantity_Comparison') ? 'gameEnabled' :  'gameDisabled')]"
-            class="badge orientation" to="/orientation" title="Orientation"
+            class="badge where_is" to="/where_is"
+            title="Orientierung"
         >
-          <img v-bind:class="[completedGames.includes('Quantity_Comparison') ? '' :  'non_active_badge']" class="orientation_img" :src="currentBadgeByName('Orientation')"/>
+          <img v-bind:class="[completedGames.includes('Quantity_Comparison') ? '' :  'non_active_badge']" class="where_is_img" :src="currentBadgeByName('Where_Is')"/>
         </router-link>
         <router-link
-            :class="[(completedGames.length === 7 ? 'animated_badge_small' : ''),(completedGames.includes('Orientation') ? 'gameEnabled' :  'gameDisabled')]"
+            :class="[(completedGames.length === 7 ? 'animated_badge_small' : ''),(completedGames.includes('Where_Is') ? 'gameEnabled' :  'gameDisabled')]"
             class="badge reduce_quantities" to="/reduce_quantities"
             title="Mengen reduzieren"
         >
-          <img v-bind:class="[completedGames.includes('Orientation') ? '' :  'non_active_badge']" class="reduce_quantities_img" :src="currentBadgeByName('Reduce_Quantities')"/>
+          <img v-bind:class="[completedGames.includes('Where_Is') ? '' :  'non_active_badge']" class="reduce_quantities_img" :src="currentBadgeByName('Reduce_Quantities')"/>
         </router-link>
         <img v-if="isFine" class="badge isGood" src="../assets/kid_has_no_problems.svg" alt=""/>
       </div>
@@ -166,11 +167,11 @@ export default {
   max-width: 20vw;
 }
 
-.orientation {
+.where_is {
   grid-area: 17 / 1 / auto / auto;
   transform: scale(0.8);
 }
-.orientation_img {
+.where_is_img {
   max-height: 40vh;
   max-width: 20vw;
 }

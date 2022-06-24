@@ -1,6 +1,6 @@
 <template>
   <GameTemplate
-    gameName="Orientation"
+    gameName="Where_Is"
     title="Dir wird eine Stelle im Regal gesagt. Welcher Gegenstand ist dort? Klicke auf ihn!"
     :countButtons="6"
     :showDemo="true"
@@ -19,7 +19,7 @@
 <script>
 import GameTemplate from './generic/GameTemplate'
 export default {
-  name: 'Orientation',
+  name: 'WhereIs',
   components: {GameTemplate}
 }
 </script>
