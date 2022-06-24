@@ -8,14 +8,14 @@ let store = new Vuex.Store({
         completedGames: [],
         badgeIndexes: [],
         isFine: false,
-        gameOrder: ['Counting', 'Quantity_Equality', 'Add_Quantities','Quantity_Comparison', 'Reduce_Quantities', 'One_Look', 'Seriation', 'Orientation'],
+        gameOrder: ['Count_Up', 'Quantity_Equality', 'Add_Quantities','Quantity_Comparison', 'Reduce_Quantities', 'One_Look', 'Seriation', 'Orientation'],
         activeGames: new Set(),
         currentBadges: {
             'Quantity_Equality': require('../assets/quantity_equality/badges/0.png'),
             'Quantity_Comparison': require('../assets/quantity_comparison/badges/0.png'),
             'Add_Quantities': require('../assets/add_quantities/badges/0.png'),
             'Reduce_Quantities': require('../assets/reduce_quantities/badges/0.png'),
-            'Counting': require('../assets/counting/badges/0.png'),
+            'Count_Up': require('../assets/count_up/badges/0.png'),
             'One_Look': require('../assets/one_look/badges/0.png'),
             'Seriation': require('../assets/seriation/badges/0.png'),
             'Orientation': require('../assets/orientation/badges/0.png'),
@@ -25,10 +25,10 @@ let store = new Vuex.Store({
             'Quantity_Comparison': require('../assets/quantity_comparison/badges/0.png'),
             'Add_Quantities': require('../assets/add_quantities/badges/0.png'),
             'Reduce_Quantities': require('../assets/reduce_quantities/badges/0.png'),
-            'Counting': require('../assets/counting/badges/0.png'),
+            'Count_Up': require('../assets/count_up/badges/0.png'),
             'One_Look': require('../assets/one_look/badges/0.png'),
             'Seriation': require('../assets/seriation/badges/0.png'),
-            'Orientation': require('../assets/orientation/badges/0.png'),
+            'Where_Is': require('../assets/where_is/badges/0.png'),
         }
     },
     mutations: {
@@ -110,6 +110,6 @@ let store = new Vuex.Store({
 },
 )
 
-store._mutations['initializeActiveBadge'][0]('Counting');
+store._mutations['initializeActiveBadge'][0]('Count_Up');
 
 export default store
