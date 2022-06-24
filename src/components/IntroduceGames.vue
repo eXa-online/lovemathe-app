@@ -77,7 +77,7 @@ export default {
       seperateInstructions: true,
       seperateTitles: {
         0: 'Klicke auf den Hut',
-        1: 'Klicke auf die Kanne',
+        1: 'Klicke auf die Gießkanne',
         2: 'Klicke auf die Schaufel',
         3: 'Klicke auf den Eimer',
         4: 'Klicke auf den Korb',
