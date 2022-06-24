@@ -89,7 +89,6 @@ export default {
         if (this.puzzleIndex === this.solutions.length) {
           this.postGameSetup({'name':this.gameName, 'badgePath':this.currentBadge})
           this.completed = true;
-          this.$store.dispatch('setGameDone', this.gameName)
           this.$store.dispatch('setBadgeIndex', this.badgeIndex)
           this.$store.dispatch('isKidFine')
         }
