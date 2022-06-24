@@ -1,15 +1,15 @@
 <template>
   <div class="home" v-bind:style="[areAllGamesDone === true ? {'backgroundImage': 'url('+allGamesDoneImage+')'} : {'backgroundImage': 'url('+gamesNotDoneYetImage+')'}]">
       <div class="badges">
-        <router-link :class="[completedGames.length === 0 ? 'animated-tree' : '']" class="badge counting" to="/counting" title="Abzählen">
-          <img class="counting_img" :src="currentBadgeByName('Counting')"/>
+        <router-link :class="[completedGames.length === 0 ? 'animated-tree' : '']" class="badge count_up" to="/count_up" title="Abzählen">
+          <img class="count_up_img" :src="currentBadgeByName('Count_Up')"/>
         </router-link>
         <router-link
-            :class="[(completedGames.length === 1 ? 'animated_badge_big' : ''),(completedGames.includes('Counting') ? 'gameEnabled' :  'gameDisabled')]"
+            :class="[(completedGames.length === 1 ? 'animated_badge_big' : ''),(completedGames.includes('Count_Up') ? 'gameEnabled' :  'gameDisabled')]"
             class="badge quantity_equality" to="/quantity_equality"
             title="Mengengleichheit"
         >
-          <img v-bind:class="[completedGames.includes('Counting') ? '' :  'non_active_badge']" class="quantity_equality_img" :src="currentBadgeByName('Quantity_Equality')"/>
+          <img v-bind:class="[completedGames.includes('Count_Up') ? '' :  'non_active_badge']" class="quantity_equality_img" :src="currentBadgeByName('Quantity_Equality')"/>
         </router-link>
         <router-link
             :class="[(completedGames.length === 2 ? 'animated-cloud' : ''),(completedGames.includes('Quantity_Equality') ? 'gameEnabled' :  'gameDisabled')]"
@@ -115,11 +115,11 @@ export default {
   max-width: 20vw;
 }
 
-.counting {
+.count_up {
   grid-area: 12 / 23 / auto / auto;
   transform: scale(2);
 }
-.counting_img {
+.count_up_img {
   max-height: 25vh;
 }
 

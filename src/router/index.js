@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Introduction from '@/components/Introduction.vue'
 import AddQuantities from '@/components/AddQuantities.vue'
-import Counting from '@/components/Counting.vue'
+import CountUp from '@/components/CountUp.vue'
 import OneLook from '@/components/OneLook.vue'
 import OverallBadge from '@/components/OverallBadge.vue'
 import QuantityComparison from '@/components/QuantityComparison.vue'
@@ -45,7 +45,7 @@ const routes = [
 
   { path: '/overall-badge', component: OverallBadge },
   { path: '/add_quantities', component: AddQuantities },
-  { path: '/counting', component: Counting },
+  { path: '/count_up', component: CountUp },
   { path: '/one_look', component: OneLook },
   { path: '/quantity_comparison', component: QuantityComparison },
   { path: '/quantity_equality', component: QuantityEquality },

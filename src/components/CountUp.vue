@@ -1,6 +1,6 @@
 <template>
   <GameTemplate
-    gameName="Counting"
+    gameName="Count_Up"
     title="Wie viele Äpfel siehst du? Klicke auf das passende Würfelbild."
     :countButtons="6"
     :showDemo="true"
@@ -11,7 +11,7 @@
 <script>
 import GameTemplate from './generic/GameTemplate'
 export default {
-  name: 'Counting',
+  name: 'CountUp',
   components: {GameTemplate}
 }
 </script>
