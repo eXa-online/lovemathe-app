@@ -9,7 +9,7 @@ let store = new Vuex.Store({
         badgeIndexes: [],
         isFine: false,
         gameOrder: ['Count_Up', 'Quantity_Equality', 'Add_Quantities','Quantity_Comparison', 'Reduce_Quantities', 'One_Look', 'Complete_Seriation', 'Where_Is'],
-        activeGames: new Set(),
+        nextGame: 'Count_Up',
         currentBadges: {
             'Quantity_Equality': require('../assets/quantity_equality/badges/0.png'),
             'Quantity_Comparison': require('../assets/quantity_comparison/badges/0.png'),
@@ -38,19 +38,13 @@ let store = new Vuex.Store({
         activateNextGame(state, name) {
             let nextGameIndex = state.gameOrder.indexOf(name) + 1;
             if (nextGameIndex < state.gameOrder.length){
-                let nextGame = state.gameOrder[nextGameIndex];
-                if (!state.activeGames.has(nextGame)){
-                    state.currentBadges[nextGame] = state.activeBadges[nextGame];
-                    state.activeGames.add(nextGame)
-                }
+                state.nextGame = state.gameOrder[nextGameIndex];
+            } else {
+                state.nextGame = ''
             }
         },
         completeGame(state, gameName){
             state.completedGames.add(gameName)
-        },
-        initializeActiveBadge(state, firstGame){
-            state.currentBadges[firstGame] = state.activeBadges[firstGame];
-            state.activeGames.add(firstGame)
         },
         BADGE_INDEX (state, badgeIndex){
             if(state.badgeIndexes.length < 8) {
@@ -96,6 +90,9 @@ let store = new Vuex.Store({
                 state.gameOrder.every((gameName)=>{
                     return state.completedGames.indexOf(gameName)> -1;
                 });
+        },
+        nextGame (state) {
+            return state.nextGame;
         }
     },
     modules: {
@@ -103,7 +100,5 @@ let store = new Vuex.Store({
     }
 },
 )
-
-store._mutations['initializeActiveBadge'][0]('Count_Up');
 
 export default store
