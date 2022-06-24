@@ -8,7 +8,7 @@ import QuantityComparison from '@/components/QuantityComparison.vue'
 import QuantityEquality from '@/components/QuantityEquality.vue'
 import ReduceQuantities from '@/components/ReduceQuantities.vue'
 import Seriation from '@/components/Seriation.vue'
-import Orientation from '@/components/Orientation.vue'
+import WhereIs from '@/components/WhereIs.vue'
 
 import TutoringOverallBadge from '@/components/tutoring/TutoringOverallBadge.vue'
 import TutoringStart from '@/components/tutoring/TutoringStart.vue'
@@ -51,7 +51,7 @@ const routes = [
   { path: '/quantity_equality', component: QuantityEquality },
   { path: '/reduce_quantities', component: ReduceQuantities },
   { path: '/seriation', component: Seriation },
-  { path: '/orientation', component: Orientation },
+  { path: '/where_is', component: WhereIs },
 
   { path: '/tutoring/vorschule', component: TutoringOverallBadge },
   { path: '/tutoring/', component: TutoringStart },
