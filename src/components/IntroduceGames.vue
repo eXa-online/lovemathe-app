@@ -29,8 +29,8 @@
           <img class="puzzle_background" :src="badgeBackground">
           <img class="puzzle_badge__small" :src="currentBadge">
         </div>
-        <img v-if="introduction" class="puzzle_help" @click="activateGame" :src="getHelpButtonImage">
-        <img v-if="!introduction" class="puzzle_help" @click="playInstruction" :src="getHelpButtonImage">
+        <img v-if="introduce_games" class="puzzle_help" @click="activateGame" :src="getHelpButtonImage">
+        <img v-if="!introduce_games" class="puzzle_help" @click="playInstruction" :src="getHelpButtonImage">
       </div>
     </div>
     <div class="puzzle_bottom" v-if="!completed && image === 6">
@@ -47,20 +47,20 @@
 <script>
 import { mapActions } from 'vuex'
 export default {
-  name: "Introduction",
+  name: "IntroduceGames",
   data() {
     return {
       showStartButton: true,
       image: 0,
-      introduction: true,
+      introduce_games: true,
       isFalse: true,
       activeButtons: false,
       activeTimer: false,
-      letsStart: require('../assets/introduction/start.svg'),
-      firstImage:require('../assets/introduction/firstImage.svg'),
+      letsStart: require('../assets/introduce_games/start.svg'),
+      firstImage:require('../assets/introduce_games/firstImage.svg'),
       completed: false,
       badgeIndex: 0,
-      gamePath: 'introduction',
+      gamePath: 'introduce_games',
       puzzleIndex: 0,
       getHelpButtonImage: require('../assets/help.svg'),
       cooldownTimeMiliseconds: 1000,
@@ -70,7 +70,7 @@ export default {
       countButtons: 6,
       title: 'Einführung',
       audioDuration: 0,
-      gameName: 'Introduction',
+      gameName: 'Introduce_Games',
       showDemo: true,
       randomIndex: 0,
       solutions: 0,
@@ -91,19 +91,19 @@ export default {
   },
   computed: {
     buttonImages: function() {
-      return [...Array(this.countButtons)].map((_, index)  => require(`../assets/introduction/game/buttons/${index}.svg`));
+      return [...Array(this.countButtons)].map((_, index)  => require(`../assets/introduce_games/game/buttons/${index}.svg`));
     },
     currentBadge: function() {
-      return require(`../assets/introduction/game/badges/${this.badgeIndex}.svg`)
+      return require(`../assets/introduce_games/game/badges/${this.badgeIndex}.svg`)
     },
     currentPuzzleBody: function() {
-      return require(`../assets/introduction/game/puzzles/${this.randomIndex}.svg`)
+      return require(`../assets/introduce_games/game/puzzles/${this.randomIndex}.svg`)
     },
     badgeBackground: function() {
       return require('../assets/badge_background.svg')
     },
     emptyBackground: function(){
-      return require(`../assets/introduction/game/puzzles/6.svg`)
+      return require(`../assets/introduce_games/game/puzzles/6.svg`)
     },
     currentTitle: function() {
       return this.seperateTitles[this.puzzleIndex]
@@ -128,23 +128,23 @@ export default {
     },
     playAudio(){
       let introductionAudio = new Audio()
-      introductionAudio.src = require(`../assets/introduction/firstAudio.mp3`)
+      introductionAudio.src = require(`../assets/introduce_games/firstAudio.mp3`)
       introductionAudio.play()
-      setTimeout(() => {introductionAudio.src = require(`../assets/introduction/secondAudio.mp3`)},16000)
+      setTimeout(() => {introductionAudio.src = require(`../assets/introduce_games/secondAudio.mp3`)},16000)
       setTimeout(() => {introductionAudio.play()},17000)
-      setTimeout(() => {introductionAudio.src = require(`../assets/introduction/thirdAudio.mp3`)},43000)
+      setTimeout(() => {introductionAudio.src = require(`../assets/introduce_games/thirdAudio.mp3`)},43000)
       setTimeout(() => {introductionAudio.play()},44000)
-      setTimeout(() => {introductionAudio.src = require(`../assets/introduction/fourthAudio.mp3`)},62000)
+      setTimeout(() => {introductionAudio.src = require(`../assets/introduce_games/fourthAudio.mp3`)},62000)
       setTimeout(() => {introductionAudio.play()},63000)
     },
     activateGame() {
-      new Audio(require(`../assets/introduction/great.mp3`)).play()
-      setTimeout(() => {new Audio(require(`../assets/introduction/game/instructions/${this.puzzleIndex}.mp3`)).play()},3000)
+      new Audio(require(`../assets/introduce_games/great.mp3`)).play()
+      setTimeout(() => {new Audio(require(`../assets/introduce_games/game/instructions/${this.puzzleIndex}.mp3`)).play()},3000)
       this.isFalse = false
       this.activeButtons = true
     },
     playFalseSound() {
-      new Audio(require(`../assets/introduction/false.mp3`)).play()
+      new Audio(require(`../assets/introduce_games/false.mp3`)).play()
     },
     ...mapActions(['postGameSetup']),
     randomNumber: function () {
@@ -154,10 +154,10 @@ export default {
     },
     playInstruction(){
       if (this.badgeIndex < 4) {
-        new Audio(require(`../assets/introduction/game/instructions/${this.puzzleIndex}.mp3`)).play()
+        new Audio(require(`../assets/introduce_games/game/instructions/${this.puzzleIndex}.mp3`)).play()
       }
       else {
-        new Audio(require(`../assets/introduction/correct.mp3`)).play()
+        new Audio(require(`../assets/introduce_games/correct.mp3`)).play()
       }
     },
     evalSelection(givenSolution) {
