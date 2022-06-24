@@ -1,57 +1,57 @@
 <template>
   <div class="home" v-bind:style="[areAllGamesDone === true ? {'backgroundImage': 'url('+allGamesDoneImage+')'} : {'backgroundImage': 'url('+gamesNotDoneYetImage+')'}]">
       <div class="badges">
-        <router-link :class="[completedGames.length === 0 ? 'animated-tree' : '']" class="badge count_up" to="/count_up" title="Abzählen">
+        <router-link :class="[completedGames.size === 0 ? 'animated-tree' : '']" class="badge count_up" to="/count_up" title="Abzählen">
           <img class="count_up_img" :src="currentBadgeByName('Count_Up')"/>
         </router-link>
         <router-link
-            :class="[(completedGames.length === 1 ? 'animated_badge_big' : ''),(completedGames.includes('Count_Up') ? 'gameEnabled' :  'gameDisabled')]"
+            :class="[(completedGames.size === 1 ? 'animated_badge_big' : ''),(completedGames.has('Count_Up') ? 'gameEnabled' :  'gameDisabled')]"
             class="badge quantity_equality" to="/quantity_equality"
             title="Mengengleichheit"
         >
-          <img v-bind:class="[completedGames.includes('Count_Up') ? '' :  'non_active_badge']" class="quantity_equality_img" :src="currentBadgeByName('Quantity_Equality')"/>
+          <img v-bind:class="[completedGames.has('Count_Up') ? '' :  'non_active_badge']" class="quantity_equality_img" :src="currentBadgeByName('Quantity_Equality')"/>
         </router-link>
         <router-link
-            :class="[(completedGames.length === 2 ? 'animated-cloud' : ''),(completedGames.includes('Quantity_Equality') ? 'gameEnabled' :  'gameDisabled')]"
+            :class="[(completedGames.size === 2 ? 'animated-cloud' : ''),(completedGames.has('Quantity_Equality') ? 'gameEnabled' :  'gameDisabled')]"
             class="badge one_look" to="/one_look"
             title="Simultanerfassung"
         >
-          <img v-bind:class="[completedGames.includes('Quantity_Equality') ? '' :  'non_active_badge']" class="one_look_img" :src="currentBadgeByName('One_Look')"/>
+          <img v-bind:class="[completedGames.has('Quantity_Equality') ? '' :  'non_active_badge']" class="one_look_img" :src="currentBadgeByName('One_Look')"/>
         </router-link>
         <router-link
-            :class="[(completedGames.length === 3 ? 'animated_badge_small' : ''),(completedGames.includes('One_Look') ? 'gameEnabled' :  'gameDisabled')]"
+            :class="[(completedGames.size === 3 ? 'animated_badge_small' : ''),(completedGames.has('One_Look') ? 'gameEnabled' :  'gameDisabled')]"
             class="badge add_quantities" to="/add_quantities"
             title="Mengen ergänzen"
         >
-          <img v-bind:class="[completedGames.includes('One_Look') ? '' :  'non_active_badge']" class="add_quantities_img" :src="currentBadgeByName('Add_Quantities')"/>
+          <img v-bind:class="[completedGames.has('One_Look') ? '' :  'non_active_badge']" class="add_quantities_img" :src="currentBadgeByName('Add_Quantities')"/>
         </router-link>
         <router-link
-            :class="[(completedGames.length === 4 ? 'animated_badge_small' : ''),(completedGames.includes('Add_Quantities') ? 'gameEnabled' :  'gameDisabled')]"
+            :class="[(completedGames.size === 4 ? 'animated_badge_small' : ''),(completedGames.has('Add_Quantities') ? 'gameEnabled' :  'gameDisabled')]"
             class="badge complete_seriation" to="/complete_seriation"
             title="Seriation"
         >
-          <img v-bind:class="[completedGames.includes('Add_Quantities') ? '' :  'non_active_badge']" class="complete_seriation_img" :src="currentBadgeByName('Complete_Seriation')"/>
+          <img v-bind:class="[completedGames.has('Add_Quantities') ? '' :  'non_active_badge']" class="complete_seriation_img" :src="currentBadgeByName('Complete_Seriation')"/>
         </router-link>
         <router-link
-            :class="[(completedGames.length === 5 ? 'animated_badge_big' : ''),(completedGames.includes('Complete_Seriation') ? 'gameEnabled' :  'gameDisabled')]"
+            :class="[(completedGames.size === 5 ? 'animated_badge_big' : ''),(completedGames.has('Complete_Seriation') ? 'gameEnabled' :  'gameDisabled')]"
             class="badge quantity_comparison" to="/quantity_comparison"
             title="Mengenvergleich"
         >
-          <img v-bind:class="[completedGames.includes('Complete_Seriation') ? '' :  'non_active_badge']" class="quantity_comparison_img" :src="currentBadgeByName('Quantity_Comparison')"/>
+          <img v-bind:class="[completedGames.has('Complete_Seriation') ? '' :  'non_active_badge']" class="quantity_comparison_img" :src="currentBadgeByName('Quantity_Comparison')"/>
         </router-link>
         <router-link
-            :class="[(completedGames.length === 6 ? 'animated-house' : ''),(completedGames.includes('Quantity_Comparison') ? 'gameEnabled' :  'gameDisabled')]"
+            :class="[(completedGames.size === 6 ? 'animated-house' : ''),(completedGames.has('Quantity_Comparison') ? 'gameEnabled' :  'gameDisabled')]"
             class="badge where_is" to="/where_is"
             title="Orientierung"
         >
-          <img v-bind:class="[completedGames.includes('Quantity_Comparison') ? '' :  'non_active_badge']" class="where_is_img" :src="currentBadgeByName('Where_Is')"/>
+          <img v-bind:class="[completedGames.has('Quantity_Comparison') ? '' :  'non_active_badge']" class="where_is_img" :src="currentBadgeByName('Where_Is')"/>
         </router-link>
         <router-link
-            :class="[(completedGames.length === 7 ? 'animated_badge_small' : ''),(completedGames.includes('Where_Is') ? 'gameEnabled' :  'gameDisabled')]"
+            :class="[(completedGames.size === 7 ? 'animated_badge_small' : ''),(completedGames.has('Where_Is') ? 'gameEnabled' :  'gameDisabled')]"
             class="badge reduce_quantities" to="/reduce_quantities"
             title="Mengen reduzieren"
         >
-          <img v-bind:class="[completedGames.includes('Where_Is') ? '' :  'non_active_badge']" class="reduce_quantities_img" :src="currentBadgeByName('Reduce_Quantities')"/>
+          <img v-bind:class="[completedGames.has('Where_Is') ? '' :  'non_active_badge']" class="reduce_quantities_img" :src="currentBadgeByName('Reduce_Quantities')"/>
         </router-link>
         <img v-if="isFine" class="badge isGood" src="../assets/kid_has_no_problems.svg" alt=""/>
       </div>

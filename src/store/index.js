@@ -5,7 +5,7 @@ import simultanerfassung from "./modules/simultanerfassung.js";
 
 let store = new Vuex.Store({
     state: {
-        completedGames: [],
+        completedGames: new Set(),
         badgeIndexes: [],
         isFine: false,
         gameOrder: ['Count_Up', 'Quantity_Equality', 'Add_Quantities','Quantity_Comparison', 'Reduce_Quantities', 'One_Look', 'Complete_Seriation', 'Where_Is'],
@@ -45,16 +45,12 @@ let store = new Vuex.Store({
                 }
             }
         },
+        completeGame(state, gameName){
+            state.completedGames.add(gameName)
+        },
         initializeActiveBadge(state, firstGame){
             state.currentBadges[firstGame] = state.activeBadges[firstGame];
             state.activeGames.add(firstGame)
-        },
-        GAME_DONE (state, gameName){
-            var gameNotDone = false
-            gameNotDone = !state.completedGames.includes(gameName);
-            if (gameNotDone === true) {
-                state.completedGames.push(gameName)
-            }
         },
         BADGE_INDEX (state, badgeIndex){
             if(state.badgeIndexes.length < 8) {
@@ -80,11 +76,9 @@ let store = new Vuex.Store({
                 });
         },
         postGameSetup(context, payload){
+            context.commit("completeGame", payload.name);
             context.commit("activateNextGame", payload.name);
             context.dispatch("fetchBadge", payload);
-        },
-        setGameDone({commit}, gameName) {
-            commit('GAME_DONE', gameName )
         },
         setBadgeIndex({commit}, badgeIndex ) {
             commit('BADGE_INDEX', badgeIndex )
