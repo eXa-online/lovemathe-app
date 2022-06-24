@@ -7,7 +7,7 @@ import OverallBadge from '@/components/OverallBadge.vue'
 import QuantityComparison from '@/components/QuantityComparison.vue'
 import QuantityEquality from '@/components/QuantityEquality.vue'
 import ReduceQuantities from '@/components/ReduceQuantities.vue'
-import Seriation from '@/components/Seriation.vue'
+import CompleteSeriation from '@/components/CompleteSeriation.vue'
 import WhereIs from '@/components/WhereIs.vue'
 
 import TutoringOverallBadge from '@/components/tutoring/TutoringOverallBadge.vue'
@@ -50,7 +50,7 @@ const routes = [
   { path: '/quantity_comparison', component: QuantityComparison },
   { path: '/quantity_equality', component: QuantityEquality },
   { path: '/reduce_quantities', component: ReduceQuantities },
-  { path: '/seriation', component: Seriation },
+  { path: '/complete_seriation', component: CompleteSeriation },
   { path: '/where_is', component: WhereIs },
 
   { path: '/tutoring/vorschule', component: TutoringOverallBadge },

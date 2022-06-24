@@ -1,6 +1,6 @@
 <template>
   <GameTemplate
-    gameName="Seriation"
+    gameName="Complete_Seriation"
     title="Schau dir die Punkte auf den Eimern genau an! Welcher Eimer gehört in die Lücke! Klicke auf Ihn."
     :countButtons="3"
     :showDemo="true"
@@ -11,7 +11,7 @@
 <script>
 import GameTemplate from './generic/GameTemplate'
 export default {
-  name: 'Seriation',
+  name: 'CompleteSeriation',
   components: {GameTemplate}
 }
 </script>

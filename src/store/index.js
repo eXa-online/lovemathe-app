@@ -8,7 +8,7 @@ let store = new Vuex.Store({
         completedGames: [],
         badgeIndexes: [],
         isFine: false,
-        gameOrder: ['Count_Up', 'Quantity_Equality', 'Add_Quantities','Quantity_Comparison', 'Reduce_Quantities', 'One_Look', 'Seriation', 'Where_Is'],
+        gameOrder: ['Count_Up', 'Quantity_Equality', 'Add_Quantities','Quantity_Comparison', 'Reduce_Quantities', 'One_Look', 'Complete_Seriation', 'Where_Is'],
         activeGames: new Set(),
         currentBadges: {
             'Quantity_Equality': require('../assets/quantity_equality/badges/0.png'),
@@ -17,7 +17,7 @@ let store = new Vuex.Store({
             'Reduce_Quantities': require('../assets/reduce_quantities/badges/0.png'),
             'Count_Up': require('../assets/count_up/badges/0.png'),
             'One_Look': require('../assets/one_look/badges/0.png'),
-            'Seriation': require('../assets/seriation/badges/0.png'),
+            'Complete_Seriation': require('../assets/complete_seriation/badges/0.png'),
             'Where_Is': require('../assets/where_is/badges/0.png'),
         },
         activeBadges: {
@@ -27,8 +27,8 @@ let store = new Vuex.Store({
             'Reduce_Quantities': require('../assets/reduce_quantities/badges/0.png'),
             'Count_Up': require('../assets/count_up/badges/0.png'),
             'One_Look': require('../assets/one_look/badges/0.png'),
-            'Seriation': require('../assets/seriation/badges/0.png'),
-            'WhereIs': require('../assets/where_is/badges/0.png'),
+            'Complete_Seration': require('../assets/complete_seriation/badges/0.png'),
+            'Where_Is': require('../assets/where_is/badges/0.png'),
         }
     },
     mutations: {
