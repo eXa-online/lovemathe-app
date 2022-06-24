@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Introduction from '@/components/Introduction.vue'
+import IntroduceGames from '@/components/IntroduceGames.vue'
 import AddQuantities from '@/components/AddQuantities.vue'
 import CountUp from '@/components/CountUp.vue'
 import OneLook from '@/components/OneLook.vue'
@@ -41,7 +41,7 @@ import MengenFive from '@/components/tutoring/MengenFive';
 import MengenSix from '@/components/tutoring/MengenSix';
 
 const routes = [
-  { path: '/', component: Introduction},
+  { path: '/', component: IntroduceGames},
 
   { path: '/overall-badge', component: OverallBadge },
   { path: '/add_quantities', component: AddQuantities },
