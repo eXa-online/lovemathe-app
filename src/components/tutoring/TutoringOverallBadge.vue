@@ -80,7 +80,8 @@ export default {
   background-image: url("../../assets/mengen_one/background.svg");
 }
 h1 {
-  margin-top: 4%;
+  margin-top: 5%;
+  font-size: 2.5em;
 }
 p {
   padding: 10%;
