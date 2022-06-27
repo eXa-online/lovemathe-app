@@ -6,8 +6,7 @@ import simultanerfassung from "./modules/simultanerfassung.js";
 let store = new Vuex.Store({
     state: {
         completedGames: new Set(),
-        badgeIndexes: [],
-        isFine: false,
+        isFine: true,
         gameOrder: ['Count_Up', 'Quantity_Equality', 'Add_Quantities','Quantity_Comparison', 'Reduce_Quantities', 'One_Look', 'Complete_Seriation', 'Where_Is'],
         nextGame: 'Count_Up',
         currentBadges: {
@@ -36,16 +35,9 @@ let store = new Vuex.Store({
         completeGame(state, gameName){
             state.completedGames.add(gameName)
         },
-        BADGE_INDEX (state, badgeIndex){
-            if(state.badgeIndexes.length < 8) {
-                state.badgeIndexes.push(badgeIndex)
-            }
-        },
-        IS_FINE (state){
-            if(state.completedGames.length === state.badgeIndexes.length && state.badgeIndexes.length === 8){
-                state.isFine = state.badgeIndexes.every(function (i) {
-                    return i > 3;
-                })
+        checkIfFine (state, badgeIndex){
+            if(badgeIndex < 4) {
+                state.isFine = false;
             }
         }
     },
@@ -62,27 +54,19 @@ let store = new Vuex.Store({
         postGameSetup(context, payload){
             context.commit("completeGame", payload.name);
             context.commit("activateNextGame", payload.name);
+            context.commit("checkIfFine", payload.badgeIndex);
             context.dispatch("fetchBadge", payload);
-        },
-        setBadgeIndex({commit}, badgeIndex ) {
-            commit('BADGE_INDEX', badgeIndex )
-        },
-        isKidFine({commit}) {
-            commit('IS_FINE')
-        },
+        }
     },
     getters: {
         currentBadgeByName: (state) => (name) => {
             return state.currentBadges[name];
         },
-        areAllGamesDone (state) {
-            return state.gameOrder.length === state.completedGames.length &&
-                state.gameOrder.every((gameName)=>{
-                    return state.completedGames.indexOf(gameName)> -1;
-                });
-        },
         nextGame (state) {
             return state.nextGame;
+        },
+        areAllGamesCompleted (state) {
+            return state.completedGames.size === state.gameOrder.length;
         }
     },
     modules: {
