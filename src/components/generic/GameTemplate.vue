@@ -87,10 +87,8 @@ export default {
           this.puzzleIndex++;
         }
         if (this.puzzleIndex === this.solutions.length) {
-          this.postGameSetup({'name':this.gameName, 'badgePath':this.currentBadge})
+          this.postGameSetup({'name':this.gameName, 'badgePath':this.currentBadge, 'badgeIndex':this.badgeIndex})
           this.completed = true;
-          this.$store.dispatch('setBadgeIndex', this.badgeIndex)
-          this.$store.dispatch('isKidFine')
         }
         this.date = Date.now()
         if (this.showDuration){

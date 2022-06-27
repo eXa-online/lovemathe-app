@@ -2,7 +2,7 @@
   <div
     class="home"
     v-bind:style="[
-      areAllGamesDone === true
+      areAllGamesCompleted === true
         ? { backgroundImage: 'url(' + allGamesDoneImage + ')' }
         : { backgroundImage: 'url(' + gamesNotDoneYetImage + ')' },
     ]"
@@ -86,7 +86,7 @@
         />
       </router-link>
       <img
-        v-if="isFine"
+        v-if="areAllGamesCompleted && isFine"
         class="badge isGood"
         src="../assets/kid_has_no_problems.svg"
         alt=""
@@ -107,7 +107,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["currentBadgeByName", "areAllGamesDone", "nextGame"]),
+    ...mapGetters(["currentBadgeByName", "areAllGamesCompleted", "nextGame"]),
     ...mapState(["completedGames", "badgeIndexes", "isFine"]),
   },
   methods: {
