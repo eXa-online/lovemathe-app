@@ -113,7 +113,7 @@ export default {
   methods: {
     badgeClasses(badgeName) {
       if (this.nextGame === badgeName) {
-        return `badge ${badgeName.toLowerCase()} animated-tree gameEnabled`;
+        return `badge ${badgeName.toLowerCase()} ${badgeName.toLowerCase()}__animated gameEnabled`;
       } else {
         return `badge ${badgeName.toLowerCase()} gameDisabled`;
       }
@@ -244,39 +244,7 @@ export default {
   filter: grayscale(1);
 }
 
-@keyframes animated-house {
-  0% {
-    transform: scale(0.7);
-    -webkit-transform: scale(0.7);
-  }
-  100% {
-    transform: scale(0.9);
-    -webkit-transform: scale(0.9);
-  }
-}
-.animated-house {
-  animation: animated-house 1s linear infinite alternate;
-  transform-origin: center;
-  transform-box: fill-box;
-}
-
-@keyframes animated-cloud {
-  0% {
-    transform: scale(1);
-    -webkit-transform: scale(1);
-  }
-  100% {
-    transform: scale(1.2);
-    -webkit-transform: scale(1.2);
-  }
-}
-.animated-cloud {
-  animation: animated-cloud 1s linear infinite alternate;
-  transform-origin: center;
-  transform-box: fill-box;
-}
-
-@keyframes animated-tree {
+@keyframes count_up__animated {
   0% {
     transform: scale(1.5);
     -webkit-transform: scale(1.5);
@@ -286,13 +254,13 @@ export default {
     -webkit-transform: scale(1.8);
   }
 }
-.animated-tree {
-  animation: animated-tree 1s linear infinite alternate;
+.count_up__animated {
+  animation: count_up__animated 1s linear infinite alternate;
   transform-origin: center;
   transform-box: fill-box;
 }
 
-@keyframes animated-badge-big {
+@keyframes quantity_equality__animated {
   0% {
     transform: scale(1);
     -webkit-transform: scale(1);
@@ -302,13 +270,29 @@ export default {
     -webkit-transform: scale(1.12);
   }
 }
-.animated_badge_big {
-  animation: animated-badge-big 1s linear infinite alternate;
+.quantity_equality__animated {
+  animation: quantity_equality__animated 1s linear infinite alternate;
   transform-origin: center;
   transform-box: fill-box;
 }
 
-@keyframes animated-badge-small {
+@keyframes one_look__animated {
+  0% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+  }
+}
+.one_look__animated {
+  animation: one_look__animated 1s linear infinite alternate;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+@keyframes add_quantities__animated {
   0% {
     transform: scale(1);
     -webkit-transform: scale(1);
@@ -318,11 +302,76 @@ export default {
     -webkit-transform: scale(1.24);
   }
 }
-.animated_badge_small {
-  animation: animated-badge-small 1s linear infinite alternate;
+.add_quantities__animated {
+  animation: add_quantities__animated 1s linear infinite alternate;
   transform-origin: center;
   transform-box: fill-box;
 }
+
+@keyframes complete_seriation__animated {
+  0% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+  }
+  100% {
+    transform: scale(1.24);
+    -webkit-transform: scale(1.24);
+  }
+}
+.complete_seriation__animated {
+  animation: complete_seriation__animated 1s linear infinite alternate;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+@keyframes quantity_comparison__animated {
+  0% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+  }
+  100% {
+    transform: scale(1.12);
+    -webkit-transform: scale(1.12);
+  }
+}
+.quantity_comparison__animated {
+  animation: quantity_comparison__animated 1s linear infinite alternate;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+@keyframes where_is__animated  {
+  0% {
+    transform: scale(0.7);
+    -webkit-transform: scale(0.7);
+  }
+  100% {
+    transform: scale(0.9);
+    -webkit-transform: scale(0.9);
+  }
+}
+.where_is__animated {
+  animation: where_is__animated 1s linear infinite alternate;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+@keyframes reduce_quantities__animated {
+  0% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+  }
+  100% {
+    transform: scale(1.24);
+    -webkit-transform: scale(1.24);
+  }
+}
+.reduce_quantities__animated {
+  animation: reduce_quantities__animated 1s linear infinite alternate;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
 .gameDisabled {
   pointer-events: none;
 }
