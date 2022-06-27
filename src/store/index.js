@@ -62,16 +62,10 @@ let store = new Vuex.Store({
             }
         },
         IS_FINE (state){
-            if(state.completedGames.length === state.badgeIndexes.length){
-                for(let i = 0; i < 8; i++) {
-                    if(state.badgeIndexes[i] > 3) {
-                        state.isFine = true
-                    }
-                    else {
-                        state.isFine = false
-                    }
-                }
-                return state.isFine
+            if(state.completedGames.length === state.badgeIndexes.length && state.badgeIndexes.length === 8){
+                state.isFine = state.badgeIndexes.every(function (i) {
+                    return i > 3;
+                })
             }
         }
     },
