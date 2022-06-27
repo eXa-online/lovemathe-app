@@ -119,7 +119,7 @@ export default {
       }
     },
     imageClasses(badgeName) {
-      if (this.completedGames.has(badgeName)) {
+      if (this.completedGames.has(badgeName) || this.nextGame === badgeName) {
         return `${badgeName.toLowerCase()}_img`;
       } else {
         return `${badgeName.toLowerCase()}_img non_active_badge`;
