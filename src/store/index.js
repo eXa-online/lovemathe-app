@@ -19,16 +19,6 @@ let store = new Vuex.Store({
             'One_Look': require('../assets/one_look/badges/0.png'),
             'Complete_Seriation': require('../assets/complete_seriation/badges/0.png'),
             'Where_Is': require('../assets/where_is/badges/0.png'),
-        },
-        activeBadges: {
-            'Quantity_Equality': require('../assets/quantity_equality/badges/0.png'),
-            'Quantity_Comparison': require('../assets/quantity_comparison/badges/0.png'),
-            'Add_Quantities': require('../assets/add_quantities/badges/0.png'),
-            'Reduce_Quantities': require('../assets/reduce_quantities/badges/0.png'),
-            'Count_Up': require('../assets/count_up/badges/0.png'),
-            'One_Look': require('../assets/one_look/badges/0.png'),
-            'Complete_Seration': require('../assets/complete_seriation/badges/0.png'),
-            'Where_Is': require('../assets/where_is/badges/0.png'),
         }
     },
     mutations: {
