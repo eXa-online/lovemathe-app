@@ -96,7 +96,8 @@
 </template>
 
 <script>
-import { mapGetters, mapState } from "vuex";
+import { mapState } from 'pinia'
+import { useMainStore } from '../stores/MainStore'
 
 export default {
   name: "OverallBadge",
@@ -107,8 +108,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["currentBadgeByName", "areAllGamesCompleted", "nextGame"]),
-    ...mapState(["completedGames", "badgeIndexes", "isFine"]),
+    ...mapState(useMainStore, ["completedGames", "badgeIndexes", "isFine", "currentBadgeByName", "areAllGamesCompleted", "nextGame"]),
   },
   methods: {
     badgeClasses(badgeName) {

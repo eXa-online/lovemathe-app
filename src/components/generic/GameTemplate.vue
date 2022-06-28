@@ -23,8 +23,8 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
-
+import { mapActions } from 'pinia'
+import { useMainStore } from '../../stores/MainStore'
 export default {
   name: 'GameTemplate',
   data() {
@@ -68,7 +68,7 @@ export default {
     }
   },
   methods: {
-    ...mapActions(['postGameSetup']),
+    ...mapActions(useMainStore, ['postGameSetup']),
     playInstruction(){
       if (this.seperateInstructions) {
         new Audio(require(`../../assets/${this.gamePath}/instructions/${this.puzzleIndex}.mp3`)).play()

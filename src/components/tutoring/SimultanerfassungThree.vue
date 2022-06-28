@@ -23,7 +23,8 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapActions } from 'pinia'
+import { useMainStore } from '../../stores/MainStore'
 export default {
   name: 'SimultanerfassungThree',
   data() {
@@ -82,7 +83,7 @@ export default {
     }
   },
   methods: {
-    ...mapActions(['postGameSetup']),
+    ...mapActions(useMainStore, ['postGameSetup']),
     randomNumber: function () {
       this.randomIndex = Math.ceil((Math.random()*6)-1)
       this.puzzleIndex = this.randomIndex
