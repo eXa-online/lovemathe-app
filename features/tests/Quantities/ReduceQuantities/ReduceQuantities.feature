@@ -1,5 +1,5 @@
 # language: de
-  Funktionalität Mengen ergänzen
+  Funktionalität Mengen reduzieren
     Um festzustellen, ob Kinder Probleme beim Erkennen von Mengen haben
     möchte ich als Tester
     ein Spiel haben in dem die Kinder Mengen vergleichen und reduzieren
