@@ -45,7 +45,6 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
 export default {
   name: "IntroduceGames",
   data() {
@@ -146,7 +145,6 @@ export default {
     playFalseSound() {
       new Audio(require(`../assets/introduce_games/false.mp3`)).play()
     },
-    ...mapActions(['postGameSetup']),
     randomNumber: function () {
       this.randomIndex = Math.ceil((Math.random()*6)-1)
       this.puzzleIndex = this.randomIndex
