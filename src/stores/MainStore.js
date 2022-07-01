@@ -1,10 +1,10 @@
 import { defineStore } from 'pinia'
 
-export const useMainStore = defineStore('MainStore',{
+export const useMainStore = defineStore('MainStore', {
     state: () => ({
         completedGames: new Set(),
         isFine: true,
-        gameOrder: ['Count_Up', 'Quantity_Equality', 'Add_Quantities','Quantity_Comparison', 'Reduce_Quantities', 'One_Look', 'Complete_Seriation', 'Where_Is'],
+        gameOrder: ['Count_Up', 'Quantity_Equality', 'Add_Quantities', 'Quantity_Comparison', 'Reduce_Quantities', 'One_Look', 'Complete_Seriation', 'Where_Is'],
         nextGame: 'Count_Up',
         currentBadges: {
             'Quantity_Equality': require('../assets/quantity_equality/badges/0.png'),
@@ -21,7 +21,7 @@ export const useMainStore = defineStore('MainStore',{
         currentBadgeByName: (state) => (name) => {
             return state.currentBadges[name];
         },
-        areAllGamesCompleted (state) {
+        areAllGamesCompleted(state) {
             return state.completedGames.size === state.gameOrder.length;
         }
     },
@@ -36,7 +36,7 @@ export const useMainStore = defineStore('MainStore',{
                 });
             this.setBadge(payload);
         },
-        postGameSetup(payload){
+        postGameSetup(payload) {
             this.completeGame(payload.name);
             this.activateNextGame(payload.name);
             this.checkIfFine(payload.badgeIndex);
@@ -47,21 +47,20 @@ export const useMainStore = defineStore('MainStore',{
         },
         activateNextGame(name) {
             let nextGameIndex = this.gameOrder.indexOf(name) + 1;
-            if (nextGameIndex < this.gameOrder.length){
+            if (nextGameIndex < this.gameOrder.length) {
                 this.nextGame = this.gameOrder[nextGameIndex];
             } else {
                 this.nextGame = ''
             }
         },
-        completeGame(gameName){
+        completeGame(gameName) {
             this.completedGames.add(gameName)
         },
-        checkIfFine (badgeIndex){
-            if(badgeIndex < 4) {
+        checkIfFine(badgeIndex) {
+            if (badgeIndex < 4) {
                 this.isFine = false;
             }
         }
     },
-   
 },
 )
