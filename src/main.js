@@ -4,7 +4,4 @@ import router from './router'
 import './registerServiceWorker'
 import { createPinia } from 'pinia'
 
-const pinia = createPinia()
-const app = createApp(App)
-
-app.use(router).use(pinia).mount('#app')
+createApp(App).use(router).use(createPinia()).mount('#app')
