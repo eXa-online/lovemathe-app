@@ -34,11 +34,19 @@ export const useMainStore = defineStore('MainStore', {
         postGameSetup(payload) {
             this.completeGame(payload.name);
             this.activateNextGame(payload.name);
-            this.setBadgeLevel(payload);
+            this.setBadgeLevel(payload.name, payload.level);
         },
-        setBadgeLevel(payload) {
-            this.currentBadges[payload.name] = payload.level;
+        setBadgeLevel(gameName, badgeLevel) {
+            this.currentBadges[gameName] = badgeLevel;
         },
+        setBadgeLevels(payload) {
+            const maxChangedGame = Math.max(...Object.keys(payload).map(changedGame => this.gameOrder.indexOf(changedGame)))
+            this.completedGames = new Set(this.gameOrder.slice(0, maxChangedGame + 1))
+            Object.entries(payload).forEach(function (nameLevelPair) {
+                let [name, level] = nameLevelPair
+                this.setBadgeLevel(name, level);
+            }, this)
+            this.nextGame = this.gameOrder[maxChangedGame + 1]
         },
         activateNextGame(name) {
             let nextGameIndex = this.gameOrder.indexOf(name) + 1;
