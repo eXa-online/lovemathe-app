@@ -7,43 +7,35 @@ export const useMainStore = defineStore('MainStore', {
         gameOrder: ['Count_Up', 'Quantity_Equality', 'Add_Quantities', 'Quantity_Comparison', 'Reduce_Quantities', 'One_Look', 'Complete_Seriation', 'Where_Is'],
         nextGame: 'Count_Up',
         currentBadges: {
-            'Quantity_Equality': require('../assets/quantity_equality/badges/0.png'),
-            'Quantity_Comparison': require('../assets/quantity_comparison/badges/0.png'),
-            'Add_Quantities': require('../assets/add_quantities/badges/0.png'),
-            'Reduce_Quantities': require('../assets/reduce_quantities/badges/0.png'),
-            'Count_Up': require('../assets/count_up/badges/0.png'),
-            'One_Look': require('../assets/one_look/badges/0.png'),
-            'Complete_Seriation': require('../assets/complete_seriation/badges/0.png'),
-            'Where_Is': require('../assets/where_is/badges/0.png'),
+            'Quantity_Equality': 0,
+            'Quantity_Comparison': 0,
+            'Add_Quantities': 0,
+            'Reduce_Quantities': 0,
+            'Count_Up': 0,
+            'One_Look': 0,
+            'Complete_Seriation': 0,
+            'Where_Is': 0,
         }
     }),
     getters: {
         currentBadgeByName: (state) => (name) => {
-            return state.currentBadges[name];
+            const level = state.currentBadges[name];
+            return require(`../assets/${name.toLowerCase()}/badges/${level}.png`);
         },
         areAllGamesCompleted(state) {
             return state.completedGames.size === state.gameOrder.length;
         }
     },
     actions: {
-        async fetchBadge(payload) {
-            await fetch(payload.badgePath)
-                .then(response => response.text())
-                .then(function (badge) {
-                    console.log(`get new badge for ${payload.name} from ${payload.badgePath}`)
-                    payload['badge'] = badge
-                    return payload;
-                });
-            this.setBadge(payload);
-        },
         postGameSetup(payload) {
             this.completeGame(payload.name);
             this.activateNextGame(payload.name);
             this.checkIfFine(payload.badgeIndex);
-            this.fetchBadge(payload);
+            this.setBadgeLevel(payload);
         },
-        setBadge(payload) {
-            this.currentBadges[payload.name] = payload.badgePath;
+        setBadgeLevel(payload) {
+            this.currentBadges[payload.name] = payload.level;
+        },
         },
         activateNextGame(name) {
             let nextGameIndex = this.gameOrder.indexOf(name) + 1;
