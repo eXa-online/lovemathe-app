@@ -86,7 +86,7 @@
         />
       </router-link>
       <img
-        v-if="areAllGamesCompleted && isFine"
+        v-if="areAllGamesCompleted && areTestsSufficientlyResolved"
         class="badge isGood"
         src="../assets/kid_has_no_problems.svg"
         alt=""
@@ -108,7 +108,7 @@ export default {
     };
   },
   computed: {
-    ...mapState(useMainStore, ["completedGames", "badgeIndexes", "isFine", "currentBadgeByName", "areAllGamesCompleted", "nextGame"]),
+    ...mapState(useMainStore, ["completedGames", "badgeIndexes", "areTestsSufficientlyResolved", "currentBadgeByName", "areAllGamesCompleted", "nextGame"]),
   },
   methods: {
     badgeClasses(badgeName) {

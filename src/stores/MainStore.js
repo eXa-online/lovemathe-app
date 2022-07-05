@@ -3,7 +3,6 @@ import { defineStore } from 'pinia'
 export const useMainStore = defineStore('MainStore', {
     state: () => ({
         completedGames: new Set(),
-        isFine: true,
         gameOrder: ['Count_Up', 'Quantity_Equality', 'Add_Quantities', 'Quantity_Comparison', 'Reduce_Quantities', 'One_Look', 'Complete_Seriation', 'Where_Is'],
         nextGame: 'Count_Up',
         currentBadges: {
@@ -24,13 +23,17 @@ export const useMainStore = defineStore('MainStore', {
         },
         areAllGamesCompleted(state) {
             return state.completedGames.size === state.gameOrder.length;
+        },
+        areTestsSufficientlyResolved(state) {
+            const minimumLevel = 4;
+            const gamesWithoutEvaluation = ['Where_Is'];
+            return Object.entries(state.currentBadges).filter(item => !gamesWithoutEvaluation.includes(item[0])).every(item => item[1] >= minimumLevel)
         }
     },
     actions: {
         postGameSetup(payload) {
             this.completeGame(payload.name);
             this.activateNextGame(payload.name);
-            this.checkIfFine(payload.badgeIndex);
             this.setBadgeLevel(payload);
         },
         setBadgeLevel(payload) {
@@ -47,11 +50,6 @@ export const useMainStore = defineStore('MainStore', {
         },
         completeGame(gameName) {
             this.completedGames.add(gameName)
-        },
-        checkIfFine(badgeIndex) {
-            if (badgeIndex < 4) {
-                this.isFine = false;
-            }
         }
     },
 },
