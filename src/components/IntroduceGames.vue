@@ -1,7 +1,7 @@
 <template>
   <div @[activeTimer&&isFalse&&`click`]="playFalseSound">
-    <div class="startButtonStyling" v-if="showStartButton" @click="setStart(); startButton();"><img :src="letsStart" /></div>
-    <div v-if="image === 1"><img :src="firstImage" /></div>
+    <div class="centered_item start_button" v-if="showStartButton" @click="setStart(); startButton();"><img :src="letsStart" /></div>
+    <div class="centered_item introduction_mole" v-if="image === 1"><img :src="firstImage" /></div>
 
     <div class="puzzle_body" v-if="image > 1 && image < 6">
       <img v-if="image > 2 && image < 6" class="puzzle" :src="currentPuzzleBody">
@@ -206,9 +206,14 @@ export default {
 </script>
 
 <style scoped>
-.startButtonStyling {
-  max-width: 30vw;
-  margin:35vh auto 0;
+.centered_item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.start_button {
+  width: 30vw;
 }
 .puzzle_additionals {
   display: flex;
@@ -268,5 +273,9 @@ export default {
 .puzzle_background {
   width: 100%;
   max-height: 16vh;
+}
+
+.introduction_mole {
+  width: 40vw;
 }
 </style>
