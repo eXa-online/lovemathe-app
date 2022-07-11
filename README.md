@@ -1,5 +1,9 @@
 # lovemathe
 
+## Use dev containers with Visual Studio Code
+
+https://code.visualstudio.com/docs/remote/containers
+
 ## Project setup
 ```
 npm install
