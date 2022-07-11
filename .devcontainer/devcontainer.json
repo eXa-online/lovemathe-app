@@ -1,0 +1,8 @@
+{
+	"name": "lovemathe",
+	"image": "node:18-alpine",
+	"remoteUser": "node",
+	"forwardPorts": [8080],
+	"postCreateCommand": "npm install",
+	"postStartCommand": "npm run serve"
+}
