@@ -62,6 +62,12 @@ export const useMainStore = defineStore('MainStore', {
     maxLevelByName: (state) => (name) => {
       return state.gameInfos[name]['maxLevel'];
     },
+    achievedLevels: (state) => {
+      return Object.values(state.gameInfos).map(item => item['level']).reduce((prev, curr) => prev + curr);
+    },
+    maximalLevels: (state) => {
+      return Object.values(state.gameInfos).map(item => item['maxLevel']).reduce((prev, curr) => prev + curr);
+    },
     areAllGamesCompleted(state) {
       return state.completedGames.size === state.gameOrder.length;
     },
@@ -78,7 +84,7 @@ export const useMainStore = defineStore('MainStore', {
       this.setBadgeLevel(payload.name, payload.level);
     },
     setBadgeLevel(gameName, badgeLevel) {
-      this.gameInfos[gameName]['level'] = badgeLevel;
+      this.gameInfos[gameName]['level'] = Number.parseInt((badgeLevel));
     },
     setBadgeLevels(payload) {
       const maxChangedGame = Math.max(...Object.keys(payload).map(changedGame => this.gameOrder.indexOf(changedGame)))

@@ -10,6 +10,7 @@ import ReduceQuantities from '@/components/ReduceQuantities.vue'
 import CompleteSeriation from '@/components/CompleteSeriation.vue'
 import WhereIs from '@/components/WhereIs.vue'
 import StageForm from '@/components/StageForm.vue'
+import GamesEvaluation from '@/components/GamesEvaluation.vue'
 
 import TutoringOverallBadge from '@/components/tutoring/TutoringOverallBadge.vue'
 import TutoringStart from '@/components/tutoring/TutoringStart.vue'
@@ -44,6 +45,7 @@ import MengenSix from '@/components/tutoring/MengenSix';
 const routes = [
   { path: '/', component: IntroduceGames},
   { path: '/form', component: StageForm },
+  { path: '/eval', component: GamesEvaluation },
 
   { path: '/overall-badge', component: OverallBadge },
   { path: '/add_quantities', component: AddQuantities },
