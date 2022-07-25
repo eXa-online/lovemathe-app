@@ -85,12 +85,14 @@
           :src="currentBadgeByName('Reduce_Quantities')"
         />
       </router-link>
-      <img
-        v-if="areAllGamesCompleted && areTestsSufficientlyResolved"
-        class="badge isGood"
-        src="../assets/kid_has_no_problems.svg"
-        alt=""
-      />
+      <router-link class="badge completedAllGames" to="/eval">
+        <img
+          v-if="areAllGamesCompleted"
+          class=""
+          src="../assets/completedGamesIndicator.svg"
+          alt="All games completed"
+        />
+      </router-link>
     </div>
   </div>
 </template>
@@ -237,7 +239,7 @@ export default {
   max-width: 20vw;
 }
 
-.isGood {
+.completedAllGames {
   grid-area: 28 / 29 / auto / auto;
   transform: scale(0.5);
   max-height: 10vh;
