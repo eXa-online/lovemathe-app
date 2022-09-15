@@ -9,42 +9,42 @@ export const useMainStore = defineStore('MainStore', {
       'Quantity_Equality': {
         "verboseName": 'Mengengleichheit',
         "level": 0,
-        "maxLevel": 5,
+        "maxLevel": 6,
       },
       'Quantity_Comparison': {
         "verboseName": 'Mengenvergleich',
         "level": 0,
-        "maxLevel": 5,
+        "maxLevel": 6,
       },
       'Add_Quantities': {
         "verboseName": 'Mengen ergänzen',
         "level": 0,
-        "maxLevel": 5,
+        "maxLevel": 6,
       },
       'Reduce_Quantities': {
         "verboseName": 'Mengen reduzieren',
         "level": 0,
-        "maxLevel": 5,
+        "maxLevel": 6,
       },
       'Count_Up': {
         "verboseName": 'Abzählen',
         "level": 0,
-        "maxLevel": 5,
+        "maxLevel": 6,
       },
       'One_Look': {
         "verboseName": 'Simultanerfassung',
         "level": 0,
-        "maxLevel": 5,
+        "maxLevel": 6,
       },
       'Complete_Seriation': {
         "verboseName": 'Seriation',
         "level": 0,
-        "maxLevel": 5,
+        "maxLevel": 6,
       },
       'Where_Is': {
         "verboseName": 'Orientierung',
         "level": 0,
-        "maxLevel": 5,
+        "maxLevel": 6,
       },
     }
   }),
