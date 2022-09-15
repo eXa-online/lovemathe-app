@@ -63,7 +63,6 @@ export default {
   computed: {
     ...mapState(useMainStore, [
       "areTestsSufficientlyResolved",
-      "currentBadgeLevels",
       "gameOrder",
       "levelByName",
       "maxLevelByName",
