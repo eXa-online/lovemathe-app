@@ -2,7 +2,7 @@
   <form id="stageform" @submit.prevent="onSubmit">
     <div v-for="gameName in gameOrder" :key="gameName">
       <label :for="gameName">{{ gameName }}: </label>
-      <input @input="onChange" type="range" :id="gameName" :name="gameName" min="0" max="5"/>
+      <input @input="onChange" type="range" :id="gameName" :name="gameName" min="0" :max="maxLevelByName(gameName)"/>
     </div>
     <input type="submit" value="change" />
   </form>
@@ -18,7 +18,7 @@ export default {
     }
   },
   computed: {
-    ...mapState(useMainStore, ["gameOrder"]),
+    ...mapState(useMainStore, ["gameOrder", "maxLevelByName"]),
   },
   methods: {
     ...mapActions(useMainStore, ['setBadgeLevels']),
