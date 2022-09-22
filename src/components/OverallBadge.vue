@@ -188,7 +188,7 @@ export default {
 }
 
 .add_quantities {
-  grid-area: 22 / 21 / auto / auto;
+  grid-area: 24 / 21 / auto / auto;
   transform: scale(1.1);
 }
 .add_quantities_img {
@@ -197,8 +197,8 @@ export default {
 }
 
 .reduce_quantities {
-  grid-area: 19 / 8 / auto / auto;
-  transform: scale(1);
+  grid-area: 15 / 9 / auto / auto;
+  transform: scale(0.8);
 }
 .reduce_quantities_img {
   max-height: 25vh;
@@ -206,7 +206,7 @@ export default {
 
 .quantity_comparison {
   grid-area: 16 / 19 / auto / auto;
-  transform: scale(0.7);
+  transform: scale(1);
 }
 .quantity_comparison_img {
   max-height: 20vh;
@@ -231,8 +231,8 @@ export default {
 }
 
 .where_is {
-  grid-area: 17 / 1 / auto / auto;
-  transform: scale(0.8);
+  grid-area: 17 / 2 / auto / auto;
+  transform: scale(0.9);
 }
 .where_is_img {
   max-height: 40vh;
