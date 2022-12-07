@@ -52,7 +52,7 @@ export default {
       return [...Array(this.countButtons)].map((_, index)  => require(`../../assets/${this.gamePath}/buttons/${index}.svg`));
     },
     currentBadge: function() {
-      return require(`../../assets/${this.gamePath}/badges/${this.badgeIndex}.png`)
+      return require(`../../assets/${this.gamePath}/badges/${this.badgeIndex}.svg`)
     },
     currentPuzzleBody: function() {
       return require(`../../assets/${this.gamePath}/puzzles/${this.puzzleIndex}.svg`)

@@ -51,7 +51,7 @@ export const useMainStore = defineStore('MainStore', {
   getters: {
     currentBadgeByName: (state) => (name) => {
       const level = state.gameInfos[name]['level'];
-      return require(`../assets/${name.toLowerCase()}/badges/${level}.png`);
+      return require(`../assets/${name.toLowerCase()}/badges/${level}.svg`);
     },
     verboseNameByName: (state) => (name) => {
       return state.gameInfos[name]['verboseName'];
