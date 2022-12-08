@@ -1,7 +1,7 @@
 <template>
   <div class="puzzle_body" @[completed&&`click`]="switchToHome">
-    <img v-if="showPuzzle" class="puzzle" :src="currentPuzzleBody">
-    <img v-if="!showPuzzle" class="puzzle" :src="emptyBackground">
+    <img v-show="!showPuzzle" class="puzzle" :src="emptyBackground">
+    <img v-show="showPuzzle" class="puzzle" :src="currentPuzzleBody">
     <img class="puzzle_badge__large" :src="currentBadge" v-if="completed">
     <div class="puzzle_additionals" v-if="!completed">
       <div class="puzzle_badge_container">
