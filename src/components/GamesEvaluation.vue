@@ -11,7 +11,7 @@
     </div>
     <hr class="hr">
       <div class="gameItem">
-        <span v-if="areTestsSufficientlyResolved" class="gameItemCell crossMark">⎷</span>
+        <span v-if="areTestsSufficientlyResolved" class="gameItemCell checkMark">⎷</span>
         <span v-else class="gameItemCell crossMark">𝖷</span>
         <strong class="gameItemCell gameItemCell__name">Gesamt</strong>
         <strong class="gameItemCell">{{achievedLevels}}/{{ maximalLevels }}</strong>
