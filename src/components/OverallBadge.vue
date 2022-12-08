@@ -153,6 +153,7 @@ export default {
   position: absolute;
   top: 0;
   left: 0;
+  background-size: contain;
   -webkit-background-size: contain;
   -moz-background-size: contain;
   display: inline-grid;
