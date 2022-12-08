@@ -95,6 +95,14 @@ export const useMainStore = defineStore('MainStore', {
       }, this)
       this.nextGame = this.gameOrder[maxChangedGame + 1]
     },
+    setAllBadgeLevelsToMaximum() {
+      Object.entries(this.gameInfos).forEach(function (nameValuePair) {
+        let [name, value] = nameValuePair
+        this.setBadgeLevel(name, value['maxLevel']);
+        this.completeGame(name)
+      }, this)
+      this.nextGame = ''
+    },
     activateNextGame(name) {
       let nextGameIndex = this.gameOrder.indexOf(name) + 1;
       if (nextGameIndex < this.gameOrder.length) {
