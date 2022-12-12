@@ -1,11 +1,12 @@
 <template>
   <div @[activeTimer&&isFalse&&`click`]="playFalseSound">
-    <div class="centered_item start_button" v-if="showStartButton" @click="setStart(); startButton();"><img :src="letsStart" /></div>
-    <div class="centered_item introduction_mole" v-if="image === 1"><img :src="firstImage" /></div>
-
+    <div class="centered_item start_button" v-if="showStartButton" @click="startGame()">
+      <img :src="letsStart" />
+    </div>
+    <div class="centered_item introduction_mole" v-if="image === 1"><img :src="mole" /></div>
     <div class="puzzle_body" v-if="image > 1 && image < 6">
       <img v-if="image > 2 && image < 6" class="puzzle" :src="currentPuzzleBody">
-      <div class="puzzle_additionals" v-if="!completed">
+      <div class="puzzle_additionals">
         <div class="puzzle_badge_container" v-if="image > 4 && image < 6">
           <img class="puzzle_background" :src="badgeBackground">
           <img class="puzzle_badge__small" :src="currentBadge">
@@ -20,11 +21,9 @@
         </button>
       </div>
     </div>
-    <div class="puzzle_body" @[completed&&`click`]="switchToNext" v-if="image === 6">
+    <div class="puzzle_body" v-if="image === 6">
       <img v-if="showPuzzle" class="puzzle" :src="currentPuzzleBody">
-      <img v-if="!showPuzzle" class="puzzle" :src="emptyBackground">
-      <img class="puzzle_badge__large" :src="currentBadge" v-if="completed">
-      <div class="puzzle_additionals" v-if="!completed">
+      <div class="puzzle_additionals">
         <div class="puzzle_badge_container">
           <img class="puzzle_background" :src="badgeBackground">
           <img class="puzzle_badge__small" :src="currentBadge">
@@ -33,14 +32,14 @@
         <img v-if="!introduce_games" class="puzzle_help" @click="playInstruction" :src="getHelpButtonImage">
       </div>
     </div>
-    <div class="puzzle_bottom" v-if="!completed && image === 6">
+    <div class="puzzle_bottom" v-if="image === 6">
       <div class="puzzle_buttons">
         <button v-for="(buttonImage, index) in buttonImages" :key="buttonImage" @[activeButtons&&`click`]="evalSelection(index)">
           <img class="puzzle_button" :src="buttonImage">
         </button>
       </div>
     </div>
-    <h3 v-if="seperateInstructions && image === 6 && activeButtons">{{currentTitle}}</h3>
+    <h3 v-if="image === 6 && activeButtons">{{currentTitle}}</h3>
   </div>
 </template>
 
@@ -55,9 +54,8 @@ export default {
       isFalse: true,
       activeButtons: false,
       activeTimer: false,
-      letsStart: require('../assets/introduce_games/start.svg'),
-      firstImage:require('../assets/introduce_games/firstImage.svg'),
-      completed: false,
+      letsStart: require('../assets/introduce_games/additional/images/start.svg'),
+      mole:require('../assets/introduce_games/additional/images/mole.svg'),
       badgeIndex: 0,
       gamePath: 'introduce_games',
       puzzleIndex: 0,
@@ -70,10 +68,7 @@ export default {
       title: 'Einführung',
       audioDuration: 0,
       gameName: 'Introduce_Games',
-      showDemo: true,
-      randomIndex: 0,
       solutions: 0,
-      seperateInstructions: true,
       seperateTitles: {
         0: 'Klicke auf den Hut',
         1: 'Klicke auf die Gießkanne',
@@ -86,37 +81,35 @@ export default {
   },
   props: [],
   created() {
-    this.randomNumber()
+    this.selectNewGame()
   },
   computed: {
     buttonImages: function() {
-      return [...Array(this.countButtons)].map((_, index)  => require(`../assets/introduce_games/game/buttons/${index}.svg`));
+      return [...Array(this.countButtons)].map((_, index)  => require(`../assets/introduce_games/buttons/${index}.svg`));
     },
     currentBadge: function() {
-      return require(`../assets/introduce_games/game/badges/${this.badgeIndex}.svg`)
+      return require(`../assets/introduce_games/badges/${this.badgeIndex}.svg`)
     },
     currentPuzzleBody: function() {
-      return require(`../assets/introduce_games/game/puzzles/${this.randomIndex}.svg`)
+      return require(`../assets/introduce_games/puzzles/${this.puzzleIndex}.svg`)
     },
     badgeBackground: function() {
       return require('../assets/badge_background.svg')
     },
     emptyBackground: function(){
-      return require(`../assets/introduce_games/game/puzzles/6.svg`)
+      return require(`../assets/introduce_games/puzzles/6.svg`)
     },
     currentTitle: function() {
       return this.seperateTitles[this.puzzleIndex]
     }
   },
   methods: {
-    startButton() {
-      this.showStartButton = !this.showStartButton
-    },
-    setStart() {
-      this.switchImage()
+    startGame() {
+      this.showStartButton = !this.showStartButton;
+      this.showIntroduction()
       this.playAudio()
     },
-    switchImage() {
+    showIntroduction() {
       this.image = 1
       setTimeout(() => {this.image = 2}, 15000)
       setTimeout(() => {this.image = 3}, 44000)
@@ -127,57 +120,53 @@ export default {
     },
     playAudio(){
       let introductionAudio = new Audio()
-      introductionAudio.src = require(`../assets/introduce_games/firstAudio.mp3`)
+      introductionAudio.src = require(`../assets/introduce_games/additional/audios/1.mp3`)
       introductionAudio.play()
-      setTimeout(() => {introductionAudio.src = require(`../assets/introduce_games/secondAudio.mp3`)},16000)
+      setTimeout(() => {introductionAudio.src = require(`../assets/introduce_games/additional/audios/2.mp3`)},16000)
       setTimeout(() => {introductionAudio.play()},17000)
-      setTimeout(() => {introductionAudio.src = require(`../assets/introduce_games/thirdAudio.mp3`)},43000)
+      setTimeout(() => {introductionAudio.src = require(`../assets/introduce_games/additional/audios/3.mp3`)},43000)
       setTimeout(() => {introductionAudio.play()},44000)
-      setTimeout(() => {introductionAudio.src = require(`../assets/introduce_games/fourthAudio.mp3`)},62000)
+      setTimeout(() => {introductionAudio.src = require(`../assets/introduce_games/additional/audios/4.mp3`)},62000)
       setTimeout(() => {introductionAudio.play()},63000)
     },
     activateGame() {
-      new Audio(require(`../assets/introduce_games/great.mp3`)).play()
-      setTimeout(() => {new Audio(require(`../assets/introduce_games/game/instructions/${this.puzzleIndex}.mp3`)).play()},3000)
+      setTimeout(() => {new Audio(require(`../assets/introduce_games/instructions/${this.puzzleIndex}.mp3`)).play()},3000)
       this.isFalse = false
       this.activeButtons = true
     },
     playFalseSound() {
-      new Audio(require(`../assets/introduce_games/false.mp3`)).play()
+      setTimeout(() => {new Audio(require(`../assets/introduce_games/additional/audios/false.mp3`)).play()},300);
     },
-    randomNumber: function () {
-      this.randomIndex = Math.ceil((Math.random()*6)-1)
-      this.puzzleIndex = this.randomIndex
-      this.solutions = this.randomIndex
+    playTransistionSound() {
+      new Audio(require(`../assets/introduce_games/additional/audios/transition.mp3`)).play();
     },
-    playInstruction(){
-      if (this.badgeIndex < 4) {
-        new Audio(require(`../assets/introduce_games/game/instructions/${this.puzzleIndex}.mp3`)).play()
+    selectNewGame() {
+      let randomIndex = Math.ceil((Math.random()*6)-1)
+      if (randomIndex === this.puzzleIndex) {
+        this.selectNewGame();
+      } else {
+        this.puzzleIndex = randomIndex
+        this.solutions = randomIndex
       }
-      else {
-        new Audio(require(`../assets/introduce_games/correct.mp3`)).play()
-      }
+    },
+    playInstruction(delay=0){
+      setTimeout(() => {new Audio(require(`../assets/introduce_games/instructions/${this.puzzleIndex}.mp3`)).play()},delay)
     },
     evalSelection(givenSolution) {
       if (this.preventDoubleClick()) {
-        let isCorrect = givenSolution == this.solutions
-        if (isCorrect) {
+        if (givenSolution === this.puzzleIndex) {
           this.badgeIndex++;
-          this.randomNumber();
-        }
-        if (!isCorrect) {
+          if (this.badgeIndex === 4) {
+            this.playTransistionSound();
+            setTimeout(() => { this.switchToNext()}, 1500)
+          } else {
+            this.playInstruction();
+            this.date = Date.now();
+          }
+          this.selectNewGame();
+        } else {
           this.badgeIndex = 0;
-          this.randomNumber();
-        }
-        this.date = Date.now()
-        if (this.showDuration){
-          this.showPuzzleForDuration(this.showDuration)
-        }
-        if (this.badgeIndex === 4) {
-          setTimeout(() => { this.switchToNext()}, 1500)
-        }
-        if (this.seperateInstructions){
-          this.playInstruction()
+          this.playFalseSound();
         }
       }
     },
@@ -186,19 +175,6 @@ export default {
     },
     preventDoubleClick: function() {
       return Date.now() > this.date + this.cooldownTimeMiliseconds;
-    },
-    async showPuzzleForDuration(milliseconds){
-      if(this.firstPuzzle){
-        this.showPuzzle = false
-        await this.sleepForDuration(this.audioDuration)
-        this.firstPuzzle = false
-      }
-      this.showPuzzle=true
-      await this.sleepForDuration(milliseconds)
-      this.showPuzzle=false
-    },
-    sleepForDuration(milliseconds){
-      return new Promise(resolve => setTimeout(resolve, milliseconds))
     }
   }
 };
