@@ -71,7 +71,6 @@ export default {
       audioDuration: 0,
       gameName: 'Introduce_Games',
       showDemo: true,
-      randomIndex: 0,
       solutions: 0,
       seperateInstructions: true,
       seperateTitles: {
@@ -86,7 +85,7 @@ export default {
   },
   props: [],
   created() {
-    this.randomNumber()
+    this.selectNewGame()
   },
   computed: {
     buttonImages: function() {
@@ -96,7 +95,7 @@ export default {
       return require(`../assets/introduce_games/game/badges/${this.badgeIndex}.svg`)
     },
     currentPuzzleBody: function() {
-      return require(`../assets/introduce_games/game/puzzles/${this.randomIndex}.svg`)
+      return require(`../assets/introduce_games/game/puzzles/${this.puzzleIndex}.svg`)
     },
     badgeBackground: function() {
       return require('../assets/badge_background.svg')
@@ -145,39 +144,40 @@ export default {
     playFalseSound() {
       new Audio(require(`../assets/introduce_games/false.mp3`)).play()
     },
-    randomNumber: function () {
-      this.randomIndex = Math.ceil((Math.random()*6)-1)
-      this.puzzleIndex = this.randomIndex
-      this.solutions = this.randomIndex
+    selectNewGame() {
+      let randomIndex = Math.ceil((Math.random()*6)-1)
+      if (randomIndex === this.puzzleIndex) {
+        this.selectNewGame();
+      } else {
+        this.puzzleIndex = randomIndex
+        this.solutions = randomIndex
+      }
     },
     playInstruction(){
       if (this.badgeIndex < 4) {
         new Audio(require(`../assets/introduce_games/game/instructions/${this.puzzleIndex}.mp3`)).play()
-      }
-      else {
+      } else {
         new Audio(require(`../assets/introduce_games/correct.mp3`)).play()
       }
     },
     evalSelection(givenSolution) {
       if (this.preventDoubleClick()) {
-        let isCorrect = givenSolution == this.solutions
-        if (isCorrect) {
+        if (givenSolution == this.puzzleIndex) {
           this.badgeIndex++;
-          this.randomNumber();
-        }
-        if (!isCorrect) {
+        } else {
           this.badgeIndex = 0;
-          this.randomNumber();
-        }
-        this.date = Date.now()
-        if (this.showDuration){
-          this.showPuzzleForDuration(this.showDuration)
         }
         if (this.badgeIndex === 4) {
           setTimeout(() => { this.switchToNext()}, 1500)
-        }
-        if (this.seperateInstructions){
-          this.playInstruction()
+        } else {
+          this.selectNewGame();
+          this.date = Date.now()
+          if (this.showDuration){
+            this.showPuzzleForDuration(this.showDuration)
+          }
+          if (this.seperateInstructions){
+            this.playInstruction()
+          }
         }
       }
     },
