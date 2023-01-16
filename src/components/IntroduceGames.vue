@@ -160,10 +160,10 @@ export default {
             this.playTransistionSound();
             setTimeout(() => { this.switchToNext()}, 1500)
           } else {
+            this.selectNewGame();
             this.playInstruction();
             this.date = Date.now();
           }
-          this.selectNewGame();
         } else {
           this.badgeIndex = 0;
           this.playFalseSound();
