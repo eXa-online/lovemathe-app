@@ -11,9 +11,11 @@ import CompleteSeriation from '@/components/CompleteSeriation.vue'
 import WhereIs from '@/components/WhereIs.vue'
 import StageForm from '@/components/StageForm.vue'
 import GamesEvaluation from '@/components/GamesEvaluation.vue'
+import StartComponent from '@/components/StartComponent.vue'
 
 const routes = [
-  { path: '/', component: IntroduceGames},
+  { path: '/', component: StartComponent},
+  { path: '/introduction', component: IntroduceGames},
   { path: '/form', component: StageForm },
   { path: '/eval', component: GamesEvaluation },
 
