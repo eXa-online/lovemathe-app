@@ -72,8 +72,7 @@ export default {
     playInstruction(){
       if (this.seperateInstructions) {
         new Audio(require(`../../assets/${this.gamePath}/instructions/${this.puzzleIndex}.mp3`)).play()
-      }
-      else {
+      } else {
         new Audio(require(`../../assets/${this.gamePath}/instruction.mp3`)).play()
         }
     },
