@@ -22,7 +22,6 @@
         <img class="markIcon" :src="crossmark" />
       </span>
       <strong class="gameItemCell gameItemCell__name">Gesamt</strong>
-      <div class="vl"></div>
       <strong class="gameItemCell">{{achievedLevels}}/{{ maximalLevels }}</strong>
     </div>
   </div>
@@ -83,14 +82,6 @@ export default {
 .hr {
   width:100%;
   border: 1px solid #844EA599;
-}
-.vl{
-  border: 1px solid #844EA599;
-  height: 90%;
-  position: absolute;
-  left: 80%;
-  margin-left: -3px;
-  top: 5%;
 }
 .markIcon {
   height: 16px;
