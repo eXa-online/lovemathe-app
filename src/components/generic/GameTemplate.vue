@@ -76,6 +76,9 @@ export default {
         new Audio(require(`../../assets/${this.gamePath}/instruction.mp3`)).play()
         }
     },
+    playTransition(){
+      new Audio(require(`../../assets/${this.gamePath}/transition.mp3`)).play()
+    },
     evalSelection(givenSolution) {
       if (this.preventDoubleClick()) {
         const isCorrect = givenSolution == this.solutions[this.puzzleIndex]
@@ -95,6 +98,7 @@ export default {
         }
         if (this.completed === true) {
           setTimeout(() => { this.switchToHome()}, 1500)
+          this.playTransition();
         }
         if (this.seperateInstructions){
           this.playInstruction()
