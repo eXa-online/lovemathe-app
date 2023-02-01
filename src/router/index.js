@@ -1,21 +1,23 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import IntroduceGames from '@/components/IntroduceGames.vue'
 import AddQuantities from '@/components/AddQuantities.vue'
+import CompleteSeriation from '@/components/CompleteSeriation.vue'
 import CountUp from '@/components/CountUp.vue'
+import ExplainApp from '@/components/ExplainApp.vue'
+import GamesEvaluation from '@/components/GamesEvaluation.vue'
+import IntroductionGame from '@/components/IntroductionGame.vue'
 import LetsStart from '@/components/LetsStart.vue'
 import OneLook from '@/components/OneLook.vue'
 import OverallBadge from '@/components/OverallBadge.vue'
 import QuantityComparison from '@/components/QuantityComparison.vue'
 import QuantityEquality from '@/components/QuantityEquality.vue'
 import ReduceQuantities from '@/components/ReduceQuantities.vue'
-import CompleteSeriation from '@/components/CompleteSeriation.vue'
-import WhereIs from '@/components/WhereIs.vue'
 import StageForm from '@/components/StageForm.vue'
-import GamesEvaluation from '@/components/GamesEvaluation.vue'
+import WhereIs from '@/components/WhereIs.vue'
 
 const routes = [
-  { path: '/introduction', component: IntroduceGames},
   { path: '/', component: LetsStart },
+  { path: '/explain', component: ExplainApp },
+  { path: '/introduction', component: IntroductionGame },
   { path: '/form', component: StageForm },
   { path: '/eval', component: GamesEvaluation },
 
