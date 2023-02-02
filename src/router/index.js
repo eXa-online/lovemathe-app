@@ -11,14 +11,14 @@ import OverallBadge from '@/components/OverallBadge.vue'
 import QuantityComparison from '@/components/QuantityComparison.vue'
 import QuantityEquality from '@/components/QuantityEquality.vue'
 import ReduceQuantities from '@/components/ReduceQuantities.vue'
-import StageForm from '@/components/StageForm.vue'
+import BadgeSimulator from '@/components/BadgeSimulator.vue'
 import WhereIs from '@/components/WhereIs.vue'
 
 const routes = [
   { path: '/', component: LetsStart },
   { path: '/explain', component: ExplainApp },
   { path: '/introduction', component: IntroductionGame },
-  { path: '/form', component: StageForm },
+  { path: '/sim', component: BadgeSimulator },
   { path: '/eval', component: GamesEvaluation },
 
   { path: '/overall-badge', component: OverallBadge },
