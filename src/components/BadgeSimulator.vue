@@ -1,5 +1,5 @@
 <template>
-  <div id="stageform">
+  <div id="badge_simulator">
     <h2>Badge Simulator</h2>
     <form @submit.prevent="onSubmit">
       <div class="game" v-for="gameName in gameOrder" :key="gameName">
@@ -17,7 +17,7 @@
 import { mapActions, mapState } from 'pinia'
 import { useMainStore } from '../stores/MainStore'
 export default {
-  name: 'StageForm',
+  name: 'BadgeSimulator',
   data() {
     return {
       formData: {}
@@ -50,7 +50,7 @@ export default {
 </script>
 
 <style scoped>
-#stageform {
+#badge_simulator {
   background-color: white;
   border-radius: 30px;
   display: flex;
