@@ -1,13 +1,13 @@
 <template>
   <div v-if="updateExists && !promptClosed" class="update_prompt">
-    <p class="prompt--heading">Neues Update verfügbar</p>
-    <p class="prompt--caption">Wir haben Verbesserungen an der App vorgenommen. Aktualisiere die App, wenn du auf dem neusten Stand sein möchtest.</p>
+    <p class="prompt--heading">{{this.updatePromptHeading}}</p>
+    <p class="prompt--caption">{{this.updatePromptCaption}}</p>
     <div class="buttons">
       <button class="cta_button" @click="refreshApp">
-        Jetzt ausführen
+        {{this.updateNowText}}
       </button>
       <button class="low_contrast_button" @click="closePrompt">
-        Nächstes Mal
+        {{this.updateLaterText}}
       </button>
     </div>
   </div>
@@ -21,13 +21,15 @@ export default({
       refreshing: false,
       registration: null,
       updateExists: false,
-      promptClosed: false
+      promptClosed: false,
+      updateNowText: "Jetzt ausführen",
+      updateLaterText: "Nächstes Mal",
+      updatePromptHeading: "Neues Update verfügbar",
+      updatePromptCaption: "Wir haben Verbesserungen an der App vorgenommen. Aktualisiere die App, wenn du auf dem neusten Stand sein möchtest.",
     }
   },
   created () {
-    document.addEventListener(
-      'swUpdated', this.showRefreshUI, { once: true }
-    );
+    document.addEventListener('swUpdated', this.showRefreshUI, { once: true });
     if (navigator.serviceWorker) {
       navigator.serviceWorker.addEventListener(
         'controllerchange', () => {
@@ -128,7 +130,7 @@ body {
   background-color: #FFFFFF;
   border: 4px solid #B2C0CE;
   border-radius: 50px;
-  color: #B2C0CE;  
+  color: #B2C0CE;
   height: 60px;
   width: 200px;
   text-align: center;
