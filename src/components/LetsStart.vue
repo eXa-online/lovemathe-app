@@ -1,11 +1,8 @@
 <template>
   <div>
-    <div class="centered_item start_button" v-if="!updating" @click="startIntro()">
+    <div class="centered_item start_button" @click="startIntro()">
       <img :src="startLogo"/>
       </div>
-    <div class="centered_item start_button" v-if="updating" disabled="true">
-      <img :src="updateLogo"/>
-    </div>
   </div>
 </template>
 
@@ -14,9 +11,7 @@ export default {
   name: "LetsStart",
   data() {
     return {
-      updating: false,
-      startLogo: require('../assets/lets_start/logo_start.svg'),
-      updateLogo: require('../assets/lets_start/logo_update.svg')
+      startLogo: require('../assets/lets_start/logo_start.svg')
     }
   },
   methods: {
