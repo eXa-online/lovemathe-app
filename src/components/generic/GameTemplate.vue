@@ -18,8 +18,7 @@
       </button>
     </div>
   </div>
-  <h3 v-if="seperateInstructions">{{currentTitle}}</h3>
-  <h3 v-else>{{title}}</h3>
+  <h3>{{currentTitle}}</h3>
 </template>
 
 <script>
@@ -35,15 +34,16 @@ export default {
       puzzleIndex: 0,
       getHelpButtonImage: require('../../assets/help.svg'),
       cooldownTimeMiliseconds: 1000,
-      hintAudio: this.seperateInstructions ? 
-        new Audio(require(`../../assets/${this.gameName.toLowerCase()}/instructions/${this.puzzleIndex ?? 0}.mp3`)) : 
+      hintAudio: this.useDynamicInstructions ?
+        new Audio(require(`../../assets/${this.gameName.toLowerCase()}/instructions/${this.puzzleIndex ?? 0}.mp3`)) :
         new Audio(require(`../../assets/${this.gameName.toLowerCase()}/instruction.mp3`)),
       showPuzzle: true,
       firstPuzzle: true,
-      date: Date.now() + this.audioDuration
+      date: Date.now() + this.audioDuration,
+      useDynamicInstructions: this.dynamicTitles !== undefined
     }
   },
-  props: ['showDemo', 'solutions', 'title', 'countButtons', 'gameName', 'audioDuration', 'showDuration', 'seperateInstructions', 'seperateTitles'],
+  props: ['showDemo', 'solutions', 'title', 'countButtons', 'gameName', 'audioDuration', 'showDuration', 'dynamicTitles'],
   created() {
     this.playInstruction()
     if (this.showDuration){
@@ -67,7 +67,11 @@ export default {
       return require(`../../assets/${this.gamePath}/puzzles/${this.solutions.length}.svg`)
     },
     currentTitle: function() {
-      return this.seperateTitles[this.puzzleIndex]
+      if (this.useDynamicInstructions) {
+        return this.dynamicTitles[this.puzzleIndex]
+      } else {
+        return this.title
+      }
     }
   },
   methods: {
@@ -78,6 +82,11 @@ export default {
         this.hintAudio.currentTime = 0
       }
       this.hintAudio.play()
+      if (this.useDynamicInstructions) {
+        new Audio(require(`../../assets/${this.gamePath}/instructions/${this.puzzleIndex}.mp3`)).play()
+      } else {
+        new Audio(require(`../../assets/${this.gamePath}/instruction.mp3`)).play()
+        }
     },
     playTransition(){
       this.hintAudio.pause()
@@ -97,7 +106,7 @@ export default {
           this.completed = true;
           this.hintAudio.pause()
         } else {
-          if(this.seperateInstructions) {
+          if(this.useDynamicInstructions) {
             this.hintAudio.pause()
             this.hintAudio = new Audio(require(`../../assets/${this.gameName.toLowerCase()}/instructions/${this.puzzleIndex}.mp3`))
           }
@@ -109,7 +118,7 @@ export default {
         if (this.completed === true) {
           setTimeout(() => { this.switchToHome()}, 1500)
           this.playTransition();
-        } else if (this.seperateInstructions) {
+        } else if (this.useDynamicInstructions) {
           this.playInstruction()
         }
       }
