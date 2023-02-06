@@ -38,7 +38,7 @@ export default {
       countButtons: 6,
       audioDuration: 0,
       solutions: 0,
-      seperateTitles: {
+      dynamicTitles: {
         0: 'Klicke auf den Hut',
         1: 'Klicke auf die Gießkanne',
         2: 'Klicke auf die Schaufel',
@@ -71,7 +71,7 @@ export default {
       return require('../assets/badge_background.svg')
     },
     currentTitle: function() {
-      return this.seperateTitles[this.puzzleIndex]
+      return this.dynamicTitles[this.puzzleIndex]
     }
   },
   methods: {

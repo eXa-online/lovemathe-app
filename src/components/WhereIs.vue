@@ -6,14 +6,14 @@
     :showDemo="true"
     :solutions="[3,1,2,4,5,0]"
     :audioDuration="8000"
-    :seperateInstructions="true"
-    :seperateTitles="{
+    :dynamicTitles="{
     0: 'Oben Mitte',
     1: 'Unten Links',
     2: 'Unten Rechts',
     3: 'Oben Links',
     4: 'Unten Mitte',
-    5: 'Oben Rechts'}"/>
+    5: 'Oben Rechts'}"
+  />
 </template>
 
 <script>
