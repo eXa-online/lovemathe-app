@@ -1,5 +1,5 @@
 module.exports = {
-  publicPath: process.env.NODE_ENV === 'production' ? '/lovemathe/' : '/',
+  publicPath: process.env.NODE_ENV === 'production' ? '/' : '/lovemathe/',
   pwa: {
     workboxPluginMode: 'InjectManifest',
     workboxOptions: {
