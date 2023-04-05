@@ -35,6 +35,9 @@ export default {
       puzzleIndex: 0,
       getHelpButtonImage: require('../../assets/help.svg'),
       cooldownTimeMiliseconds: 1000,
+      hintAudio: this.seperateInstructions ? 
+        new Audio(require(`../../assets/${this.gameName.toLowerCase()}/instructions/${this.puzzleIndex ?? 0}.mp3`)) : 
+        new Audio(require(`../../assets/${this.gameName.toLowerCase()}/instruction.mp3`)),
       showPuzzle: true,
       firstPuzzle: true,
       date: Date.now() + this.audioDuration
@@ -70,13 +73,14 @@ export default {
   methods: {
     ...mapActions(useMainStore, ['postGameSetup']),
     playInstruction(){
-      if (this.seperateInstructions) {
-        new Audio(require(`../../assets/${this.gamePath}/instructions/${this.puzzleIndex}.mp3`)).play()
-      } else {
-        new Audio(require(`../../assets/${this.gamePath}/instruction.mp3`)).play()
-        }
+      if(this.hintAudio.currentTime != 0) {
+        this.hintAudio.pause()
+        this.hintAudio.currentTime = 0
+      }
+      this.hintAudio.play()
     },
     playTransition(){
+      this.hintAudio.pause()
       new Audio(require(`../../assets/${this.gamePath}/transition.mp3`)).play()
     },
     evalSelection(givenSolution) {
@@ -87,6 +91,10 @@ export default {
         }
         if (this.puzzleIndex < this.solutions.length) {
           this.puzzleIndex++;
+          if(this.seperateInstructions) {
+            this.hintAudio.pause()
+            this.hintAudio = new Audio(require(`../../assets/${this.gameName.toLowerCase()}/instructions/${this.puzzleIndex}.mp3`))
+          }
         }
         if (this.puzzleIndex === this.solutions.length) {
           this.postGameSetup({'name':this.gameName, 'level':this.badgeIndex})

@@ -27,6 +27,7 @@ export default {
     return {
       badgeIndex: 0,
       puzzleIndex: 0,
+      hintAudio: new Audio(require(`../assets/introduce_game/instructions/0.mp3`)),
       gameStarted: false,
       getHelpButtonImage: require('../assets/help.svg'),
       cooldownTimeMiliseconds: 1000,
@@ -84,10 +85,16 @@ export default {
       } else {
         this.puzzleIndex = randomIndex
         this.solutions = randomIndex
+
+        this.hintAudio.pause()
+        this.hintAudio = new Audio(require(`../assets/introduce_game/instructions/${this.puzzleIndex}.mp3`))
       }
     },
     playInstruction(delay=0){
-      setTimeout(() => {new Audio(require(`../assets/introduce_game/instructions/${this.puzzleIndex}.mp3`)).play()},delay)
+      setTimeout(() => {
+        this.hintAudio.pause()
+        this.hintAudio.play()
+      },delay)
     },
     enableGame(delay) {
       setTimeout(() => {this.gameStarted = true},delay)
