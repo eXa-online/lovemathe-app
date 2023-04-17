@@ -91,14 +91,16 @@ export default {
         }
         if (this.puzzleIndex < this.solutions.length) {
           this.puzzleIndex++;
-          if(this.seperateInstructions) {
-            this.hintAudio.pause()
-            this.hintAudio = new Audio(require(`../../assets/${this.gameName.toLowerCase()}/instructions/${this.puzzleIndex}.mp3`))
-          }
         }
         if (this.puzzleIndex === this.solutions.length) {
           this.postGameSetup({'name':this.gameName, 'level':this.badgeIndex})
           this.completed = true;
+          this.hintAudio.pause()
+        } else {
+          if(this.seperateInstructions) {
+            this.hintAudio.pause()
+            this.hintAudio = new Audio(require(`../../assets/${this.gameName.toLowerCase()}/instructions/${this.puzzleIndex}.mp3`))
+          }
         }
         this.date = Date.now()
         if (this.showDuration){
