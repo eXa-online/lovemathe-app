@@ -50,7 +50,6 @@ export default {
   created() {
     this.selectNewGame()
     this.playInstruction()
-    this.setHintInterval()
     this.enableGame(1000)
   },
   computed: {
@@ -103,6 +102,7 @@ export default {
         this.hintAudio.pause()
         this.hintAudio.play()
       },delay)
+      this.setHintInterval()
     },
     enableGame(delay) {
       setTimeout(() => {this.gameStarted = true},delay)
@@ -117,7 +117,6 @@ export default {
           } else {
             this.selectNewGame();
             this.playInstruction();
-            this.setHintInterval();
             this.date = Date.now();
           }
         } else {
