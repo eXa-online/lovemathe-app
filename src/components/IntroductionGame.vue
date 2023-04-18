@@ -28,6 +28,7 @@ export default {
       badgeIndex: 0,
       puzzleIndex: 0,
       hintAudio: new Audio(require(`../assets/introduce_game/instructions/0.mp3`)),
+      hintAudioInterval: null,
       gameStarted: false,
       getHelpButtonImage: require('../assets/help.svg'),
       cooldownTimeMiliseconds: 1000,
@@ -49,7 +50,8 @@ export default {
   created() {
     this.selectNewGame()
     this.playInstruction()
-    this.enableGame(5600)
+    this.setHintInterval()
+    this.enableGame(1000)
   },
   computed: {
     buttonImages: function() {
@@ -85,10 +87,16 @@ export default {
       } else {
         this.puzzleIndex = randomIndex
         this.solutions = randomIndex
-
         this.hintAudio.pause()
         this.hintAudio = new Audio(require(`../assets/introduce_game/instructions/${this.puzzleIndex}.mp3`))
       }
+    },
+    setHintInterval(){
+      clearInterval(this.hintAudioInterval)
+      this.hintAudioInterval = setInterval(() => {
+        this.hintAudio.pause()
+        this.hintAudio.play()
+      }, 20000)
     },
     playInstruction(delay=0){
       setTimeout(() => {
@@ -109,6 +117,7 @@ export default {
           } else {
             this.selectNewGame();
             this.playInstruction();
+            this.setHintInterval();
             this.date = Date.now();
           }
         } else {
@@ -118,6 +127,7 @@ export default {
       }
     },
     switchToNext: function() {
+      clearInterval(this.hintAudioInterval)
       this.$router.push({ path: '/overall-badge' });
     },
     preventDoubleClick: function() {
