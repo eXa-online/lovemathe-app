@@ -4,7 +4,7 @@
     title="Ich brauche genau so viele Körbe wie Marmeladengläser. Was fehlt?"
     :countButtons="2"
     :showDemo="true"
-    :solutions="[1,0,1,0,1,0]"
+    :solutions="[0,1,1,0,1,0]"
     :audioDuration="4000"/>
 </template>
 
