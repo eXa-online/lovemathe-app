@@ -23,10 +23,19 @@ export default {
   name: "ExplainApp",
   data() {
     return {
-      image: 0,
+      image: 1,
+      introductionIsFinished: false,
       introduce_games: true,
       isFalse: true,
       mole: require('../assets/explain_app/images/mole.svg'),
+      audioInstances: [
+        new Audio(require(`../assets/explain_app/audios/1.mp3`)),
+        new Audio(require(`../assets/explain_app/audios/2.mp3`)),
+        new Audio(require(`../assets/explain_app/audios/3.mp3`)),
+        new Audio(require(`../assets/explain_app/audios/4.mp3`)),
+        new Audio(require(`../assets/explain_app/audios/5.mp3`)),
+        new Audio(require(`../assets/explain_app/audios/6.mp3`)),
+      ],
       getHelpButtonImage: require('../assets/help.svg'),
       cooldownTimeMiliseconds: 1000,
       countButtons: 6,
@@ -36,7 +45,6 @@ export default {
   props: [],
   created() {
     this.showIntroduction()
-    this.playAudio()
   },
   computed: {
     buttonImages: function() {
@@ -50,27 +58,34 @@ export default {
     }
   },
   methods: {
-    showIntroduction() {
-      this.image = 1
-      setTimeout(() => {this.image = 2}, 15000)
-      setTimeout(() => {this.image = 3}, 44000)
-      setTimeout(() => {this.image = 4}, 48000)
-      setTimeout(() => {this.image = 5}, 53000)
-      setTimeout(() => {this.image = 6}, 60000)
+    registerAudioStateHandler() {
+      // register handler to play next hint after current audio has finished
+      for(let i = 0; i< this.audioInstances.length-1; i++) {
+        this.audioInstances[i].onended = () => {
+          this.switchToNextAudioAndImage(i)
+        }
+      }
+
+      // register handler for last hint to enable the route for the test game
+      this.audioInstances[this.audioInstances.length-1].onended = () => {
+        this.introductionIsFinished = true
+      }
     },
-    playAudio(){
-      let introductionAudio = new Audio()
-      introductionAudio.src = require(`../assets/explain_app/audios/1.mp3`)
-      introductionAudio.play()
-      setTimeout(() => {introductionAudio.src = require(`../assets/explain_app/audios/2.mp3`)},16000)
-      setTimeout(() => {introductionAudio.play()},17000)
-      setTimeout(() => {introductionAudio.src = require(`../assets/explain_app/audios/3.mp3`)},43000)
-      setTimeout(() => {introductionAudio.play()},44000)
-      setTimeout(() => {introductionAudio.src = require(`../assets/explain_app/audios/4.mp3`)},62000)
-      setTimeout(() => {introductionAudio.play()},63000)
+    switchToNextAudioAndImage(currentIndex) {
+      // switch to next image
+      this.image += 1 
+
+      // start next audio hint
+      this.audioInstances[currentIndex+1].play()
+    },
+    showIntroduction() {
+      this.registerAudioStateHandler()
+      this.audioInstances[0].play()
     },
     switchToNext: function() {
-      this.$router.push({ path: '/introduction' });
+      if(this.introductionIsFinished) {
+        this.$router.push({ path: '/introduction' });
+      }
     }
   }
 };
