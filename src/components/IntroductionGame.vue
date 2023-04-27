@@ -27,6 +27,8 @@ export default {
     return {
       badgeIndex: 0,
       puzzleIndex: 0,
+      falseAudio: new Audio(require(`../assets/introduce_game/audios/false.mp3`)),
+      transitionAudio: new Audio(require(`../assets/introduce_game/audios/transition.mp3`)),
       hintAudio: new Audio(require(`../assets/introduce_game/instructions/0.mp3`)),
       hintAudioInterval: null,
       gameStarted: false,
@@ -74,10 +76,17 @@ export default {
   },
   methods: {
     playFalseSound() {
-      setTimeout(() => {new Audio(require(`../assets/introduce_game/audios/false.mp3`)).play()},300);
+      setTimeout(() => {this.falseAudio.play()},300);
     },
-    playTransistionSound() {
-      new Audio(require(`../assets/introduce_game/audios/transition.mp3`)).play();
+    cancelAllAudio() {
+      this.transitionAudio.pause()
+      this.falseAudio.pause()
+      this.hintAudio.pause()
+    },
+    waitForAudio() {
+      this.transitionAudio.pause()
+      this.falseAudio.pause()
+      this.hintAudio.pause()
     },
     selectNewGame() {
       let randomIndex = Math.ceil((Math.random()*this.countButtons)-1)
@@ -86,20 +95,20 @@ export default {
       } else {
         this.puzzleIndex = randomIndex
         this.solutions = randomIndex
-        this.hintAudio.pause()
+        this.cancelAllAudio()
         this.hintAudio = new Audio(require(`../assets/introduce_game/instructions/${this.puzzleIndex}.mp3`))
       }
     },
     setHintInterval(){
       clearInterval(this.hintAudioInterval)
       this.hintAudioInterval = setInterval(() => {
-        this.hintAudio.pause()
+        this.cancelAllAudio()
         this.hintAudio.play()
       }, 20000)
     },
     playInstruction(delay=0){
       setTimeout(() => {
-        this.hintAudio.pause()
+        this.cancelAllAudio()
         this.hintAudio.play()
       },delay)
       this.setHintInterval()
@@ -112,8 +121,11 @@ export default {
         if (givenSolution === this.puzzleIndex) {
           this.badgeIndex++;
           if (this.badgeIndex === 4) {
-            this.playTransistionSound();
-            setTimeout(() => { this.switchToNext()}, 1500)
+            this.transitionAudio.onended = () => {
+              this.transitionAudio.onended = () => {}
+              this.switchToNext()
+            }
+            this.transitionAudio.play();
           } else {
             this.selectNewGame();
             this.playInstruction();
@@ -121,6 +133,7 @@ export default {
           }
         } else {
           this.badgeIndex = 0;
+          this.cancelAllAudio()
           this.playFalseSound();
         }
       }
