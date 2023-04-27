@@ -34,7 +34,7 @@ export default {
       gameStarted: false,
       getHelpButtonImage: require('../assets/help.svg'),
       cooldownTimeMiliseconds: 1000,
-      date: Date.now() + 6000,
+      date: Date.now() + 3000,
       countButtons: 6,
       audioDuration: 0,
       solutions: 0,
