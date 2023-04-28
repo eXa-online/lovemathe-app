@@ -109,8 +109,7 @@ export default {
         if (this.completed === true) {
           setTimeout(() => { this.switchToHome()}, 1500)
           this.playTransition();
-        }
-        if (this.seperateInstructions){
+        } else if (this.seperateInstructions) {
           this.playInstruction()
         }
       }
