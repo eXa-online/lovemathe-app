@@ -1,16 +1,17 @@
 <template>
   <div id="evaluation">
     <h2>Auswertung</h2>
-    <div v-for="gameName in gameOrder" :key="gameName">
-      <div class="gameItem">
-        <span v-if="levelByName(gameName) >=4" class="gameItemCell">
-          <img class="markIcon" :src="checkmark" />
-        </span>
-        <span v-else class="gameItemCell">
-          <img class="markIcon" :src="crossmark" />
-        </span>
-        <span class="gameItemCell gameItemCell__name">{{ verboseNameByName(gameName) }}</span>
-        <strong class="gameItemCell">{{ levelByName(gameName) }}/{{ maxLevelByName(gameName) }}</strong>
+    <div v-for="game in evalGameOrder.map(getDataByName)" :key="game.verboseName">
+      <GameEvaluationRow :game="game" v-if="game.type === 'game'" />
+      <div class="gameItemGroup" v-if="game.type === 'group'">
+        <GameEvaluationRow :game="{
+          level: game.subGames.map(levelByName).reduce((a,b) => a+b, 0),
+          maxLevel: game.subGames.map(maxLevelByName).reduce((a,b) => a+b, 0),
+          verboseName: game.verboseName
+        }" />
+        <div class="subGameItem" v-for="subGame in game.subGames.map(getDataByName)" :key="subGame.verboseName">
+          <GameEvaluationRow :game="subGame"/>
+        </div>
       </div>
     </div>
     <hr class="hr" />
@@ -30,6 +31,7 @@
 <script>
 import { mapState } from "pinia";
 import { useMainStore } from "../stores/MainStore";
+import GameEvaluationRow from "./evaluation/GameEvaluationRow";
 
 export default {
   name: "GamesEvaluation",
@@ -39,10 +41,15 @@ export default {
       crossmark: require("../assets/games_evaluation/crossmark.svg"),
     };
   },
+  components: {
+    GameEvaluationRow
+  },
   computed: {
     ...mapState(useMainStore, [
       "areTestsSufficientlyResolved",
       "gameOrder",
+      "evalGameOrder",
+      "getDataByName",
       "levelByName",
       "maxLevelByName",
       "achievedLevels",
@@ -72,11 +79,24 @@ export default {
   display: flex;
   flex-direction: row;
 }
+.points {
+  min-width: 50px;
+  text-align: center;
+}
+.subGameItem {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.gameItemGroup {
+  display: flex;
+  flex-direction: column;
+}
 .gameItemCell {
   margin: 10px;
 }
 .gameItemCell__name {
   min-width: 20vw;
+  flex-grow: 1;
   text-align: left;
 }
 .hr {
