@@ -16,14 +16,8 @@
     </div>
     <hr class="hr" />
     <div class="gameItem">
-      <span v-if="areTestsSufficientlyResolved" class="gameItemCell">
-        <img class="markIcon" :src="checkmark" />
-      </span>
-      <span v-else class="gameItemCell">
-        <img class="markIcon" :src="crossmark" />
-      </span>
-      <strong class="gameItemCell gameItemCell__name">Gesamt</strong>
-      <strong class="gameItemCell">{{achievedLevels}}/{{ maximalLevels }}</strong>
+      <div class="gameItemCell gameItemCell__name button" @click="this.$router.push({ path: '/overall-badge' })"><strong>Zurück zum Badge-Bildschirm</strong></div>
+      <div class="gameItemCell gameItemCell__name button inverted" @click="resetGame()"><strong>Neu Starten</strong></div>
     </div>
   </div>
 </template>
@@ -44,6 +38,12 @@ export default {
   components: {
     GameEvaluationRow
   },
+  methods: {
+    resetGame() {
+      this.fullReset()
+      this.$router.push({ path: '/' })
+    }
+  },
   computed: {
     ...mapState(useMainStore, [
       "areTestsSufficientlyResolved",
@@ -55,6 +55,7 @@ export default {
       "achievedLevels",
       "maximalLevels",
       "verboseNameByName",
+      "fullReset",
     ]),
   },
 };
@@ -98,6 +99,40 @@ export default {
   min-width: 20vw;
   flex-grow: 1;
   text-align: left;
+}
+
+.button {
+  position: relative;
+  background-color: #844EA5;
+  border: none;
+  border-radius: 50px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: 'Rubik';
+  margin-top: 1rem;
+  font-weight: 700;
+  font-size: 1.4rem;
+  padding: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button.inverted {
+  background-color: white;
+  border: 5px solid #844EA5;
+  color: #844EA5;
+}
+
+.backButton {
+  min-width: 20vw;
+  text-align: center;
+  flex-grow: 1;
+  border: 2px solid #844EA599;
+  border-radius: 10px;
 }
 .hr {
   width:100%;
