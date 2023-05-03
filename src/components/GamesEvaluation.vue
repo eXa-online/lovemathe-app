@@ -29,12 +29,6 @@ import GameEvaluationRow from "./evaluation/GameEvaluationRow";
 
 export default {
   name: "GamesEvaluation",
-  data() {
-    return {
-      checkmark: require("../assets/games_evaluation/checkmark.svg"),
-      crossmark: require("../assets/games_evaluation/crossmark.svg"),
-    };
-  },
   components: {
     GameEvaluationRow
   },
@@ -80,10 +74,6 @@ export default {
   display: flex;
   flex-direction: row;
 }
-.points {
-  min-width: 50px;
-  text-align: center;
-}
 .subGameItem {
   margin-left: 20px;
   margin-right: 20px;
@@ -126,20 +116,8 @@ export default {
   border: 5px solid #844EA5;
   color: #844EA5;
 }
-
-.backButton {
-  min-width: 20vw;
-  text-align: center;
-  flex-grow: 1;
-  border: 2px solid #844EA599;
-  border-radius: 10px;
-}
 .hr {
   width:100%;
   border: 1px solid #844EA599;
-}
-.markIcon {
-  height: 16px;
-  width: 16px;
 }
 </style>
