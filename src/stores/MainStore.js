@@ -120,8 +120,10 @@ export const useMainStore = defineStore('MainStore', {
     setAllBadgeLevelsToMaximum() {
       Object.entries(this.gameInfos).forEach(function (nameValuePair) {
         let [name, value] = nameValuePair
-        this.setBadgeLevel(name, value['maxLevel']);
-        this.completeGame(name)
+        if(value.type === 'game') {
+          this.setBadgeLevel(name, value['maxLevel']);
+          this.completeGame(name)
+        }
       }, this)
       this.nextGame = ''
     },
