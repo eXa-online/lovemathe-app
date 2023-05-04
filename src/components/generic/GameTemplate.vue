@@ -1,9 +1,9 @@
 <template>
-  <div class="puzzle_body" @[completed&&`click`]="switchToHome">
-    <img v-show="!showPuzzle" class="puzzle" :src="emptyBackground">
-    <img v-show="showPuzzle" class="puzzle" :src="currentPuzzleBody">
-    <img class="puzzle_badge__large" :src="currentBadge" v-if="completed">
-    <div class="puzzle_additionals" v-if="!completed">
+  <div class="puzzle_body">
+    <img v-if="state.matches('showPuzzle')" class="puzzle" :src="currentPuzzleBody">
+    <img v-if="!state.matches('showPuzzle')" class="puzzle" :src="emptyBackground">
+    <img v-if="state.matches('showResult')" class="puzzle_badge__large" :src="currentBadge">
+    <div v-if="!state.matches('showResult')" class="puzzle_additionals">
       <div class="puzzle_badge_container">
         <img class="puzzle_background" :src="badgeBackground">
         <img class="puzzle_badge__small" :src="currentBadge">
@@ -11,53 +11,62 @@
       <img class="puzzle_help" @click="playInstruction" :src="getHelpButtonImage">
     </div>
   </div>
-  <div class="puzzle_bottom" v-if="!completed">
-    <div class="puzzle_buttons">
-      <button v-for="(buttonImage, index) in buttonImages" :key="buttonImage" @click="evalSelection(index)">
-        <img class="puzzle_button" :src="buttonImage">
-      </button>
+  <span v-if="!state.matches('showResult')">
+    <div class="puzzle_bottom">
+      <div class="puzzle_buttons">
+        <button v-for="(buttonImage, index) in buttonImages" :key="buttonImage" @click="send({ type: 'PLAY', answer: index })">
+          <img class="puzzle_button" :src="buttonImage">
+        </button>
+      </div>
     </div>
-  </div>
-  <h3>{{currentTitle}}</h3>
+    <h3>{{currentTitle}}</h3>
+</span>
 </template>
 
 <script>
 import { mapActions } from 'pinia'
 import { useMainStore } from '../../stores/MainStore'
+
+import { useMachine } from '@xstate/vue';
+import { genericMachine } from '../../state-machines/generic'
+
 export default {
   name: 'GameTemplate',
+  setup(props) {
+    const clickTime = Date.now() + props.audioDuration
+    const showDuration = props.showDuration || Number.POSITIVE_INFINITY
+    const { state, send } = useMachine(
+      genericMachine(props.solutions, clickTime, showDuration)
+    );
+    return {
+      state,
+      send
+    };
+  },
   data() {
     return {
-      completed: false,
-      badgeIndex: 0,
       gamePath: this.gameName.toLowerCase(),
-      puzzleIndex: 0,
       getHelpButtonImage: require('../../assets/help.svg'),
       cooldownTimeMiliseconds: 1000,
       hintAudio: this.titles.length > 1 ?
-        new Audio(require(`../../assets/${this.gameName.toLowerCase()}/instructions/${this.puzzleIndex ?? 0}.mp3`)):
+        new Audio(require(`../../assets/${this.gameName.toLowerCase()}/instructions/${this.state.context.puzzleIndex ?? 0}.mp3`)):
         new Audio(require(`../../assets/${this.gameName.toLowerCase()}/instruction.mp3`)),
-      showPuzzle: true,
-      firstPuzzle: true,
       date: Date.now() + this.audioDuration,
     }
   },
   props: ['showDemo', 'solutions', 'titles', 'countButtons', 'gameName', 'audioDuration', 'showDuration'],
   created() {
     this.playInstruction()
-    if (this.showDuration){
-      this.showPuzzleForDuration(this.showDuration)
-    }
   },
   computed: {
     buttonImages: function() {
       return [...Array(this.countButtons)].map((_, index)  => require(`../../assets/${this.gamePath}/buttons/${index}.svg`));
     },
     currentBadge: function() {
-      return require(`../../assets/${this.gamePath}/badges/${this.badgeIndex}.svg`)
+      return require(`../../assets/${this.gamePath}/badges/${this.state.context.badgeIndex}.svg`)
     },
     currentPuzzleBody: function() {
-      return require(`../../assets/${this.gamePath}/puzzles/${this.puzzleIndex}.svg`)
+      return require(`../../assets/${this.gamePath}/puzzles/${this.state.context.puzzleIndex}.svg`)
     },
     badgeBackground: function() {
       return require('../../assets/badge_background.svg')
@@ -67,7 +76,7 @@ export default {
     },
     currentTitle: function() {
       if (this.areMoreTitlesAvailable) {
-        return this.titles[this.puzzleIndex]
+        return this.titles[this.state.context.puzzleIndex]
       } else {
         return this.titles[0]
       }
@@ -84,7 +93,7 @@ export default {
         this.hintAudio.currentTime = 0
       }
       if (this.areMoreTitlesAvailable) {
-        this.hintAudio = new Audio(require(`../../assets/${this.gamePath}/instructions/${this.puzzleIndex}.mp3`))
+        this.hintAudio = new Audio(require(`../../assets/${this.gamePath}/instructions/${this.state.context.puzzleIndex}.mp3`))
       } else {
         this.hintAudio = new Audio(require(`../../assets/${this.gamePath}/instruction.mp3`))
       }
@@ -94,55 +103,26 @@ export default {
       this.hintAudio.pause()
       new Audio(require(`../../assets/${this.gamePath}/transition.mp3`)).play()
     },
-    evalSelection(givenSolution) {
+    evalSelection() {
       if (this.preventDoubleClick()) {
-        const isCorrect = givenSolution == this.solutions[this.puzzleIndex]
-        if (isCorrect) {
-          this.badgeIndex++;
-        }
-        if (this.puzzleIndex < this.solutions.length) {
-          this.puzzleIndex++;
-        }
-        if (this.puzzleIndex === this.solutions.length) {
-          this.postGameSetup({'name':this.gameName, 'level':this.badgeIndex})
-          this.completed = true;
+        if (this.areMoreTitlesAvailable) {
           this.hintAudio.pause()
-        } else {
-          if (this.areMoreTitlesAvailable) {
-            this.hintAudio.pause()
-            this.hintAudio = new Audio(require(`../../assets/${this.gameName.toLowerCase()}/instructions/${this.puzzleIndex}.mp3`))
-          }
+          this.hintAudio = new Audio(require(`../../assets/${this.gameName.toLowerCase()}/instructions/${this.this.state.context.puzzleIndex}.mp3`))
         }
-        this.date = Date.now()
-        if (this.showDuration){
-          this.showPuzzleForDuration(this.showDuration)
-        }
-        if (this.completed === true) {
-          setTimeout(() => { this.switchToHome()}, 1500)
-          this.playTransition();
-        } else if (this.areMoreTitlesAvailable) {
-          this.playInstruction()
-        }
+        this.playInstruction()
       }
     },
     switchToHome: function() {
       this.$router.push({ path: '/overall-badge' });
     },
-    preventDoubleClick: function() {
-      return Date.now() > this.date + this.cooldownTimeMiliseconds;
-    },
-    async showPuzzleForDuration(milliseconds){
-      if(this.firstPuzzle){
-        this.showPuzzle = false
-        await this.sleepForDuration(this.audioDuration)
-        this.firstPuzzle = false
+  },
+  watch: {
+    state(state) {
+      if (state.matches('showResult')) {
+        this.playTransition();
+        this.postGameSetup({'name':this.gameName, 'level':state.context.badgeIndex})
+        setTimeout(() => { this.switchToHome()}, 1500)
       }
-      this.showPuzzle=true
-      await this.sleepForDuration(milliseconds)
-      this.showPuzzle=false
-    },
-    sleepForDuration(milliseconds){
-      return new Promise(resolve => setTimeout(resolve, milliseconds))
     }
   }
 }

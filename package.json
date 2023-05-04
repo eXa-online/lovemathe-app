@@ -14,6 +14,7 @@
     "@vue/cli-plugin-router": "~5.0.6",
     "@vue/cli-service": "~5.0.6",
     "@vue/compiler-sfc": "^3.2.37",
+    "@xstate/vue": "^2.0.0",
     "caniuse-lite": "^1.0.30001439",
     "core-js": "^3.23.2",
     "eslint": "^8.18.0",
@@ -28,7 +29,8 @@
     "postcss": ">=8.4.14",
     "register-service-worker": "^1.7.2",
     "vue": "^3.2.37",
-    "vue-router": "^4.0.16"
+    "vue-router": "^4.0.16",
+    "xstate": "^4.37.2"
   },
   "eslintConfig": {
     "root": true,
