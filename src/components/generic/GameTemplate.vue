@@ -35,9 +35,8 @@ export default {
   setup(props) {
     const clickTime = Date.now() + props.audioDuration
     const showDuration = props.showDuration || Number.POSITIVE_INFINITY
-    const { state, send } = useMachine(
-      genericMachine(props.solutions, clickTime, showDuration)
-    );
+    const machine = props.machine ? props.machine : genericMachine
+    const { state, send } = useMachine(machine(props.solutions, clickTime, showDuration));
     return {
       state,
       send
@@ -54,10 +53,7 @@ export default {
       date: Date.now() + this.audioDuration,
     }
   },
-  props: ['showDemo', 'solutions', 'titles', 'countButtons', 'gameName', 'audioDuration', 'showDuration'],
-  created() {
-    this.playInstruction()
-  },
+  props: ['showDemo', 'solutions', 'titles', 'countButtons', 'gameName', 'audioDuration', 'showDuration', 'machine'],
   computed: {
     buttonImages: function() {
       return [...Array(this.countButtons)].map((_, index)  => require(`../../assets/${this.gamePath}/buttons/${index}.svg`));
@@ -103,26 +99,23 @@ export default {
       this.hintAudio.pause()
       new Audio(require(`../../assets/${this.gamePath}/transition.mp3`)).play()
     },
-    evalSelection() {
-      if (this.preventDoubleClick()) {
-        if (this.areMoreTitlesAvailable) {
-          this.hintAudio.pause()
-          this.hintAudio = new Audio(require(`../../assets/${this.gameName.toLowerCase()}/instructions/${this.this.state.context.puzzleIndex}.mp3`))
-        }
-        this.playInstruction()
-      }
-    },
     switchToHome: function() {
       this.$router.push({ path: '/overall-badge' });
     },
   },
   watch: {
-    state(state) {
-      if (state.matches('showResult')) {
-        this.playTransition();
-        this.postGameSetup({'name':this.gameName, 'level':state.context.badgeIndex})
-        setTimeout(() => { this.switchToHome()}, 1500)
-      }
+    state: {
+      handler(state) {
+        if (state.context.puzzleIndex === 0 || state.matches('showPuzzle') && this.areMoreTitlesAvailable) {
+          this.playInstruction()
+        }
+        if (state.matches('showResult')) {
+          this.playTransition();
+          this.postGameSetup({'name':this.gameName, 'level':state.context.badgeIndex})
+          setTimeout(() => { this.switchToHome()}, 1500)
+        }
+      },
+      immediate: true
     }
   }
 }

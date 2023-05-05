@@ -1,6 +1,7 @@
 <template>
   <GameTemplate
     gameName="Where_Is"
+    :machine="machine"
     :titles="[
     'Dir wird eine Stelle im Regal gesagt. Welcher Gegenstand ist dort? Klicke auf ihn! Oben Mitte',
     'Unten Links',
@@ -17,8 +18,14 @@
 
 <script>
 import GameTemplate from './generic/GameTemplate'
+import { whereIsMachine } from '../state-machines/where-is'
 export default {
   name: 'WhereIs',
+  data() {
+    return {
+      machine: whereIsMachine
+    }
+  },
   components: {GameTemplate}
 }
 </script>
