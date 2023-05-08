@@ -1,7 +1,7 @@
 <template>
   <GameTemplate
     gameName="Add_Quantities"
-    title="Ich brauche genau so viele Körbe wie Marmeladengläser. Was fehlt?"
+    :titles="['Ich brauche genau so viele Körbe wie Marmeladengläser. Was fehlt?']"
     :countButtons="2"
     :showDemo="true"
     :solutions="[0,1,1,0,1,0]"
