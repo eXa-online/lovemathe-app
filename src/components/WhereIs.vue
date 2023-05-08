@@ -1,18 +1,17 @@
 <template>
   <GameTemplate
     gameName="Where_Is"
-    title="Dir wird eine Stelle im Regal gesagt. Welcher Gegenstand ist dort? Klicke auf ihn!"
+    :titles="[
+    'Dir wird eine Stelle im Regal gesagt. Welcher Gegenstand ist dort? Klicke auf ihn! Oben Mitte',
+    'Unten Links',
+    'Unten Rechts',
+    'Oben Links',
+    'Unten Mitte',
+    'Oben Rechts']"
     :countButtons="6"
     :showDemo="true"
     :solutions="[3,1,2,4,5,0]"
     :audioDuration="8000"
-    :dynamicTitles="{
-    0: 'Oben Mitte',
-    1: 'Unten Links',
-    2: 'Unten Rechts',
-    3: 'Oben Links',
-    4: 'Unten Mitte',
-    5: 'Oben Rechts'}"
   />
 </template>
 

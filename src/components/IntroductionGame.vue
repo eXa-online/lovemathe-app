@@ -38,14 +38,14 @@ export default {
       countButtons: 6,
       audioDuration: 0,
       solutions: 0,
-      dynamicTitles: {
-        0: 'Klicke auf den Hut',
-        1: 'Klicke auf die Gießkanne',
-        2: 'Klicke auf die Schaufel',
-        3: 'Klicke auf den Eimer',
-        4: 'Klicke auf den Korb',
-        5: 'Klicke auf das Marmeladenglas',
-      }
+      titles: [
+        'Klicke auf den Hut',
+        'Klicke auf die Gießkanne',
+        'Klicke auf die Schaufel',
+        'Klicke auf den Eimer',
+        'Klicke auf den Korb',
+        'Klicke auf das Marmeladenglas',
+      ]
     }
   },
   props: [],
@@ -71,7 +71,11 @@ export default {
       return require('../assets/badge_background.svg')
     },
     currentTitle: function() {
-      return this.dynamicTitles[this.puzzleIndex]
+      if (this.puzzleIndex < this.titles.length) {
+        return this.titles[this.puzzleIndex]
+      } else {
+        return this.titles[0]
+      }
     }
   },
   methods: {

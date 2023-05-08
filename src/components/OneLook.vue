@@ -1,7 +1,7 @@
 <template>
   <GameTemplate
     gameName="One_Look"
-    title="Du siehst das Bild nur für eine kurze Zeit. Wie viele Tropfen kannst du erkennen?"
+    :titles="['Du siehst das Bild nur für eine kurze Zeit. Wie viele Tropfen kannst du erkennen?']"
     :countButtons="6"
     :showDemo="true"
     :solutions="[1,4,0,2,5,3]"
