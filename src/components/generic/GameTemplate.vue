@@ -106,7 +106,9 @@ export default {
   watch: {
     state: {
       handler(state) {
-        if (state.context.puzzleIndex === 0 || state.matches('showPuzzle') && this.areMoreTitlesAvailable) {
+        const initialState = state.context.puzzleIndex === 0 && state.machine.initial == state.value
+        const playInstructionForAdditionalTitles = state.matches('showPuzzle') && this.areMoreTitlesAvailable
+        if (initialState || playInstructionForAdditionalTitles) {
           this.playInstruction()
         }
         if (state.matches('showResult')) {
