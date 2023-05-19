@@ -20,12 +20,12 @@ const preventDoubleClick = function(context) {
 
 // Guard to check if all puzzles are completed
 function completed(context) {
-  return context.puzzleIndex === context.solutions.length -1;
+  return context.puzzleIndex === context.solutions.length;
 }
 
 export const oneLookMachine = (solutions, clickTime, showDuration) => {
   return createMachine({
-      predictableActionArguments: true,
+      predictableActionArguments: false,
       id: 'game',
       context: {
         solutions,
@@ -33,33 +33,28 @@ export const oneLookMachine = (solutions, clickTime, showDuration) => {
         showDuration,
         badgeIndex: 0,
         puzzleIndex: 0,
-        cooldownTimeMiliseconds: 1000
+        cooldownTimeMiliseconds: 1000,
+        initialCooldownTimeMiliseconds: 6000
       },
-      initial: 'showPuzzle',
+      initial: 'startPuzzle',
       states: {
+        startPuzzle: {
+          after: {
+            INITIAL_COOLDOWN: { target: 'showPuzzle' }
+          }
+        },
         showPuzzle: {
-          exit: [evalAnswer, incrementPuzzleIndex, setClickTime],
+          after: {
+            SHOW_COOLDOWN: { target: 'hidePuzzle' }
+          },
           always: {
             target: 'showResult',
             cond: 'completed',
           },
-          after: [
-            {
-              delay: (context) => {
-                return context.showDuration;
-              },
-              target: 'hidePuzzle',
-              cond: 'shouldHideAfterDuration'
-            }
-          ],
-          on: {
-            PLAY: {
-              target: 'showPuzzle',
-              cond: 'preventDoubleClick'
-            }
-          }
+
         },
         hidePuzzle: {
+          exit: [evalAnswer, incrementPuzzleIndex, setClickTime],
           on: {
             PLAY: {
               target: 'showPuzzle',
@@ -77,8 +72,13 @@ export const oneLookMachine = (solutions, clickTime, showDuration) => {
       guards: {
         completed,
         preventDoubleClick,
-        shouldHideAfterDuration: (context) => {
-          return context.showDuration !== Number.POSITIVE_INFINITY;
+      },
+      delays: {
+        INITIAL_COOLDOWN: (context) => {
+          return context.initialCooldownTimeMiliseconds;
+        },
+        SHOW_COOLDOWN: (context) => {
+          return context.showDuration;
         }
       }
     }
