@@ -3,12 +3,12 @@
     gameName="Where_Is"
     :machine="machine"
     :titles="[
-    'Dir wird eine Stelle im Regal gesagt. Welcher Gegenstand ist dort? Klicke auf ihn! Oben Mitte',
-    'Unten Links',
-    'Unten Rechts',
-    'Oben Links',
-    'Unten Mitte',
-    'Oben Rechts']"
+    'Dir wird ein Platz im Regal gesagt. Welcher Gegenstand ist dort? Klicke auf das richtige Bild! Welcher Gegenstand ist oben in der Mitte?',
+    'Welcher Gegenstand ist unten links?',
+    'Welcher Gegenstand ist unten rechts?',
+    'Welcher Gegenstand ist oben links?',
+    'Welcher Gegenstand ist unten in der Mitte?',
+    'Welcher Gegenstand ist ist oben rechts?']"
     :countButtons="6"
     :showDemo="true"
     :solutions="[3,1,2,4,5,0]"
