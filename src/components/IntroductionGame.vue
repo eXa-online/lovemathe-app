@@ -71,7 +71,7 @@ export default {
       return require('../assets/badge_background.svg')
     },
     currentTitle: function() {
-      if (this.puzzleIndex > this.titles.length) {
+      if (this.puzzleIndex < this.titles.length) {
         return this.titles[this.puzzleIndex]
       } else {
         return this.titles[0]
