@@ -16,16 +16,6 @@
         <img class="count_up_img" :src="currentBadgeByName('Count_Up')" />
       </router-link>
       <router-link
-        :class="[badgeClasses('Quantity_Equality')]"
-        to="/quantity_equality"
-        :title="verboseNameByName('Quantity_Equality')"
-      >
-        <img
-          :class="[imageClasses('Quantity_Equality')]"
-          :src="currentBadgeByName('Quantity_Equality')"
-        />
-      </router-link>
-      <router-link
         :class="[badgeClasses('One_Look')]"
         to="/one_look"
         :title="verboseNameByName('One_Look')"
@@ -63,16 +53,6 @@
         <img
           :class="[imageClasses('Quantity_Comparison')]"
           :src="currentBadgeByName('Quantity_Comparison')"
-        />
-      </router-link>
-      <router-link
-        :class="[badgeClasses('Where_Is')]"
-        to="/where_is"
-        :title="verboseNameByName('Where_Is')"
-      >
-        <img
-          :class="[imageClasses('Where_Is')]"
-          :src="currentBadgeByName('Where_Is')"
         />
       </router-link>
       <router-link
@@ -167,16 +147,6 @@ export default {
   margin: 0;
   padding: 0;
 }
-
-.quantity_equality {
-  grid-area: 3 / 2 / auto / auto;
-  transform: scale(1.3);
-}
-.quantity_equality_img {
-  max-height: 20vh;
-  max-width: 20vw;
-}
-
 .count_up {
   grid-area: 12 / 23 / auto / auto;
   transform: scale(2);
@@ -228,15 +198,6 @@ export default {
   max-width: 20vw;
 }
 
-.where_is {
-  grid-area: 13 / 2 / auto / auto;
-  transform: scale(1.4);
-}
-.where_is_img {
-  max-height: 40vh;
-  max-width: 20vw;
-}
-
 .completedAllGames {
   grid-area: 28 / 29 / auto / auto;
   transform: scale(0.5);
@@ -264,22 +225,6 @@ export default {
 }
 .count_up__animated {
   animation: count_up__animated 1s linear infinite alternate;
-  transform-origin: center;
-  transform-box: fill-box;
-}
-
-@keyframes quantity_equality__animated {
-  0% {
-    transform: scale(1);
-    -webkit-transform: scale(1);
-  }
-  100% {
-    transform: scale(1.12);
-    -webkit-transform: scale(1.12);
-  }
-}
-.quantity_equality__animated {
-  animation: quantity_equality__animated 1s linear infinite alternate;
   transform-origin: center;
   transform-box: fill-box;
 }
@@ -344,22 +289,6 @@ export default {
 }
 .quantity_comparison__animated {
   animation: quantity_comparison__animated 1s linear infinite alternate;
-  transform-origin: center;
-  transform-box: fill-box;
-}
-
-@keyframes where_is__animated  {
-  0% {
-    transform: scale(0.7);
-    -webkit-transform: scale(0.7);
-  }
-  100% {
-    transform: scale(0.9);
-    -webkit-transform: scale(0.9);
-  }
-}
-.where_is__animated {
-  animation: where_is__animated 1s linear infinite alternate;
   transform-origin: center;
   transform-box: fill-box;
 }

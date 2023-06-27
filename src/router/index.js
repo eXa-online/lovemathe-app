@@ -9,10 +9,8 @@ import LetsStart from '@/components/LetsStart.vue'
 import OneLook from '@/components/OneLook.vue'
 import OverallBadge from '@/components/OverallBadge.vue'
 import QuantityComparison from '@/components/QuantityComparison.vue'
-import QuantityEquality from '@/components/QuantityEquality.vue'
 import ReduceQuantities from '@/components/ReduceQuantities.vue'
 import BadgeSimulator from '@/components/BadgeSimulator.vue'
-import WhereIs from '@/components/WhereIs.vue'
 
 const routes = [
   { path: '/', component: LetsStart },
@@ -26,10 +24,8 @@ const routes = [
   { path: '/count_up', component: CountUp },
   { path: '/one_look', component: OneLook },
   { path: '/quantity_comparison', component: QuantityComparison },
-  { path: '/quantity_equality', component: QuantityEquality },
   { path: '/reduce_quantities', component: ReduceQuantities },
   { path: '/complete_seriation', component: CompleteSeriation },
-  { path: '/where_is', component: WhereIs },
 ]
 
 const router = createRouter({
