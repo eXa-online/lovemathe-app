@@ -2,20 +2,14 @@ import { defineStore } from 'pinia'
 
 const initialState = {
   completedGames: new Set(),
-  gameOrder: ['Count_Up', 'Quantity_Equality', 'Add_Quantities', 'Quantity_Comparison', 'Reduce_Quantities', 'One_Look', 'Complete_Seriation', 'Where_Is'],
-  evalGameOrder: ['Count_Up', 'Quantity_Equality', 'Quantities', 'One_Look', 'Complete_Seriation', 'Where_Is'],
+  gameOrder: ['Count_Up', 'Add_Quantities', 'Quantity_Comparison', 'Reduce_Quantities', 'One_Look', 'Complete_Seriation'],
+  evalGameOrder: ['Count_Up', 'Quantities', 'One_Look', 'Complete_Seriation'],
   nextGame: 'Count_Up',
   gameInfos: {
     'Quantities': {
       "type": "group",
       "verboseName": 'Mengen',
       "subGames": ['Add_Quantities', 'Quantity_Comparison', 'Reduce_Quantities'],
-    },
-    'Quantity_Equality': {
-      "type": "game",
-      "verboseName": 'Mengengleichheit',
-      "level": 0,
-      "maxLevel": 6,
     },
     'Quantity_Comparison': {
       "type": "game",
@@ -53,12 +47,6 @@ const initialState = {
       "level": 0,
       "maxLevel": 6,
     },
-    'Where_Is': {
-      "type": "game",
-      "verboseName": 'Orientierung',
-      "level": 0,
-      "maxLevel": 6,
-    },
   }
 }
 
@@ -92,8 +80,7 @@ export const useMainStore = defineStore('MainStore', {
     },
     areTestsSufficientlyResolved(state) {
       const minimumLevel = 4;
-      const gamesWithoutEvaluation = ['Where_Is'];
-      return Object.entries(state.gameInfos).filter(item => !gamesWithoutEvaluation.includes(item[0])).every(item => item[1]['level'] >= minimumLevel)
+      return Object.entries(state.gameInfos).every(item => item[1]['level'] >= minimumLevel)
     }
   },
   actions: {
