@@ -13,7 +13,7 @@
   <div class="puzzle_bottom">
     <div class="puzzle_buttons">
       <button v-for="(buttonImage, index) in buttonImages" :key="buttonImage" @click="evalSelection(index)">
-        <img class="puzzle_button" :src="buttonImage">
+        <img class="puzzle_button svg_shadow" :src="buttonImage">
       </button>
     </div>
   </div>
@@ -203,5 +203,10 @@ export default {
 .puzzle_background {
   width: 100%;
   max-height: 16vh;
+}
+
+.svg_shadow {
+  filter: drop-shadow(0px 4px 4px rgba(0,0,0,0.50));
+
 }
 </style>
