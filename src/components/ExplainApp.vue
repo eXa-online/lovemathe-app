@@ -1,12 +1,12 @@
 <template>
-  <div class="centered_item introduction_mole" v-if="image === 1"><img :src="mole"/></div>
+  <div class="centered_item introduction_mole svg_shadow" v-if="image === 1"><img :src="mole"/></div>
   <div class="puzzle_body" v-if="image > 1">
     <img v-if="image > 2" class="puzzle" :src="emptyPuzzleBody">
     <div class="puzzle_additionals">
       <div class="puzzle_badge_container" v-if="image > 4">
         <img class="puzzle_background" :src="badgeBackground">
       </div>
-      <img v-if="image > 1" class="puzzle_help" @click="switchToNext" :src="getHelpButtonImage">
+      <img v-if="image > 1" class="puzzle_help svg_shadow" @click="switchToNext" :src="getHelpButtonImage">
     </div>
   </div>
   <div class="puzzle_bottom" v-if="image > 3">
