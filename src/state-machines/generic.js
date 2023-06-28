@@ -3,7 +3,7 @@ import { createMachine } from 'xstate';
 const evalAnswer = function(context, event){
   const givenSolution = event.answer
   const isCorrect = givenSolution === context.solutions[context.puzzleIndex]
-  if (isCorrect) {
+  if (isCorrect && event.type == "PLAY") {
     return context.badgeIndex = context.badgeIndex + 1;
   } else {
     return context.badgeIndex;
@@ -19,7 +19,7 @@ const preventDoubleClick = function(context) {
 }
 
 function completed(context) {
-  return context.puzzleIndex === context.solutions.length -1;
+  return context.puzzleIndex === context.solutions.length;
 }
 
 export const genericMachine = (solutions, clickTime) => {
