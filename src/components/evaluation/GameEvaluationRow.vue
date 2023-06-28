@@ -1,6 +1,6 @@
 <template>
   <div class="gameItem">
-    <span v-if="game.level >=4" class="gameItemCell">
+    <span v-if="game.level >= game.successLevel" class="gameItemCell">
       <img class="markIcon" :src="checkmark" />
     </span>
     <span v-else class="gameItemCell">
