@@ -7,7 +7,7 @@
         <img class="puzzle_background" :src="badgeBackground">
         <img class="puzzle_badge__small" :src="currentBadge">
       </div>
-      <img class="puzzle_help" @click="playInstruction" :src="getHelpButtonImage">
+      <img class="puzzle_help svg_shadow" @click="playInstruction" :src="getHelpButtonImage">
     </div>
   </div>
   <div class="puzzle_bottom">
