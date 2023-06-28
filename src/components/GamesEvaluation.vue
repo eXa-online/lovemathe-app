@@ -7,6 +7,7 @@
         <GameEvaluationRow :game="{
           level: game.subGames.map(levelByName).reduce((a,b) => a+b, 0),
           maxLevel: game.subGames.map(maxLevelByName).reduce((a,b) => a+b, 0),
+          successLevel: game.subGames.map(successLevelByName).reduce((a,b) => a+b, 0),
           verboseName: game.verboseName
         }" />
         <div class="subGameItem" v-for="subGame in game.subGames.map(getDataByName)" :key="subGame.verboseName">
@@ -46,6 +47,7 @@ export default {
       "getDataByName",
       "levelByName",
       "maxLevelByName",
+      "successLevelByName",
       "achievedLevels",
       "maximalLevels",
       "verboseNameByName",

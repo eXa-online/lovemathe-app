@@ -15,36 +15,42 @@ const initialState = {
       "type": "game",
       "verboseName": 'Mengenvergleich',
       "level": 0,
+      "successLevel": 4,
       "maxLevel": 6,
     },
     'Add_Quantities': {
       "type": "game",
       "verboseName": 'Mengen ergänzen',
       "level": 0,
-      "maxLevel": 6,
+      "successLevel": 6,
+      "maxLevel": 8,
     },
     'Reduce_Quantities': {
       "type": "game",
       "verboseName": 'Mengen reduzieren',
       "level": 0,
-      "maxLevel": 6,
+      "successLevel": 6,
+      "maxLevel": 8,
     },
     'Count_Up': {
       "type": "game",
       "verboseName": 'Abzählen',
       "level": 0,
+      "successLevel": 4,
       "maxLevel": 6,
     },
     'One_Look': {
       "type": "game",
       "verboseName": 'Simultanerfassung',
       "level": 0,
+      "successLevel": 4,
       "maxLevel": 6,
     },
     'Complete_Seriation': {
       "type": "game",
       "verboseName": 'Seriation',
       "level": 0,
+      "successLevel": 4,
       "maxLevel": 6,
     },
   }
@@ -69,6 +75,9 @@ export const useMainStore = defineStore('MainStore', {
     maxLevelByName: (state) => (name) => {
       return state.gameInfos[name]['maxLevel'];
     },
+    successLevelByName: (state) => (name) => {
+      return state.gameInfos[name]['successLevel'];
+    },
     achievedLevels: (state) => {
       return Object.values(state.gameInfos).map(item => item['level']).reduce((prev, curr) => prev + curr);
     },
@@ -79,8 +88,7 @@ export const useMainStore = defineStore('MainStore', {
       return state.completedGames.size === state.gameOrder.length;
     },
     areTestsSufficientlyResolved(state) {
-      const minimumLevel = 4;
-      return Object.entries(state.gameInfos).every(item => item[1]['level'] >= minimumLevel)
+      return Object.entries(state.gameInfos).every(item => item[1]['level'] >= item[1]['successLevel'])
     }
   },
   actions: {
