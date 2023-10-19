@@ -1,15 +1,15 @@
 <template>
   <div class="centered_item introduction_mole svg_shadow" v-if="image === 1"><img :src="mole"/></div>
   <div class="puzzle_body" v-if="image > 1">
-    <img v-if="image > 2" class="puzzle" :src="emptyPuzzleBody">
+    <img v-if="image > 1" class="puzzle" :src="emptyPuzzleBody">
     <div class="puzzle_additionals">
-      <div class="puzzle_badge_container" v-if="image > 4">
+      <div class="puzzle_badge_container" v-if="image > 3">
         <img class="puzzle_background" :src="badgeBackground">
       </div>
       <img v-if="image > 1" class="puzzle_help svg_shadow" @click="switchToNext" :src="getHelpButtonImage">
     </div>
   </div>
-  <div class="puzzle_bottom" v-if="image > 3">
+  <div class="puzzle_bottom" v-if="image > 2">
     <div class="puzzle_buttons">
       <button v-for="(buttonImage) in buttonImages" :key="buttonImage">
         <img class="puzzle_button svg_shadow" :src="buttonImage">
@@ -72,7 +72,7 @@ export default {
     },
     switchToNextAudioAndImage(currentIndex) {
       // switch to next image
-      this.image += 1 
+      this.image += 1
 
       // start next audio hint
       this.audioInstances[currentIndex+1].play()
