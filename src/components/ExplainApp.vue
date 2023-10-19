@@ -34,7 +34,6 @@ export default {
         new Audio(require(`../assets/explain_app/audios/3.mp3`)),
         new Audio(require(`../assets/explain_app/audios/4.mp3`)),
         new Audio(require(`../assets/explain_app/audios/5.mp3`)),
-        new Audio(require(`../assets/explain_app/audios/6.mp3`)),
       ],
       getHelpButtonImage: require('../assets/help.svg'),
       cooldownTimeMiliseconds: 1000,
