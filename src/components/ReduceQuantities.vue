@@ -4,7 +4,7 @@
     :titles="['Ich brauche genau so viele Tomaten wie Schaufeln. Was ist zu viel?']"
     :countButtons="3"
     :showDemo="true"
-    :solutions="[0,1,2,2,1,0,1,0]"
+    :solutions="[0,1,2,2,1,0,1,2]"
     :audioDuration="4000"/>
 </template>
 
