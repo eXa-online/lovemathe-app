@@ -4,7 +4,7 @@
     :titles="['Wie viele Äpfel siehst du? Klicke auf das passende Würfelbild.']"
     :countButtons="6"
     :showDemo="true"
-    :solutions="[0,2,4,1,2,3]"
+    :solutions="[0,2,4,1,2,3,5,4]"
     :audioDuration="3000"/>
 </template>
 

@@ -36,8 +36,8 @@ const initialState = {
       "type": "game",
       "verboseName": 'Abzählen',
       "level": 0,
-      "successLevel": 4,
-      "maxLevel": 6,
+      "successLevel": 6,
+      "maxLevel": 8,
     },
     'One_Look': {
       "type": "game",
