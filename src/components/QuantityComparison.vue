@@ -4,7 +4,7 @@
     :titles="['Siehst du mehr Bienen, mehr Schmetterlinge oder gleich viele? Klicke auf das richtige Bild.']"
     :countButtons="3"
     :showDemo="true"
-    :solutions="[1,1,2,0,2,0]"
+    :solutions="[1,1,2,0,2,1]"
     :audioDuration="4000"/>
 </template>
 
