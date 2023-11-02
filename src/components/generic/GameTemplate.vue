@@ -53,10 +53,14 @@ export default {
       date: Date.now() + this.audioDuration,
     }
   },
-  props: ['showDemo', 'solutions', 'titles', 'countButtons', 'gameName', 'audioDuration', 'showDuration', 'machine'],
+  props: ['showDemo', 'solutions', 'titles', 'buttons','countButtons', 'gameName', 'audioDuration', 'showDuration', 'machine'],
   computed: {
     buttonImages: function() {
-      return [...Array(this.countButtons)].map((_, index)  => require(`../../assets/${this.gamePath}/buttons/${index}.svg`));
+      if(this.buttons) {
+        return this.buttons[this.state.context.puzzleIndex].map((id)  => require(`../../assets/${this.gamePath}/buttons/${id}.svg`));
+      } else {
+        return [...Array(this.countButtons)].map((_, index)  => require(`../../assets/${this.gamePath}/buttons/${index}.svg`));
+      }
     },
     currentBadge: function() {
       return require(`../../assets/${this.gamePath}/badges/${this.state.context.badgeIndex}.svg`)
