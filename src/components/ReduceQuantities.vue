@@ -1,7 +1,7 @@
 <template>
   <GameTemplate
     gameName="Reduce_Quantities"
-    :titles="['Ich brauche genau so viele Tomaten wie Schaufeln. Was ist zu viel?']"
+    :titles="['Ich brauche gleich viele Tomaten wie Schaufeln. Wie viele Tomaten muss ich wegnehmen?']"
     :countButtons="3"
     :showDemo="true"
     :solutions="[0,1,2,2,1,0,1,2]"
