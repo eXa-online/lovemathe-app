@@ -43,8 +43,8 @@ const initialState = {
       "type": "game",
       "verboseName": 'Simultanerfassung',
       "level": 0,
-      "successLevel": 4,
-      "maxLevel": 6,
+      "successLevel": 6,
+      "maxLevel": 8,
     },
     'Complete_Seriation': {
       "type": "game",
