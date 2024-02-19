@@ -50,8 +50,8 @@ const initialState = {
       "type": "game",
       "verboseName": 'Seriation',
       "level": 0,
-      "successLevel": 4,
-      "maxLevel": 6,
+      "successLevel": 6,
+      "maxLevel": 8,
     },
   }
 }
